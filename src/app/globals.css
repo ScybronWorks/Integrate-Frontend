@@ -5,6 +5,7 @@
 
 :root {
   --background-primary: #FFFFFF:
+  --text-color: #1E1E1E;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -16,7 +17,8 @@
 } */
 
 body {
-  background: var(--foreground-rgb)
+  background: var(--background-primary);
+  color: var( --text-color);
 }
 
 @layer utilities {
