@@ -4,6 +4,7 @@ import Button from '@/components/atomic/button/Button';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
 import TeamCard from '@/components/molecular/teamCard/TeamCard';
+import TestimonialCard from '@/components/molecular/testimonialsCard/TestimonialCard';
 import VisionCard from '@/components/molecular/visionCard/VisionCard';
 
 const Components = () => {
@@ -43,6 +44,19 @@ const Components = () => {
                         image="/img/team/David.png"
                         title="Dr. Emily Carter"
                         description="Lorem ipsum dolor"
+                    />
+                ))}
+            </div>
+            <div className="flex justify-center gap-4 w-full p-6">
+                {Array.from({ length: 3 }).map((_, index) => (
+                    <TestimonialCard
+                        key={index}
+                        image="/img/team/David.png"
+                        location="France"
+                        name="Sarah M"
+                        text="Indiginite has been a game-changer for my exam preparation. 
+                        The resources are top-notch, and the personalized support made all the difference. 
+                        I highly recommend their services!"
                     />
                 ))}
             </div>
