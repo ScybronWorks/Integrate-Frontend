@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '⚙️🛠️ Running pre-commit checks: Styling, linting, and type-checking your project'
+echo '⚙️ 🛠️  Running pre-commit checks: Styling, linting, and type-checking your project, Please wait...'
 
 # Run Prettier to check code formatting
 npm run prettier || (

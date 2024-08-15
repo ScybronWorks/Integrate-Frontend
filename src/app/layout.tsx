@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={lexend.className}>{children}</body>
+            <body className={lexend.className}>
+                <div className="px-[5%] sm:px-[10%] lg:px-[15%]">{children}</div>
+            </body>
         </html>
     );
 }
