@@ -1,12 +1,14 @@
 'use client';
 
 import Button from '@/components/atomic/button/Button';
+import Navbar from '@/components/layout/Navbar/Navbar';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
 import VisionCard from '@/components/molecular/visionCard/VisionCard';
 
 const Components = () => {
     return (
+        
         <div className="flex flex-col justify-center items-center h-screen gap-4 my-48">
             <ServiceCard
                 title="Tutoring"

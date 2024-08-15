@@ -1,14 +1,14 @@
 import HeaderTitle from '@/components/common/HeaderTitle';
 import Header from '@/components/layout/Header/Header';
 
-const Gallery = () => {
+const ContactUs = () => {
     return (
         <>
             <Header type="md">
-                <HeaderTitle title="Gallery Us" />
+                <HeaderTitle title="Contact Us" />
             </Header>
         </>
     );
 };
 
-export default Gallery;
+export default ContactUs;
