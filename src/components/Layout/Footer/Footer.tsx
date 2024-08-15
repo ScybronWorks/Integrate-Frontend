@@ -22,28 +22,39 @@ const Footer = () => {
                             alt=""
                         />
                     </div>
-                    <div className="flex flex-col gap-6">
-                        <Button
-                            type="outline"
-                            className="w-[202px] h-[50px] flex justify-center items-center"
-                        >
-                            COURSES
-                        </Button>
-                        <Button className="w-[202px] h-[50px] flex justify-center items-center">
-                            BLOGS
-                        </Button>
+                    <div className="">
+                        <div className="w-[202px] h-[50px] ">
+                            <Button type="outline" className="flex justify-center items-center">
+                                COURSES
+                            </Button>
+                        </div>
+                        <div className="w-[202px] h-[50px] ">
+                            <Button className="mt-6  flex justify-center items-center">
+                                BLOGS
+                            </Button>
+                        </div>
                     </div>
-                    <div className="flex gap-5 text-white text-xs">
-                        <a href="">HOME</a>
-                        <a href="">ABOUT US</a>
-                        <a href="">COURSES</a>
-                        <a href="">NEWS</a>
-                        <a href="">CONTACT US</a>
+                    <div className="flex gap-10 text-white text-xs">
+                        <div>
+                            <a href="">HOME</a>
+                        </div>
+                        <div>
+                            <a href="">ABOUT US</a>
+                        </div>
+                        <div>
+                            <a href="">COURSES</a>
+                        </div>
+                        <div>
+                            <a href="">NEWS</a>
+                        </div>
+                        <div>
+                            <a href="">CONTACT US</a>
+                        </div>
                     </div>
                 </div>
                 <div className="flex mt-12 items-start justify-between text-white text-sm">
                     <div className="flex gap-2">
-                        <FontAwesomeIcon icon={faLocationDot} className="w-[20px] h-[20px]" />
+                        <FontAwesomeIcon icon={faPhone} className="w-[20px] h-[20px]" />
                         <span>0123456789 | 0123456789</span>
                     </div>
                     <div className="flex gap-2 max-w-[395px] ">
