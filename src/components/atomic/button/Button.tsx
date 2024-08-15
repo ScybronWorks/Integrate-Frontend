@@ -12,7 +12,6 @@ const Button = ({
     href,
 }: ButtonProps) => {
     const router = useRouter();
-
     const buttonStyle = {
         outline: 'border border-white text-white hover:border-primary hover:bg-primary',
         primary:
@@ -27,7 +26,7 @@ const Button = ({
     return (
         <div
             onClick={handleOnClick}
-            className={`${buttonStyle[type]} ${className} font-bold py-2  px-4 rounded-md text-center h-fit w-fit cursor-pointer`}
+            className={`${buttonStyle[type]} transition-colors duration-700  font-bold py-2  px-4 rounded-md text-center h-fit w-fit cursor-pointer ${className}`}
         >
             {children}
         </div>

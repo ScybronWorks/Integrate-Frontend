@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/Layout/Footer/Footer';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={lexend.className}>
                 <div className="px-[5%] sm:px-[10%] lg:px-[15%]">{children}</div>
+                <Footer/>
             </body>
         </html>
     );
