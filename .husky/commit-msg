@@ -1,0 +1,8 @@
+# Run Commitlint to enforce commit message conventions
+npm run commitlint || (
+    echo '❌ Commitlint Check Failed. Please fix your commit message to match the required format and try again.'
+    false
+)
+
+# If everything passes, proceed with the commit
+echo '✅ All checks passed! Committing your changes... ✅'
