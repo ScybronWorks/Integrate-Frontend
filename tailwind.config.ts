@@ -25,6 +25,9 @@ const config: Config = {
                 lexend: ['Lexend', 'sans-serif'],
                 italianno: ['Italianno', 'cursive'],
             },
+            clipPath: {
+                'angled-edge': 'polygon(29% 0, 100% 0, 100% 100%, 0 100%, 0 29%)',
+            },
         },
     },
     plugins: [],

@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '@/components/atomic/button/Button';
+import Navbar from '@/components/layout/Navbar/Navbar';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import GalleryCard from '@/components/molecular/galleryCard/GalleryCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';

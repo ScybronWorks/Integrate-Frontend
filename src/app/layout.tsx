@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { Lexend } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/Layout/Footer/Footer';
+import Navbar from '@/components/layout/Navbar/Navbar';
+import Header from '@/components/layout/Header/Header';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -17,7 +20,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={lexend.className}>
-                <div className="px-[5%] sm:px-[10%] lg:px-[15%] text-titleBlack">{children}</div>
+                <Navbar/>
+                <div className="min-h-[100vh]">{children}</div>
+                <Footer />
             </body>
         </html>
     );
