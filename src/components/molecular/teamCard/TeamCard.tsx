@@ -13,8 +13,8 @@ const TeamCard = ({ image, title, description }: Props) => {
             <div className="row-span-9 relative">
                 <Image
                     src={image}
-                    className="object-contain w-full h-full roundedfu"
-                    layout="fill"
+                    className="object-contain w-full h-full rounded-full "
+                    fill
                     alt="courseImage"
                 />
             </div>

@@ -15,7 +15,7 @@ const TestimonialCard = ({ image, location, name, text }: Props) => {
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-3">
                     <div className="rounded-full relative h-16 w-16 flex">
-                        <Image src={image} alt="profile" layout="fill" />
+                        <Image src={image} alt="profile" fill />
                     </div>
                     <div className="flex flex-col">
                         <p className="text-base font-bold">{name}</p>
