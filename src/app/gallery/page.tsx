@@ -1,7 +1,14 @@
-export default function Gallery() {
+import HeaderTitle from '@/components/common/HeaderTitle';
+import Header from '@/components/layout/Header/Header';
+
+const Gallery = () => {
     return (
-        <main className="flex flex-col items-center justify-center p-24 font-semibold text-xl">
-            Gallery
-        </main>
+        <>
+            <Header type="md">
+                <HeaderTitle title="Gallery Us" />
+            </Header>
+        </>
     );
-}
+};
+
+export default Gallery;
