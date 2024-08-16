@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={lexend.className}>
-                <Navbar/>
+                <Navbar />
                 <div className="min-h-[100vh]">{children}</div>
                 <Footer />
             </body>

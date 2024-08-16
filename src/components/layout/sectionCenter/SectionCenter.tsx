@@ -1,5 +1,4 @@
-
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 const SectionCenter: React.FC<{ children: ReactNode; className?: string }> = ({
     children,
     className,

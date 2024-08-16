@@ -2,8 +2,8 @@
 
 import Button from '@/components/atomic/button/Button';
 import HeaderTitle from '@/components/common/HeaderTitle';
-import Header from '@/components/layout/Header/Header';
-import Navbar from '@/components/layout/Navbar/Navbar';
+import Header from '@/components/layout/header/Header';
+import Navbar from '@/components/layout/navbar/Navbar';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import GalleryCard from '@/components/molecular/galleryCard/GalleryCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
@@ -72,8 +72,9 @@ const Components = () => {
                 <div className="grid grid-cols-3 justify-center gap-4 bg-[#1E1E1C] w-full p-6">
                     {Array.from({ length: 6 }).map((_, index) => (
                         <GalleryCard
+                            isImage
                             key={index}
-                            image="/img/photoGallery/photoGallery1.png"
+                            src="/img/photoGallery/photoGallery1.png"
                             text="Educational Workshops"
                         />
                     ))}

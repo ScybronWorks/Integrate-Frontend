@@ -5,7 +5,7 @@ const AboutUs = () => {
     return (
         <>
             <Header type="md">
-                <HeaderTitle title='About Us' />
+                <HeaderTitle title="About Us" />
             </Header>
         </>
     );

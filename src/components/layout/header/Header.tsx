@@ -1,6 +1,6 @@
 import { url } from 'inspector';
 import React, { ReactNode } from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../navbar/Navbar';
 
 interface IProps {
     backgroundImageType?: 'home' | 'other';
