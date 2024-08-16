@@ -2,7 +2,7 @@
 import { galleryData } from '@/@db/gallery';
 import HeaderTitle from '@/components/common/HeaderTitle';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
-import Header from '@/components/layout/Header/Header';
+import Header from '@/components/layout/header/Header';
 import GalleryCard from '@/components/molecular/galleryCard/GalleryCard';
 import Image from 'next/image';
 

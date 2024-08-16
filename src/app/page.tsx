@@ -1,6 +1,6 @@
 import Button from '@/components/atomic/button/Button';
-import Header from '@/components/layout/Header/Header';
-import SectionCenter from '@/components/layout/SectionCenter/SectionCenter';
+import Header from '@/components/layout/header/Header';
+import SectionCenter from '@/components/layout/sectionCenter/SectionCenter'
 
 export default function Home() {
     return (

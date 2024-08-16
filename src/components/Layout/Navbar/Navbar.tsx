@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Button from '@/components/atomic/button/Button';
-import SectionCenter from '@/components/layout/SectionCenter/SectionCenter';
+import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
 import Link from 'next/link';
 import React from 'react';
 const Navbar = () => {
