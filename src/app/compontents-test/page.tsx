@@ -8,7 +8,6 @@ import VisionCard from '@/components/molecular/visionCard/VisionCard';
 
 const Components = () => {
     return (
-        
         <div className="flex flex-col justify-center items-center h-screen gap-4 my-48">
             <ServiceCard
                 title="Tutoring"

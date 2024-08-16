@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import Button from '@/components/atomic/button/Button';
-import SectionCenter from '@/components/common/SectionCenter';
+import SectionCenter from '@/components/layout/SectionCenter/SectionCenter';
 import Link from 'next/link';
 import React from 'react';
 const Navbar = () => {
@@ -9,14 +9,14 @@ const Navbar = () => {
         <nav className="bg-transparent text-white absolute top-0 left-0 right-0">
             <SectionCenter>
                 <div className="flex  justify-between items-center pt-10">
-                    <div className="w-[310px] h-[76px]">
+                    <div className="w-[19.3rem] h-[4.75rem]">
                         <img
                             className="w-full h-full object-cover object-center"
                             src="https://img.freepik.com/free-photo/cement-texture_1194-5331.jpg"
                             alt="Logo"
                         />
                     </div>
-                    <div className="flex gap-7 items-center">
+                    <div className="flex gap-12 items-center">
                         {links.map(link => (
                             <div key={link.id}>
                                 <Link
@@ -28,7 +28,7 @@ const Navbar = () => {
                             </div>
                         ))}
                         <Button
-                            className="flex justify-center items-center w-[121px] h-[30px]"
+                            className="flex justify-center items-center w-32 h-7"
                             isLink={true}
                             href="/blogs"
                         >

@@ -1,5 +1,5 @@
 import Button from '@/components/atomic/button/Button';
-import SectionCenter from '@/components/common/SectionCenter';
+
 import {
     faFacebook,
     faInstagram,
@@ -8,14 +8,16 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faLocationDot, faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 import React from 'react';
+import SectionCenter from '@/components/layout/SectionCenter/SectionCenter'
 
 const Footer = () => {
     return (
-        <footer className=" bg-[#1E1E1C] w-full h-[532px]">
+        <footer className=" bg-titleBlack w-full h-[33rem]">
             <SectionCenter className="py-20">
                 <div className="flex  items-center justify-between">
-                    <div className="wi-[366px] h-[140px]">
+                    <div className="w-[22.8rem] h-36">
                         <img
                             className="h-full w-full object-cover"
                             src="https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123951468.jpg"
@@ -23,12 +25,12 @@ const Footer = () => {
                         />
                     </div>
                     <div className="">
-                        <div className="w-[202px] h-[50px] ">
+                        <div className="w-48 h-12 ">
                             <Button type="outline" className="flex justify-center items-center">
                                 COURSES
                             </Button>
                         </div>
-                        <div className="w-[202px] h-[50px] ">
+                        <div className="w-48 h-12 ">
                             <Button className="mt-6  flex justify-center items-center">
                                 BLOGS
                             </Button>
@@ -36,56 +38,56 @@ const Footer = () => {
                     </div>
                     <div className="flex gap-10 text-white text-xs">
                         <div>
-                            <a href="">HOME</a>
+                            <Link href="">HOME</Link>
                         </div>
                         <div>
-                            <a href="">ABOUT US</a>
+                            <Link href="">ABOUT US</Link>
                         </div>
                         <div>
-                            <a href="">COURSES</a>
+                            <Link href="">COURSES</Link>
                         </div>
                         <div>
-                            <a href="">NEWS</a>
+                            <Link href="">NEWS</Link>
                         </div>
                         <div>
-                            <a href="">CONTACT US</a>
+                            <Link href="">CONTACT US</Link>
                         </div>
                     </div>
                 </div>
                 <div className="flex mt-12 items-start justify-between text-white text-sm">
                     <div className="flex gap-2">
-                        <FontAwesomeIcon icon={faPhone} className="w-[20px] h-[20px]" />
+                        <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
                         <span>0123456789 | 0123456789</span>
                     </div>
-                    <div className="flex gap-2 max-w-[395px] ">
-                        <FontAwesomeIcon icon={faPhone} className="w-[20px] h-[20px]" />
+                    <div className="flex gap-2 max-w-[24.5rem] ">
+                        <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
                         <span>
                             4904 Robson Street, Vancouver, British Columbia - V6B 3K9, Canada
                         </span>
                     </div>
                     <div className="flex gap-2">
-                        <FontAwesomeIcon icon={faEnvelope} className="w-[20px] h-[20px]" />
+                        <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
                         <span>admin@testtest@gmail.com</span>
                     </div>
                 </div>
             </SectionCenter>
 
-            <SectionCenter className="py-10 border-t-[1px] text-white text-sm border-gray-700">
+            <SectionCenter className="pt-10 border-t-[1px] text-white text-sm border-gray-700">
                 <div className="text-center">
                     © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
                 </div>
                 <div className=" pt-5 flex justify-center items-center gap-6 ">
                     <a href="#">
-                        <FontAwesomeIcon icon={faFacebook} className="h-[23px] w-[23px]" />
+                        <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
                     </a>
                     <a href="#">
-                        <FontAwesomeIcon icon={faInstagram} className="h-[23px] w-[23px]" />
+                        <FontAwesomeIcon icon={faInstagram} className="h-6 w-6" />
                     </a>
                     <a href="#">
-                        <FontAwesomeIcon icon={faYoutube} className="h-[23px] w-[23px]" />
+                        <FontAwesomeIcon icon={faYoutube} className="h-6 w-6" />
                     </a>
                     <a href="#">
-                        <FontAwesomeIcon icon={faLinkedinIn} className="h-[23px] w-[23px]" />
+                        <FontAwesomeIcon icon={faLinkedinIn} className="h-6 w-6" />
                     </a>
                 </div>
             </SectionCenter>
