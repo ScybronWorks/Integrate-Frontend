@@ -18,9 +18,10 @@ const Header: React.FC<IProps> = ({ backgroundImageType = 'other', type, ClassNa
     return (
         <header
             className={` w-full 
-            bg-fixed ${ClassName} ${heightClass} background-image-property`}
+            bg-fixed ${ClassName} ${heightClass}`}
             style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundImageUrl})`,
+                background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url(${backgroundImageUrl}) center/cover no-repeat`,
             }}
         >
             {children}

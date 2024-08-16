@@ -10,7 +10,30 @@ import { faEnvelope, faLocationDot, faMailBulk, faPhone } from '@fortawesome/fre
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import React from 'react';
-import SectionCenter from '@/components/layout/SectionCenter/SectionCenter'
+import SectionCenter from '@/components/layout/SectionCenter/SectionCenter';
+import Image from 'next/image';
+
+const navLinks = [
+    { title: 'HOME', href: '/' },
+    { title: 'ABOUT US', href: '/about' },
+    { title: 'COURSES', href: '/courses' },
+    { title: 'NEWS', href: '/' },
+    { title: 'CONTACT US', href: '/contact' },
+];
+const socialMediaLinks = [
+    { icon: faFacebook, href: '#' },
+    { icon: faInstagram, href: '#' },
+    { icon: faYoutube, href: '#' },
+    { icon: faLinkedinIn, href: '#' },
+];
+
+const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {
+    return (
+        <Link href={href}>
+            <FontAwesomeIcon icon={icon} className="h-6 w-6" />
+        </Link>
+    );
+};
 
 const Footer = () => {
     return (
@@ -18,10 +41,12 @@ const Footer = () => {
             <SectionCenter className="py-20">
                 <div className="flex  items-center justify-between">
                     <div className="w-[22.8rem] h-36">
-                        <img
+                        <Image
+                            src="/assets/images/logo.jpg"
                             className="h-full w-full object-cover"
-                            src="https://thumbs.dreamstime.com/b/sample-stamp-sample-stamp-sign-icon-editable-vector-illustration-isolated-white-background-123951468.jpg"
-                            alt=""
+                            alt="logo"
+                            width={366}
+                            height={116}
                         />
                     </div>
                     <div className="">
@@ -37,21 +62,11 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="flex gap-10 text-white text-xs">
-                        <div>
-                            <Link href="">HOME</Link>
-                        </div>
-                        <div>
-                            <Link href="">ABOUT US</Link>
-                        </div>
-                        <div>
-                            <Link href="">COURSES</Link>
-                        </div>
-                        <div>
-                            <Link href="">NEWS</Link>
-                        </div>
-                        <div>
-                            <Link href="">CONTACT US</Link>
-                        </div>
+                        {navLinks.map((item, idx) => (
+                            <div key={idx}>
+                                <Link href={item.href}>{item.title}</Link>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="flex mt-12 items-start justify-between text-white text-sm">
@@ -77,18 +92,9 @@ const Footer = () => {
                     © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
                 </div>
                 <div className=" pt-5 flex justify-center items-center gap-6 ">
-                    <a href="#">
-                        <FontAwesomeIcon icon={faFacebook} className="h-6 w-6" />
-                    </a>
-                    <a href="#">
-                        <FontAwesomeIcon icon={faInstagram} className="h-6 w-6" />
-                    </a>
-                    <a href="#">
-                        <FontAwesomeIcon icon={faYoutube} className="h-6 w-6" />
-                    </a>
-                    <a href="#">
-                        <FontAwesomeIcon icon={faLinkedinIn} className="h-6 w-6" />
-                    </a>
+                    {socialMediaLinks.map((item, idx) => (
+                        <SocialMediaIcon key={idx} icon={item.icon} href={item.href} />
+                    ))}
                 </div>
             </SectionCenter>
         </footer>
