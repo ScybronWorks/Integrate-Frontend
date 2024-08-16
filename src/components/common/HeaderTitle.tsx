@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import SectionCenter from '../layout/SectionCenter/SectionCenter';
+import SectionCenter from '../layout/sectionCenter/SectionCenter';
 
 interface IProps {
     title: string;
