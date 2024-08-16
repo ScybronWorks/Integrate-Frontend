@@ -10,7 +10,7 @@ import { faEnvelope, faLocationDot, faMailBulk, faPhone } from '@fortawesome/fre
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import React from 'react';
-import SectionCenter from '@/components/layout/SectionCenter/SectionCenter';
+import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
 import Image from 'next/image';
 
 const navLinks = [
@@ -42,7 +42,7 @@ const Footer = () => {
                 <div className="flex  items-center justify-between">
                     <div className="w-[22.8rem] h-36">
                         <Image
-                            src="/assets/images/logo.jpg"
+                            src="/img/logo/logo.jpg"
                             className="h-full w-full object-cover"
                             alt="logo"
                             width={366}

@@ -1,6 +1,6 @@
 import { courseData } from '@/@db/course';
 import HeaderTitle from '@/components/common/HeaderTitle';
-import ClipEdgeSection from '@/components/layout/ClipEdgeSection/ClipEdgeSection';
+import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/Header/Header';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 

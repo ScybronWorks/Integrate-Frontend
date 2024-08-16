@@ -12,8 +12,8 @@ interface IProps {
 const Header: React.FC<IProps> = ({ backgroundImageType = 'other', type, ClassName, children }) => {
     const backgroundImageUrl =
         backgroundImageType === 'home'
-            ? 'assets/images/header-background-home.png'
-            : 'assets/images/header-background-other.png';
+            ? '/img/header/headerBackgroundHome.png'
+            : '/img/header/headerBackgroundOther.png';
     const heightClass = type === 'lg' ? 'h-screen' : 'h-[55vh]';
     return (
         <header
