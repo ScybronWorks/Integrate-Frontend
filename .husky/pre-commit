@@ -20,12 +20,5 @@ npm run check-types || (
     echo '❌ TypeScript Check Failed. Please fix the type errors listed above and try committing again.'
     false
 )
-
-# Run Commitlint to enforce commit message conventions
-npm run commitlint || (
-    echo '❌ Commitlint Check Failed. Please fix your commit message to match the required format and try again.'
-    false
-)
-
-# If everything passes, proceed with the commit
-echo '✅ All checks passed! Committing your changes... ✅'
+# If pre-commit passes , proceed with the commit
+echo '✅ All pre-commit checks passed! ✅'
