@@ -1,6 +1,8 @@
 import Button from '@/components/atomic/button/Button';
 import Header from '@/components/layout/header/Header';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
+import TeamCard from '@/components/molecular/teamCard/TeamCard';
 import TestimonialCard from '@/components/molecular/testimonialsCard/TestimonialCard';
 import Image from 'next/image';
 
@@ -34,6 +36,67 @@ export default function Home() {
                     </div>
                 </SectionCenter>
             </Header>
+
+            {/* Our Services Section */}
+            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-white relative z-0">
+                <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center"></div>
+                <SectionCenter className="h-full">
+                    <div className="flex justify-center items-start flex-col w-[100%]">
+                        <div className="text-[2rem] font-italianno text-white leading-[2.5rem] font-normal">
+                            Our Services
+                        </div>
+                        <div className="text-[2.4375rem] font-lexend text-white leading-[3rem] font-bold mt-[1px]">
+                            We Give You The Best <br />
+                            Facilities to Learning
+                        </div>
+                        <div className="grid grid-cols-4 justify-center gap-10 mt-11 w-full">
+                            {Array.from({ length: 4 }).map((_, index) => (
+                                <ServiceCard
+                                    title="Tutoring"
+                                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
+                                    image="/img/tutoring.png"
+                                    key="1"
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </SectionCenter>
+            </section>
+
+            {/* Our Team Section */}
+            <section className="w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
+                <SectionCenter className="h-full">
+                    <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
+                        <div className="flex flex-col items-start justify-start gap-[3.375rem]">
+                            <img src="/icons/teams.svg" alt="teams" />
+                            <div className="w-[320px] font-light leading-[2rem] text-[1.125rem]">
+                                &quot;Meet our dedicated team of expert tutors committed to helping
+                                you excel. With years of experience and a passion for teaching, they
+                                provide personalized guidance to ensure you reach your academic
+                                goals.&quot;
+                            </div>
+                        </div>
+                        <div>
+                            <div className="text-[2rem] font-italianno text-titleBlack leading-[2.5rem] font-normal">
+                                Our Team
+                            </div>
+                            <div className="text-[2.75rem] font-lexend text-titleBlack leading-[3.4375rem] font-bold">
+                                Meet Our Team..
+                            </div>
+                            <div className="flex justify-center gap-[1.125rem] w-full pt-[2.5625rem]">
+                                {Array.from({ length: 3 }).map((_, index) => (
+                                    <TeamCard
+                                        key={index}
+                                        image="/img/team/David.png"
+                                        title="Dr. Emily Carter"
+                                        description="Lorem ipsum dolor"
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </SectionCenter>
+            </section>
 
             {/* Newsletter Section */}
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-gradient-primary-linear">
