@@ -20,17 +20,16 @@ export default function Home() {
                 </SectionCenter>
             </Header>
 
-
             <section className="w-full py-[6.25rem]">
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
-                        <div className='text-[2rem] font-italianno text-primary leading-10'>
+                        <div className="text-[2rem] font-italianno text-primary leading-10">
                             Testimonials
                         </div>
-                        <div className='text-[2rem] font-bold text-titleBlack leading-10'>
+                        <div className="text-[2rem] font-bold text-titleBlack leading-10">
                             What Our Students Say
                         </div>
-                        <div className='text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem]'>
+                        <div className="text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem]">
                             Hear from Our Satisfied Clients and Students. Real Stories of <br />
                             Success and Satisfaction.
                         </div>
