@@ -4,8 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --background-primary: #FFFFFF:
-  --text-color: #1E1E1E;
+    --background-primary: #ffffff: --text-color: #1e1e1e;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -17,8 +16,8 @@
 } */
 
 body {
-  background: var(--background-primary);
-  color: var( --text-color);
+    background: var(--background-primary);
+    color: var(--text-color);
 }
 
 @layer utilities {
@@ -31,6 +30,10 @@ body {
         min-height: 75vh;
         background-color: #1e1e1e;
     }
+    .clip-path-image {
+        clip-path: polygon(0 0, 100% 0, 100% 76%, 83% 100%, 1% 100%, 0% 60%, 0 20%);
+    }
+
     .background-image-property {
         background-position: center;
         background-size: cover;

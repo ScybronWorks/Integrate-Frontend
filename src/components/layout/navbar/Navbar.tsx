@@ -6,7 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 const Navbar = () => {
     return (
-        <nav className="bg-transparent text-white absolute top-0 left-0 right-0">
+        <nav className="bg-transparent z-50 text-white absolute top-0 left-0 right-0">
             <SectionCenter>
                 <div className="flex  justify-between items-center pt-10">
                     <div className="w-[19.3rem] h-[4.75rem]">
