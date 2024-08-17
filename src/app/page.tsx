@@ -1,6 +1,7 @@
 import Button from '@/components/atomic/button/Button';
 import Header from '@/components/layout/header/Header';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+import TestimonialCard from '@/components/molecular/testimonialsCard/TestimonialCard';
 import Image from 'next/image';
 
 export default function Home() {
@@ -20,44 +21,31 @@ export default function Home() {
             </Header>
 
 
-            <section className="w-full py-28">
-                <SectionCenter>
-                    <div className="grid grid-cols-2 gap-x-1">
-                        <div className="h-full  px-10">
-                            <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
-                                <div className=" absolute w-[85%] h-[26rem] top-9 left-9">
-                                    <Image
-                                        src="/img/home/about.png"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-2xl"
-                                        alt="About image"
-                                    />
-                                </div>
-                            </div>
+            <section className="w-full py-[6.25rem]">
+                <SectionCenter className="h-full">
+                    <div className="flex justify-center items-center flex-col w-[100%]">
+                        <div className='text-[2rem] font-italianno text-primary leading-10'>
+                            Testimonials
                         </div>
-                        <div className="">
-                            <h6 className="text-2xl font-italianno text-primary">About us</h6>
-                            <h1 className="text-4xl font-semibold"> Empowering Minds</h1>
-                            <h1 className="text-4xl font-semibold">Shoping Futrues</h1>
-                            <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
-                                The firm aims to provide quality education for students who are
-                                thriving to achieve their maximum for different subjects in high
-                                school, higher secondary and for competitive examinations. We are
-                                dedicated in providing online as well as offline class for various
-                                prime subjects such as chemistry, physics, mathematics and other;
-                                for both school level and career oriented competitive level
-                                examinations such as JEE, NEET, KEAM etc. The classes comes with
-                                expert teaching faculties and supplementary mentor support.
-                            </p>
-                            <Button
-                                href="/about"
-                                isLink={true}
-                                type="primary"
-                                className="w-36 h-11 mt-3"
-                            >
-                                Learn More
-                            </Button>
+                        <div className='text-[2rem] font-bold text-titleBlack leading-10'>
+                            What Our Students Say
+                        </div>
+                        <div className='text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem]'>
+                            Hear from Our Satisfied Clients and Students. Real Stories of <br />
+                            Success and Satisfaction.
+                        </div>
+                        <div className="flex justify-center gap-6 w-full pt-12">
+                            {Array.from({ length: 3 }).map((_, index) => (
+                                <TestimonialCard
+                                    key={index}
+                                    image="/img/team/David.png"
+                                    location="France"
+                                    name="Sarah M"
+                                    text="Indiginite has been a game-changer for my exam preparation. 
+                        The resources are top-notch, and the personalized support made all the difference. 
+                        I highly recommend their services!"
+                                />
+                            ))}
                         </div>
                     </div>
                 </SectionCenter>

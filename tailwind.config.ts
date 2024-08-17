@@ -20,6 +20,7 @@ const config: Config = {
                 titleBlack: '#1E1E1E',
                 textMuted: '#817E7B',
                 cardBrown: '#393023',
+                subtitleGray: '#868686',
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],
