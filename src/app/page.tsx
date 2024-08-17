@@ -5,6 +5,21 @@ import TestimonialCard from '@/components/molecular/testimonialsCard/Testimonial
 import Image from 'next/image';
 
 export default function Home() {
+    function NewsletterInput() {
+        return (
+            <div className="flex flex-row justify-start items-start bg-transparent p-0 mt-[2rem]">
+                <input
+                    type="email"
+                    placeholder="Enter your Email...."
+                    className="w-[25rem] p-[1.2rem] rounded-tl-[0.4375rem] rounded-bl-[0.4375rem] font-light text-subtitleGray leading-[0.78125rem] text-[0.625rem] h-[50px]"
+                />
+                <button className="flex justify-center items-center px-[2rem] bg-titleBlack rounded-tr-[0.4375rem] rounded-br-[0.4375rem] text-white font-bold h-[50px] text-[0.8125rem]">
+                    Submit
+                </button>
+            </div>
+        );
+    }
+
     return (
         <main className="">
             <Header backgroundImageType="home" type="lg" ClassName="text-white">
@@ -20,6 +35,25 @@ export default function Home() {
                 </SectionCenter>
             </Header>
 
+            {/* Newsletter Section */}
+            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-gradient-primary-linear">
+                <SectionCenter className="h-full">
+                    <div className="flex justify-center items-start flex-col w-[100%]">
+                        <div className="text-[3.5rem] font-italianno text-white leading-[4.25rem] font-normal">
+                            Subscribe to Our Newsletter...
+                        </div>
+                        <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light mt-[1.4375rem]">
+                            Subscribe to our Gmail notifications for timely updates and important
+                            announcements. <br />
+                            Never miss out on valuable information and new resources!
+                        </div>
+                        {/* Newsletter Input Component */}
+                        <NewsletterInput />
+                    </div>
+                </SectionCenter>
+            </section>
+
+            {/* Testimonials Section */}
             <section className="w-full py-[6.25rem]">
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
