@@ -5,7 +5,7 @@ const Courses = () => {
     return (
         <>
             <Header type="md">
-                <HeaderTitle title="Our Courses" />
+                <HeaderTitle title="Our Courses" titleStyles="max-sm:text-[2.5rem]" />
             </Header>
         </>
     );
