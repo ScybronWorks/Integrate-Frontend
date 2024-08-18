@@ -20,9 +20,9 @@ const NewsletterInput = () => {
             <input
                 type="email"
                 placeholder="Enter your Email...."
-                className="w-[25rem] p-[1.2rem] rounded-tl-[0.4375rem] rounded-bl-[0.4375rem] font-light text-subtitleGray leading-[0.78125rem] text-[0.625rem] h-[50px]"
+                className="outline-none w-[25rem] max-sm:w-[15rem] max-xs:w-[10rem] p-[1.2rem] rounded-tl-[0.4375rem] rounded-bl-[0.4375rem] font-light text-subtitleGray leading-[0.78125rem] text-[0.625rem] h-[50px] max-sm:h-[40px]"
             />
-            <button className="flex justify-center items-center px-[2rem] bg-titleBlack rounded-tr-[0.4375rem] rounded-br-[0.4375rem] text-white font-bold h-[50px] text-[0.8125rem]">
+            <button className="flex justify-center items-center px-[2rem] bg-titleBlack rounded-tr-[0.4375rem] rounded-br-[0.4375rem] text-white font-bold h-[50px] max-sm:h-[40px] text-[0.8125rem]">
                 Submit
             </button>
         </div>
@@ -31,6 +31,28 @@ const NewsletterInput = () => {
 
 export default function Home() {
     const courseScrollView = useRef<HTMLDivElement | null>(null);
+    const testScrollView = useRef<HTMLDivElement | null>(null);
+    const teamScrollView = useRef<HTMLDivElement | null>(null);
+
+    function onTeamScrollClick(type: 'right' | 'left') {
+        if (!teamScrollView) return;
+
+        if (type == 'left' && teamScrollView.current) {
+            teamScrollView.current.scrollLeft -= 266;
+        } else if (type == 'right' && teamScrollView.current) {
+            teamScrollView.current.scrollLeft += 266;
+        }
+    }
+
+    function onTestScrollClick(type: 'right' | 'left') {
+        if (!testScrollView) return;
+
+        if (type == 'left' && testScrollView.current) {
+            testScrollView.current.scrollLeft -= 380;
+        } else if (type == 'right' && testScrollView.current) {
+            testScrollView.current.scrollLeft += 380;
+        }
+    }
 
     function onCourseScrollClick(type: 'right' | 'left') {
         if (!courseScrollView) return;
@@ -158,7 +180,7 @@ export default function Home() {
             <section>
                 <SectionCenter className="py-24 max-md:py-10">
                     <div className="grid grid-cols-2  max-md:grid-cols-1 max-md:gap-y-10">
-                        <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden">
+                        <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden order-2">
                             <Image
                                 src={'/img/home/brain.png'}
                                 layout="fill"
@@ -193,25 +215,37 @@ export default function Home() {
 
             {/* Our Services Section */}
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-white relative z-0">
-                <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center"></div>
+                <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center max-sm:h-[90%]"></div>
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-start flex-col w-[100%]">
-                        <div className="text-[2rem] font-italianno text-white leading-[2.5rem] font-normal">
+                        <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
                             Our Services
                         </div>
-                        <div className="text-[2.4375rem] font-lexend text-white leading-[3rem] font-bold mt-[1px]">
+                        <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
                             We Give You The Best <br />
                             Facilities to Learning
                         </div>
-                        <div className="grid grid-cols-4 justify-center gap-10 mt-11 w-full">
-                            {Array.from({ length: 4 }).map((_, index) => (
-                                <ServiceCard
-                                    title="Tutoring"
-                                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
-                                    image="/img/tutoring.png"
-                                    key="1"
-                                />
-                            ))}
+                        <div className="flex gap-10 mt-11 w-full justify-start items-start flex-row max-1/2xl:flex-col max-sm:items-center">
+                            <div className="flex flex-row gap-10 max-sm:flex-col">
+                                {Array.from({ length: 2 }).map((_, index) => (
+                                    <ServiceCard
+                                        title="Tutoring"
+                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
+                                        image="/img/tutoring.png"
+                                        key="1"
+                                    />
+                                ))}
+                            </div>
+                            <div className="flex flex-row gap-10 max-sm:flex-col">
+                                {Array.from({ length: 2 }).map((_, index) => (
+                                    <ServiceCard
+                                        title="Tutoring"
+                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
+                                        image="/img/tutoring.png"
+                                        key="1"
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </SectionCenter>
@@ -221,7 +255,7 @@ export default function Home() {
             <section className="w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
                 <SectionCenter className="h-full">
                     <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
-                        <div className="flex flex-col items-start justify-start gap-[3.375rem]">
+                        <div className="flex flex-col items-start justify-start gap-[3.375rem] max-1/2xl:hidden">
                             <div className="">
                                 <Image
                                     src="/icons/teams.svg"
@@ -237,22 +271,41 @@ export default function Home() {
                                 goals.&quot;
                             </div>
                         </div>
-                        <div>
-                            <div className="text-[2rem] font-italianno text-titleBlack leading-[2.5rem] font-normal">
+                        <div className="w-full">
+                            <div className="text-[2rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-titleBlack leading-[2.5rem] font-normal">
                                 Our Team
                             </div>
-                            <div className="text-[2.75rem] font-lexend text-titleBlack leading-[3.4375rem] font-bold">
+                            <div className="text-[2.75rem] max-sm:text-[1.75rem] max-sm:leading-[2.5625rem] font-lexend text-titleBlack leading-[3.4375rem] font-bold">
                                 Meet Our Team..
                             </div>
-                            <div className="flex justify-center gap-[1.125rem] w-full pt-[2.5625rem]">
-                                {Array.from({ length: 3 }).map((_, index) => (
-                                    <TeamCard
-                                        key={index}
-                                        image="/img/team/David.png"
-                                        title="Dr. Emily Carter"
-                                        description="Lorem ipsum dolor"
-                                    />
-                                ))}
+                            <div className="w-full relative flex flex-col items-center gap-8">
+                                <div
+                                    className="flex justify-start gap-[1.125rem] w-full pt-[2.5625rem] max-lg:overflow-auto max-lg:justify-start scroll-smooth scrollbar-hide"
+                                    ref={teamScrollView}
+                                >
+                                    {Array.from({ length: 3 }).map((_, index) => (
+                                        <TeamCard
+                                            key={index}
+                                            image="/img/team/David.png"
+                                            title="Dr. Emily Carter"
+                                            description="Lorem ipsum dolor"
+                                        />
+                                    ))}
+                                </div>
+                                <div className="flex flex-row gap-4 justify-center items-center">
+                                    <span
+                                        className="xl:hidden w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
+                                        onClick={() => onTeamScrollClick('left')}
+                                    >
+                                        <FontAwesomeIcon icon={faAngleLeft} className="w-6 h-6" />
+                                    </span>
+                                    <span
+                                        className="xl:hidden w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
+                                        onClick={() => onTeamScrollClick('right')}
+                                    >
+                                        <FontAwesomeIcon icon={faAngleRight} className="w-6 h-6" />
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,13 +316,12 @@ export default function Home() {
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-gradient-primary-linear">
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-start flex-col w-[100%]">
-                        <div className="text-[3.5rem] font-italianno text-white leading-[4.25rem] font-normal">
+                        <div className="text-[3.5rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-white leading-[4.25rem] font-normal">
                             Subscribe to Our Newsletter...
                         </div>
-                        <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light mt-[1.4375rem]">
+                        <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light max-w-[41rem] mt-[1.4375rem] max-sm:mt-[0.6875rem] max-sm:text-[0.8125rem]">
                             Subscribe to our Gmail notifications for timely updates and important
-                            announcements. <br />
-                            Never miss out on valuable information and new resources!
+                            announcements. Never miss out on valuable information and new resources!
                         </div>
                         {/* Newsletter Input Component */}
                         <NewsletterInput />
@@ -281,28 +333,46 @@ export default function Home() {
             <section className="w-full py-[6.25rem]">
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
-                        <div className="text-[2rem] font-italianno text-primary leading-10">
+                        <div className="text-[2rem] font-italianno text-primary leading-10 text-center">
                             Testimonials
                         </div>
-                        <div className="text-[2rem] font-bold text-titleBlack leading-10">
+                        <div className="text-[1.5rem] sm:text-[2rem] font-bold text-titleBlack leading-10 text-center">
                             What Our Students Say
                         </div>
-                        <div className="text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem]">
-                            Hear from Our Satisfied Clients and Students. Real Stories of <br />
-                            Success and Satisfaction.
+                        <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem] max-w-[500px]">
+                            Hear from Our Satisfied Clients and Students. Real Stories of Success
+                            and Satisfaction.
                         </div>
-                        <div className="flex justify-center gap-6 w-full pt-12">
-                            {Array.from({ length: 3 }).map((_, index) => (
-                                <TestimonialCard
-                                    key={index}
-                                    image="/img/team/David.png"
-                                    location="France"
-                                    name="Sarah M"
-                                    text="Indiginite has been a game-changer for my exam preparation. 
+                        <div className="w-full relative">
+                            <div
+                                className="flex flex-row max-xl:overflow-auto max-xl:justify-start justify-center gap-6 w-full pt-12 scrollbar-hide scroll-smooth"
+                                ref={testScrollView}
+                            >
+                                {Array.from({ length: 3 }).map((_, index) => (
+                                    <TestimonialCard
+                                        key={index}
+                                        image="/img/team/David.png"
+                                        location="France"
+                                        name="Sarah M"
+                                        text="Indiginite has been a game-changer for my exam preparation. 
                         The resources are top-notch, and the personalized support made all the difference. 
                         I highly recommend their services!"
-                                />
-                            ))}
+                                    />
+                                ))}
+                            </div>
+
+                            <span
+                                className="absolute -left-8 top-[50%] xl:hidden w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
+                                onClick={() => onTestScrollClick('left')}
+                            >
+                                <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
+                            </span>
+                            <span
+                                className="absolute -right-8 top-[50%] xl:hidden w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
+                                onClick={() => onTestScrollClick('right')}
+                            >
+                                <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
+                            </span>
                         </div>
                     </div>
                 </SectionCenter>

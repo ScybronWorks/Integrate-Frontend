@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 const config: Config = {
     content: [
@@ -31,6 +32,11 @@ const config: Config = {
             clipPath: {
                 'angled-edge': 'polygon(29% 0, 100% 0, 100% 100%, 0 100%, 0 29%)',
             },
+            screens: {
+                'xs': '400px',
+                '1/2xl': '1420px',
+                ...defaultTheme.screens,
+            }
         },
     },
     plugins: [],

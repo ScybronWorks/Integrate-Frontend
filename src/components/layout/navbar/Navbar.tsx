@@ -9,16 +9,16 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const Navbar = () => {
-    const container = useRef<HTMLDivElement>(null)
+    const container = useRef<HTMLDivElement>(null);
     useGSAP(
         () => {
-            gsap.fromTo('.navbar', { y:-100,opacity:0 }, { y:0,opacity:1 }); 
+            gsap.fromTo('.navbar', { y: -100, opacity: 0 }, { y: 0, opacity: 1 });
         },
         { scope: container }
     );
     return (
         <nav ref={container} className="bg-transparent text-white absolute top-0 left-0 right-0">
-            <SectionCenter className='navbar relative opacity-0'>
+            <SectionCenter className="navbar relative opacity-0">
                 <div className="flex  justify-between items-center pt-10">
                     <div className="w-[19.3rem] h-[4.75rem]">
                         <img

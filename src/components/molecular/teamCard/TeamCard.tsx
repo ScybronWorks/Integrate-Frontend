@@ -9,7 +9,7 @@ type Props = {
 
 const TeamCard = ({ image, title, description }: Props) => {
     return (
-        <div className="grid grid-row-10 h-80 w-64 p-4 bg-teamCardBg rounded-br-[3rem] gap-3">
+        <div className="grid grid-row-10 h-80 w-64 min-w-64 p-4 bg-teamCardBg rounded-br-[3rem] gap-3">
             <div className="row-span-10 relative">
                 <Image
                     src={image}
