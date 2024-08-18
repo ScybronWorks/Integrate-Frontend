@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 const AboutUs = () => {
     return (
-        <main className="relative pb-[40rem]">
+        <main className="relative pb-[100rem] md:pb-[40rem]">
             <Header type="md">
                 <HeaderTitle title="About Us" />
             </Header>
-            <ClipEdgeSection className="text-white py-20  w-full pb-[20rem]">
+            <ClipEdgeSection className="text-white py-20 w-full md:pb-[20rem]">
                 <div className="space-y-8 flex flex-col">
                     <div className="flex flex-col space-y-4">
                         <h6 className="text-2xl">
@@ -100,7 +100,8 @@ const AboutUs = () => {
                             excellence in academics and competitive exams.
                         </h1>
 
-                        <div className="flex items-center space-x-8 py-16">
+
+                        <div className="flex items-center gap-8 py-16 flex-col md:flex-row">
                             <VisionCard
                                 title="Our Aim"
                                 description="The prime objective of Integrate is to improve the learning outcomes with enhanced
@@ -116,8 +117,9 @@ const AboutUs = () => {
                 </div>
             </ClipEdgeSection>
             <div
-                className="grid grid-cols-2 gap-6 absolute h-fit -bottom-[15rem] left-1/2 transform -translate-x-1/2
-             -translate-y-1/2 max-w-5xl mx-auto w-full pb-8"
+                className="grid grid-cols-1 gap-6 absolute md:- max-w-5xl mx-auto w-full left-1/2 -translate-x-1/2
+                md:grid-cols-2 px-4 md:px-0 bottom-[5rem] md:bottom-[10rem]"
+
             >
                 <Image
                     src="/img/about/AboutImage2.png"
