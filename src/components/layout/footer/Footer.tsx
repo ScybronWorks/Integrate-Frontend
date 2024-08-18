@@ -96,7 +96,7 @@ const Footer = () => {
                 </div>
             </SectionCenter>
 
-            <SectionCenter className="pt-10 border-t text-white text-sm border-gray-700">
+            <SectionCenter className="py-10 border-t text-white text-sm border-gray-700">
                 <div className="text-center">
                     © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
                 </div>
