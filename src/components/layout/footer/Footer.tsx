@@ -78,9 +78,7 @@ const Footer = () => {
                 </div>
                 <div
                     className="flex mt-12 items-start justify-between text-white text-sm
-                max-xl:flex-col max-xl:gap-7
-                "
-                >
+                max-xl:flex-col max-xl:gap-7">
                     <div className="flex gap-2">
                         <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
                         <span>0123456789 | 0123456789</span>

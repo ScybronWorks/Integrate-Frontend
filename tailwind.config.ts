@@ -28,6 +28,14 @@ const config: Config = {
             clipPath: {
                 'angled-edge': 'polygon(29% 0, 100% 0, 100% 100%, 0 100%, 0 29%)',
             },
+            backgroundPosition: {
+                'top-left-1rem': '60% 50%',
+            },
+            backgroundSize: {
+                default: 'cover', // Default size
+                '0.7': '70%', // Scale to 0.7
+                '0.5': '50%', // Optionally add more scales
+            },
         },
     },
     plugins: [],
