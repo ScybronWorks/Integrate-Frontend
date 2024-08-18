@@ -22,9 +22,10 @@ const Navbar = () => {
         setIsOpen(false);
     }, [pathname]);
 
+
     return (
-        <nav className="bg-transparent text-white absolute top-0 left-0 right-0">
-            <SectionCenter>
+        <nav ref={container} className="bg-transparent text-white absolute top-0 left-0 right-0">
+            <SectionCenter className="navbar relative opacity-0">
                 <div className="flex  justify-between items-center pt-10">
                     <div className="w-[11.65rem] md:w-[19.3rem] h-[4rem] md:h-[4.75rem]">
                         <img

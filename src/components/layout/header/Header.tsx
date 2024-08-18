@@ -14,11 +14,11 @@ const Header: React.FC<IProps> = ({ backgroundImageType = 'other', type, ClassNa
         backgroundImageType === 'home'
             ? '/img/header/headerBackgroundHome.png'
             : '/img/header/headerBackgroundOther.png';
-    const heightClass = type === 'lg' ? 'h-screen' : 'h-[55vh]';
+    const heightClass = type === 'lg' ? 'h-[100vh]' : 'h-[55vh]';
     return (
         <header
-            className={` w-full 
-            bg-fixed ${ClassName} ${heightClass}`}
+            className={` w-full bg-fixed  max-xl:!bg-top-left-1rem
+            ${ClassName} ${heightClass}`}
             style={{
                 background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url(${backgroundImageUrl}) center/cover no-repeat`,
