@@ -25,9 +25,9 @@ const Components = () => {
                     key="1"
                 />
                 <div className="grid grid-col-2 grid-flow-col gap-4 w-full px-6">
-                    <VisionCard />
-                    <VisionCard />
-                    <VisionCard />
+                    <VisionCard title="test" description="Lorem" />
+                    <VisionCard title="test" description="Lorem" />
+                    <VisionCard title="test" description="Lorem" />
                 </div>
                 <div className="grid grid-col-2 grid-flow-col gap-4 w-full px-6 h-36 bg-black items-center justify-center ">
                     <Button onClick={() => alert('hello')}>Submit</Button>
