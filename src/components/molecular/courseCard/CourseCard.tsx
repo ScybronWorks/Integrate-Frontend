@@ -9,7 +9,7 @@ type Props = {
 
 const CourseCard = ({ description, image, title }: Props) => {
     return (
-        <div className="grid grid-rows-12 h-[28rem] w-72 rounded-lg bg-cardBrown hover:bg-gradient-primary-linear">
+        <div className="grid grid-rows-12 h-[28rem] w-80  rounded-lg bg-cardBrown hover:bg-gradient-primary-linear">
             <div className="row-span-7 relative">
                 <Image src={image} className="object-cover" fill alt="courseImage" />
             </div>
