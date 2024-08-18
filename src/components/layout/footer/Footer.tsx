@@ -20,7 +20,6 @@ import Link from 'next/link';
 import React from 'react';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
 import Image from 'next/image';
-
 const navLinks = [
     { title: 'HOME', href: '/' },
     { title: 'ABOUT US', href: '/about' },
