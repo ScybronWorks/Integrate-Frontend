@@ -23,7 +23,6 @@ const Navbar = () => {
     }, [pathname]);
 
     return (
-
         <nav className="bg-transparent text-white absolute top-0 left-0 right-0 z-50">
             <SectionCenter className="navbar relative ">
                 <div className="flex  justify-between items-center pt-10">
@@ -35,7 +34,7 @@ const Navbar = () => {
                         />
                     </div>
 
-                    <div className="hidden gap-12 items-center md:flex">
+                    <div className="hidden gap-12 items-center 1/2xl:flex">
                         {links.map(link => (
                             <div key={link.id}>
                                 <Link
@@ -54,9 +53,8 @@ const Navbar = () => {
                             Blogs
                         </Button>
                     </div>
-
                     <div className="flex items-center">
-                        <button className="md:hidden" onClick={() => setIsOpen(true)}>
+                        <button className="1/2xl:hidden" onClick={() => setIsOpen(true)}>
                             <Image
                                 src="/icons/Hamburger.png"
                                 alt="hamburger"
@@ -68,7 +66,7 @@ const Navbar = () => {
                             <div
                                 ref={navRef}
                                 className="absolute bg-black w-[70%] min-h-screen z-50 top-0 right-0
-                             text-white"
+                        text-white"
                             >
                                 <button
                                     onClick={() => setIsOpen(false)}
@@ -86,7 +84,7 @@ const Navbar = () => {
                                             className={twMerge(
                                                 location.pathname === link.href && 'bg-primary',
                                                 `w-full px-6 py-5 uppercase text-sm hover:bg-primary
-                                         transition-colors duration-300 ease-linear`
+                                        transition-colors duration-300 ease-linear`
                                             )}
                                             href={link.href}
                                         >
