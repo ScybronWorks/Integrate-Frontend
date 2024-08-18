@@ -117,7 +117,7 @@ const AboutUs = () => {
             </ClipEdgeSection>
             <div
                 className="grid grid-cols-2 gap-6 absolute h-fit -bottom-[15rem] left-1/2 transform -translate-x-1/2
-             -translate-y-1/2 max-w-5xl mx-auto w-full pb8"
+             -translate-y-1/2 max-w-5xl mx-auto w-full pb-8"
             >
                 <Image
                     src="/img/about/AboutImage2.png"
