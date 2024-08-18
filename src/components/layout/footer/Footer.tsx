@@ -78,7 +78,8 @@ const Footer = () => {
                 </div>
                 <div
                     className="flex mt-12 items-start justify-between text-white text-sm
-                max-xl:flex-col max-xl:gap-7">
+                max-xl:flex-col max-xl:gap-7"
+                >
                     <div className="flex gap-2">
                         <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
                         <span>0123456789 | 0123456789</span>
@@ -96,7 +97,7 @@ const Footer = () => {
                 </div>
             </SectionCenter>
 
-            <SectionCenter className="pt-10 border-t text-white text-sm border-gray-700">
+            <SectionCenter className="py-10 border-t text-white text-sm border-gray-700">
                 <div className="text-center">
                     © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
                 </div>

@@ -3,7 +3,7 @@ import SectionCenter from '../sectionCenter/SectionCenter';
 interface IProps {
     children?: ReactNode;
     className?: string;
-    sectionCenterClassName?:string
+    sectionCenterClassName?: string;
 }
 const ClipEdgeSection: React.FC<IProps> = ({ children, className, sectionCenterClassName }) => {
     return (
