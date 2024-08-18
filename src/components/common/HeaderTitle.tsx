@@ -3,15 +3,25 @@ import SectionCenter from '../layout/sectionCenter/SectionCenter';
 
 interface IProps {
     title: string;
+    titleStyles?:string
 }
 
-const HeaderTitle: React.FC<IProps> = ({ title }) => {
+const HeaderTitle: React.FC<IProps> = ({ title, titleStyles }) => {
     return (
         <SectionCenter className="h-full text-white ">
-            <div className="h-full flex items-end pb-[5.6rem]">
+            <div className="h-full flex items-end pb-[5.6rem] max-sm:pb-[8rem]">
                 <div className="flex items-center">
-                    <span className="text-[4.3rem] font-[600] leading-[5.4rem]">{title}</span>
-                    <div className="w-24 h-[1.5px] mt-3 ml-6  bg-white"></div>
+                    <span
+                        className={`text-[4.3rem] font-[600] leading-[5.4rem] max-sm:text-[2.5rem]
+                        ${titleStyles}`}
+                    >
+                        {title}
+                    </span>
+                    <div
+                        className="w-24 h-[1.5px] mt-3 ml-6  bg-white
+                    max-sm:w-20
+                    "
+                    ></div>
                 </div>
             </div>
         </SectionCenter>

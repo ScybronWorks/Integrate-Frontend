@@ -10,7 +10,7 @@ export default function Home() {
                     <div className="flex items-start justify-center h-full flex-col">
                         <div
                             className="text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
-                        max-lg:text-2xl
+                            max-lg:text-2xl
                         "
                         >
                             Unlock Your Potential with Expert Guidance and Resources
