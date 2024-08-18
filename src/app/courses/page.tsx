@@ -8,7 +8,7 @@ const Courses = () => {
     return (
         <>
             <Header type="md">
-                <HeaderTitle title="Our Courses" titleStyles="max-sm:text-[2.5rem]" />
+                <HeaderTitle title="Our Courses" titleStyles="max-sm:text-[2.3rem]" />
             </Header>
 
             <ClipEdgeSection>

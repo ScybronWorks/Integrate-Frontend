@@ -13,12 +13,12 @@ const HeaderTitle: React.FC<IProps> = ({ title, titleStyles }) => {
                 <div className="flex items-center">
 
                     <span
-                        className={`text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
-                            max-lg:text-2xl ${titleStyles}`}
+                        className={`text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-sm:text-4xl
+                            ${titleStyles}`}
                     >
                         {title}
                     </span>
-                    <div className="w-[89px] h-[1.5px] mt-3 ml-6  bg-white"></div>
+                    <div className="w-[89px] h-[1.5px] mt-3 ml-6   bg-white"></div>
                 </div>
             </div>
         </SectionCenter>
