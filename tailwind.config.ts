@@ -36,7 +36,15 @@ const config: Config = {
                 'xs': '400px',
                 '1/2xl': '1420px',
                 ...defaultTheme.screens,
-            }
+            },
+            backgroundPosition: {
+                'top-left-1rem': '60% 50%',
+            },
+            backgroundSize: {
+                default: 'cover', // Default size
+                '0.7': '70%', // Scale to 0.7
+                '0.5': '50%', // Optionally add more scales
+            },
         },
     },
     plugins: [],
