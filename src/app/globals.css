@@ -5,6 +5,7 @@
 
 :root {
   --background-primary: #FFFFFF:
+  --text-color: #1E1E1E;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -16,13 +17,24 @@
 } */
 
 body {
-  background: var(--foreground-rgb)
+  background: var(--background-primary);
+  color: var( --text-color);
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+    .clip-edge-section {
+        clip-path: polygon(120px 0, 100% 0, 100% 100%, 0 100%, 0 120px);
+        margin-top: 80px;
+        min-height: 75vh;
+        background-color: #1e1e1e;
+    }
+    .background-image-property {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
 }
-
 /* ._primary_gradient */
