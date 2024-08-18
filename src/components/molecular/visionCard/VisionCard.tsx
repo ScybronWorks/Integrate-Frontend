@@ -7,9 +7,10 @@ type Props = {
 
 const VisionCard = ({ title, description }: Props) => {
     return (
-        <div className="w-full p-4 bg-gradient-primary-linear text-white flex-col rounded-tr-lg rounded-br-[3rem] pb-20">
+        <div className="w-full p-8 bg-gradient-primary-linear text-white flex-col rounded-tr-lg rounded-br-[3rem] ">
             <h2 className="font-italianno text-4xl">{title}</h2>
-            <p className="text-sm font-normal">{description}</p>
+            <p className="leading-8 text-left text-sm">{description}</p>
+
         </div>
     );
 };
