@@ -140,8 +140,18 @@ export default function Home() {
                         excellence in academics and competitive exams.
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-20 ">
-                        <VisionCard />
-                        <VisionCard />
+                        <VisionCard
+                            title="Our Aim"
+                            description="The prime objective of Integrate is to improve the learning outcomes with enhanced
+                technology, providing individualized education and ensuring student with diverse
+                learning styles, thereby making your dreams come true."
+                        />
+                        <VisionCard
+                            title="Our Aim"
+                            description="The prime objective of Integrate is to improve the learning outcomes with enhanced
+                technology, providing individualized education and ensuring student with diverse
+                learning styles, thereby making your dreams come true."
+                        />
                     </div>
                 </div>
                 <div className="mt-20">

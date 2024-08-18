@@ -100,9 +100,18 @@ const AboutUs = () => {
                             excellence in academics and competitive exams.
                         </h1>
 
+
                         <div className="flex items-center gap-8 py-16 flex-col md:flex-row">
-                            <VisionCard />
-                            <VisionCard />
+                            <VisionCard
+                                title="Our Aim"
+                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
+                technology, providing individualized education and ensuring student with diverse
+                learning styles, thereby making your dreams come true."
+                            />
+                            <VisionCard
+                                title="Our Vision"
+                                description="Our vision is to culture globally resourceful citizens by nurturing them with quality education and innovative learning style and powering their success."
+                            />
                         </div>
                     </div>
                 </div>
@@ -110,6 +119,7 @@ const AboutUs = () => {
             <div
                 className="grid grid-cols-1 gap-6 absolute md:- max-w-5xl mx-auto w-full left-1/2 -translate-x-1/2
                 md:grid-cols-2 px-4 md:px-0 bottom-[5rem] md:bottom-[10rem]"
+
             >
                 <Image
                     src="/img/about/AboutImage2.png"
