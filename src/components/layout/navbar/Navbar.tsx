@@ -22,10 +22,9 @@ const Navbar = () => {
         setIsOpen(false);
     }, [pathname]);
 
-
     return (
-        <nav ref={container} className="bg-transparent text-white absolute top-0 left-0 right-0">
-            <SectionCenter className="navbar relative opacity-0">
+        <nav className="bg-transparent text-white absolute top-0 left-0 right-0 z-50">
+            <SectionCenter className="navbar relative ">
                 <div className="flex  justify-between items-center pt-10">
                     <div className="w-[11.65rem] md:w-[19.3rem] h-[4rem] md:h-[4.75rem]">
                         <img
@@ -66,7 +65,7 @@ const Navbar = () => {
                         </button>
                         {isOpen && (
                             <div
-                            ref={navRef}
+                                ref={navRef}
                                 className="absolute bg-black w-[70%] min-h-screen z-50 top-0 right-0
                              text-white"
                             >
