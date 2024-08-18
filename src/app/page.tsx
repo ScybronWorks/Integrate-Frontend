@@ -60,9 +60,13 @@ export default function Home() {
             <section className="w-full pt-24 pb-16">
                 <SectionCenter>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1">
-                        <div className="h-full px-10">
+                        <div className="h-full px-10 max-md:px-0 max-lg:order-1">
                             <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
-                                <div className=" absolute  h-[26rem] top-9 left-9 right-9">
+                                <div
+                                    className=" absolute  h-[26rem] top-9 left-9 right-9 max-md:right-6
+                                max-md:bottom-6 max-md:left-6 
+                                "
+                                >
                                     <Image
                                         src="/img/home/about.png"
                                         layout="fill"
@@ -101,9 +105,12 @@ export default function Home() {
                 </SectionCenter>
             </section>
 
-            <ClipEdgeSection className="text-white mb-0" sectionCenterClassName="pt-14">
+            <ClipEdgeSection
+                className="text-white mb-0"
+                sectionCenterClassName="pt-14 max-md:pt-16"
+            >
                 <div className="" id="course">
-                    <h3 className="font-extrabold text-[2.5rem] ">
+                    <h3 className="font-extrabold text-[2.5rem] max-md:text-[1.75rem]  max-md:text-center">
                         Innovating education through technology, we empower students to achieve
                         excellence in academics and competitive exams.
                     </h3>
@@ -133,13 +140,13 @@ export default function Home() {
                             ))}
                         </div>
                         <span
-                            className="absolute -left-8 top-[50%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer"
+                            className="absolute -left-8 top-[50%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
                             onClick={() => onCourseScrollClick('left')}
                         >
                             <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
                         </span>
                         <span
-                            className="absolute -right-8 top-[50%] w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center  "
+                            className="absolute -right-8 top-[50%] w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
                             onClick={() => onCourseScrollClick('right')}
                         >
                             <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
@@ -149,9 +156,9 @@ export default function Home() {
             </ClipEdgeSection>
             {/*  */}
             <section>
-                <SectionCenter className="py-24">
+                <SectionCenter className="py-24 max-md:py-10">
                     <div className="grid grid-cols-2  max-md:grid-cols-1 max-md:gap-y-10">
-                        <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start md:order-2">
+                        <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden">
                             <Image
                                 src={'/img/home/brain.png'}
                                 layout="fill"
@@ -167,7 +174,7 @@ export default function Home() {
                                 discuss how we can support your educational goals.
                             </h1>
                             {/* <h1 className="text-4xl font-semibold"></h1> */}
-                            <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
+                            <p className=" font-lexend text-[1rem] text-gray-500 font-light leading-8 tracking-tight mt-3">
                                 Choose a convenient time to speak with our team and get personalized
                                 assistance tailored to your needs.
                             </p>
@@ -175,14 +182,13 @@ export default function Home() {
                                 href="/about"
                                 isLink={true}
                                 type="primary"
-                                className="!w-36 !h-11 mt-8"
+                                className="!h-11 mt-8 pr-8 pl-8 pt-6 pb-6 w-fit max-md:text-sm"
                             >
-                                Learn More
+                                Shedule a Call?
                             </Button>
                         </div>
                     </div>
                 </SectionCenter>
-                      
             </section>
 
             {/* Our Services Section */}
@@ -216,13 +222,13 @@ export default function Home() {
                 <SectionCenter className="h-full">
                     <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
                         <div className="flex flex-col items-start justify-start gap-[3.375rem]">
-                            <div className=''>
-                            <Image
-                                src="/icons/teams.svg"
-                                alt="teams"
-                                layout="fill"
-                                className="!relative max-h-28"
-                            />
+                            <div className="">
+                                <Image
+                                    src="/icons/teams.svg"
+                                    alt="teams"
+                                    layout="fill"
+                                    className="!relative max-h-28"
+                                />
                             </div>
                             <div className="w-[320px] font-light leading-[2rem] text-[1.125rem]">
                                 &quot;Meet our dedicated team of expert tutors committed to helping
