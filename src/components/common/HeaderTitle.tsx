@@ -3,7 +3,7 @@ import SectionCenter from '../layout/sectionCenter/SectionCenter';
 
 interface IProps {
     title: string;
-    titleStyles?:string
+    titleStyles?: string;
 }
 
 const HeaderTitle: React.FC<IProps> = ({ title, titleStyles }) => {
@@ -12,7 +12,7 @@ const HeaderTitle: React.FC<IProps> = ({ title, titleStyles }) => {
             <div className="h-full flex items-end pb-[5.6rem] max-sm:pb-[8rem]">
                 <div className="flex items-center">
                     <span
-                        className={`text-[4.3rem] font-[600] leading-[5.4rem] max-sm:text-[2.5rem]
+                        className={`text-[4.3rem] font-[600] leading-[5.4rem] 
                         ${titleStyles}`}
                     >
                         {title}
