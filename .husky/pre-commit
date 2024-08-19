@@ -1,0 +1,21 @@
+echo '⚙️ 🛠️  Running pre-commit checks: Styling, linting, and type-checking your project, Please wait...'
+
+# Run Prettier to check code formatting
+npm run prettier || (
+    echo '❌ Prettier Check Failed. Please run `npm run prettier`, fix any issues, and try committing again.'
+    false
+)
+
+# Run ESLint to check for code quality and style issues
+npm run lint || (
+    echo '❌ ESLint Check Failed. Please address the issues listed above, fix them, and try committing again.'
+    false
+)
+
+# Run TypeScript to check for type errors
+npm run check-types || (
+    echo '❌ TypeScript Check Failed. Please fix the type errors listed above and try committing again.'
+    false
+)
+# If pre-commit passes , proceed with the commit
+echo '✅ All pre-commit checks passed! ✅'
