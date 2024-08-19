@@ -74,7 +74,9 @@ export default function Home() {
                             className="text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
                             max-lg:text-2xl"
                         >
-                            <Zoom>Unlock Your Potential with Expert Guidance and Resources</Zoom>
+                            <Zoom duration={2000} triggerOnce>
+                                Unlock Your Potential with Expert Guidance and Resources
+                            </Zoom>
                         </div>
                         <div className="pt-5">
                             <Slide duration={1000} direction="up" triggerOnce>
