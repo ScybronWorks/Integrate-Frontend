@@ -40,7 +40,7 @@ const ContactUsForm = (props: Props) => {
                         className="col-span-2 bg-contactInputBg focus-visible:border-primary p-4 text-sm font-light"
                     />
                 </div>
-                <Button className='w-fit mt-4'>Submit Now</Button>
+                <Button className="w-fit mt-4">Submit Now</Button>
             </div>
         </div>
     );
