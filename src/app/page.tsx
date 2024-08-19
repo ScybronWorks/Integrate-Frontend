@@ -13,11 +13,7 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { useRef } from 'react';
-import {
-    Bounce,
-    Slide,
-    Zoom,
-} from 'react-awesome-reveal';
+import { Bounce, Slide, Zoom } from 'react-awesome-reveal';
 
 const NewsletterInput = () => {
     return (
@@ -358,15 +354,16 @@ export default function Home() {
                                     className="flex justify-start gap-[1.125rem] w-full pt-[2.5625rem] max-lg:overflow-auto max-lg:justify-start scroll-smooth scrollbar-hide"
                                     ref={teamScrollView}
                                 >
-                                    {Array.from({ length: 3 }).map((_, index) => (
-                                        <Bounce key={index} cascade damping={2000} triggerOnce>
+                                    <Zoom duration={1000} cascade triggerOnce>
+                                        {Array.from({ length: 3 }).map((_, index) => (
                                             <TeamCard
+                                                key={index}
                                                 image="/img/team/David.png"
                                                 title="Dr. Emily Carter"
                                                 description="Lorem ipsum dolor"
                                             />
-                                        </Bounce>
-                                    ))}
+                                        ))}
+                                    </Zoom>
                                 </div>
                                 <div className="flex flex-row gap-4 justify-center items-center">
                                     <span
@@ -426,16 +423,10 @@ export default function Home() {
                                 className="flex flex-row max-xl:overflow-auto max-xl:justify-start justify-center gap-6 w-full pt-12 scrollbar-hide scroll-smooth"
                                 ref={testScrollView}
                             >
-                                {Array.from({ length: 3 }).map((_, index) => (
-                                    <Slide
-                                        key={index}
-                                        duration={1000}
-                                        direction="right"
-                                        triggerOnce
-                                        cascade
-                                        damping={0.025}
-                                    >
+                                <Zoom duration={1000} triggerOnce cascade>
+                                    {Array.from({ length: 3 }).map((_, index) => (
                                         <TestimonialCard
+                                            key={index}
                                             image="/img/team/David.png"
                                             location="France"
                                             name="Sarah M"
@@ -443,8 +434,8 @@ export default function Home() {
                         The resources are top-notch, and the personalized support made all the difference. 
                         I highly recommend their services!"
                                         />
-                                    </Slide>
-                                ))}
+                                    ))}
+                                </Zoom>
                             </div>
 
                             <span
