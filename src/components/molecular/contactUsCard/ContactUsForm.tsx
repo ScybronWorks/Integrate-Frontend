@@ -1,5 +1,6 @@
 'use client';
 import Button from '@/components/atomic/button/Button';
+import { Fade } from 'react-awesome-reveal';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import axios from 'axios';
 import https from 'https';
@@ -59,12 +60,15 @@ const ContactUsForm = (props: Props) => {
     };
     return (
         <div className="w-full h-fit p-8 py-12 flex flex-col gap-4 bg-white text-black rounded-tr-lg rounded-br-[3rem]">
-            <div className="flex flex-col gap-2">
-                <h2 className="text-primary text-3xl font-bold">Enquiry Form</h2>
-                <p className="font-italianno text-lg">
-                    Submit Your Inquiry: We{`'`}ll Get Back to You with the Information You Need.
-                </p>
-            </div>
+            <Fade triggerOnce>
+                <div className="flex flex-col gap-2">
+                    <h2 className="text-primary text-3xl font-bold">Enquiry Form</h2>
+                    <p className="font-italianno text-lg">
+                        Submit Your Inquiry: We{`'`}ll Get Back to You with the Information You
+                        Need.
+                    </p>
+                </div>
+            </Fade>
             <div className="flex flex-col">
                 <div className="grid grid-cols-2 gap-4">
                     <input

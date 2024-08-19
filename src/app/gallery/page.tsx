@@ -1,3 +1,4 @@
+'use client';
 /* eslint-disable jsx-a11y/alt-text */
 import { galleryData } from '@/@db/gallery';
 import HeaderTitle from '@/components/common/HeaderTitle';
@@ -5,6 +6,7 @@ import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection
 import Header from '@/components/layout/header/Header';
 import GalleryCard from '@/components/molecular/galleryCard/GalleryCard';
 import Image from 'next/image';
+import { Slide, Zoom } from 'react-awesome-reveal';
 
 const Gallery = () => {
     return (
@@ -62,17 +64,19 @@ const Gallery = () => {
                     </div>
                 </div>
                 <div className="grid justify-center gap-4 grid-cols-[repeat(auto-fill,minmax(384px,1fr))]">
-                    {galleryData.map((item, idx) => (
-                        <div key={idx} className="flex justify-center">
-                            <GalleryCard
-                                key={idx} // Adding a key prop for better performance in lists
-                                src={item.src}
-                                isImage={item.isImage}
-                                text={item.title}
-                                thumbnail={item.thumnail}
-                            />
-                        </div>
-                    ))}
+                    <Zoom cascade damping={0.25} triggerOnce>
+                        {galleryData.map((item, idx) => (
+                            <div key={idx} className="flex justify-center">
+                                <GalleryCard
+                                    key={idx} // Adding a key prop for better performance in lists
+                                    src={item.src}
+                                    isImage={item.isImage}
+                                    text={item.title}
+                                    thumbnail={item.thumnail}
+                                />
+                            </div>
+                        ))}
+                    </Zoom>
                 </div>
             </ClipEdgeSection>
         </>

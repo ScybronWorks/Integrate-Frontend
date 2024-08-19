@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import ContactData from './ContactData';
 import ContactUsForm from './ContactUsForm';
+import { Fade } from 'react-awesome-reveal';
 
 type Props = {};
 
@@ -24,13 +26,15 @@ const ContactUsCard = ({}: Props) => {
     ];
     return (
         <div className="w-full h-[34rem] bg-gradient-primary-linear flex flex-col p-8 rounded-br-[3rem] rounded-tr-lg text-white mb-44 mt-20">
-            <div className="w-fit flex flex-col gap-2 py-2">
-                <h2 className="text-6xl font-semibold">Let{`'`}s connect now</h2>
-                <p className="text-lg  font-italianno">
-                    Get in Touch: We{`'`}re Here to Assist with Your Educational Needs.
-                </p>
-                <div className="border-b w-5/6" />
-            </div>
+            <Fade triggerOnce>
+                <div className="w-fit flex flex-col gap-2 py-2">
+                    <h2 className="text-6xl font-semibold">Let{`'`}s connect now</h2>
+                    <p className="text-lg  font-italianno">
+                        Get in Touch: We{`'`}re Here to Assist with Your Educational Needs.
+                    </p>
+                    <div className="border-b w-5/6" />
+                </div>
+            </Fade>
             <div className="w-full grid grid-cols-1 md:grid-cols-5 p-6">
                 <div className="col-span-2">
                     <div className="flex flex-col gap-6">

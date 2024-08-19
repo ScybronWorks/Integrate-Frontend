@@ -63,8 +63,8 @@
 //                             image="/img/team/David.png"
 //                             location="France"
 //                             name="Sarah M"
-//                             text="Indiginite has been a game-changer for my exam preparation. 
-//                         The resources are top-notch, and the personalized support made all the difference. 
+//                             text="Indiginite has been a game-changer for my exam preparation.
+//                         The resources are top-notch, and the personalized support made all the difference.
 //                         I highly recommend their services!"
 //                         />
 //                     ))}
