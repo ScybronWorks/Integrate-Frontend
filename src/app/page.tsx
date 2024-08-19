@@ -13,6 +13,17 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { useRef } from 'react';
+import {
+    Bounce,
+    Fade,
+    Flip,
+    Hinge,
+    JackInTheBox,
+    Roll,
+    Rotate,
+    Slide,
+    Zoom,
+} from 'react-awesome-reveal';
 
 const NewsletterInput = () => {
     return (
@@ -73,10 +84,12 @@ export default function Home() {
                             className="text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
                             max-lg:text-2xl"
                         >
-                            Unlock Your Potential with Expert Guidance and Resources
+                            <Zoom>Unlock Your Potential with Expert Guidance and Resources</Zoom>
                         </div>
                         <div className="pt-5">
-                            <Button className="text-sm  w-40 h-14">Discover More</Button>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <Button className="text-sm  w-40 h-14">Discover More</Button>
+                            </Slide>
                         </div>
                     </div>
                 </SectionCenter>
@@ -85,46 +98,57 @@ export default function Home() {
             <section className="w-full pt-24 pb-16">
                 <SectionCenter>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1">
-                        <div className="h-full px-10 max-md:px-0 max-lg:order-1">
-                            <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
-                                <div
-                                    className=" absolute  h-[26rem] top-9 left-9 right-9 max-md:right-6
+                        <Slide duration={1000} direction="left" triggerOnce>
+                            <div className="h-full px-10 max-md:px-0 max-lg:order-1">
+                                <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
+                                    <div
+                                        className=" absolute  h-[26rem] top-9 left-9 right-9 max-md:right-6
                                 max-md:bottom-6 max-md:left-6 
                                 "
-                                >
-                                    <Image
-                                        src="/img/home/about.png"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        className="rounded-2xl text-4xl"
-                                        alt="About image"
-                                    />
+                                    >
+                                        <Image
+                                            src="/img/home/about.png"
+                                            layout="fill"
+                                            objectFit="cover"
+                                            className="rounded-2xl text-4xl"
+                                            alt="About image"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Slide>
                         <div className="">
-                            <h6 className="text-3xl font-italianno text-primary">About us</h6>
-                            <h1 className="text-4xl font-semibold">Empowering Minds</h1>
-                            <h1 className="text-4xl font-semibold">Shoping Futrues</h1>
-                            {/* <h1 className="text-4xl font-semibold"></h1> */}
-                            <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
-                                The firm aims to provide quality education for students who are
-                                thriving to achieve their maximum for different subjects in high
-                                school, higher secondary and for competitive examinations. We are
-                                dedicated in providing online as well as offline class for various
-                                prime subjects such as chemistry, physics, mathematics and other;
-                                for both school level and career oriented competitive level
-                                examinations such as JEE, NEET, KEAM etc. The classes comes with
-                                expert teaching faculties and supplementary mentor support.
-                            </p>
-                            <Button
-                                href="/about"
-                                isLink={true}
-                                type="primary"
-                                className="!w-36 !h-11 mt-3"
+                            <Slide
+                                duration={1000}
+                                direction="right"
+                                triggerOnce
+                                cascade
+                                damping={0.025}
                             >
-                                Learn More
-                            </Button>
+                                <h6 className="text-3xl font-italianno text-primary">About us</h6>
+                                <h1 className="text-4xl font-semibold">Empowering Minds</h1>
+                                <h1 className="text-4xl font-semibold">Shoping Futrues</h1>
+                                {/* <h1 className="text-4xl font-semibold"></h1> */}
+                                <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
+                                    The firm aims to provide quality education for students who are
+                                    thriving to achieve their maximum for different subjects in high
+                                    school, higher secondary and for competitive examinations. We
+                                    are dedicated in providing online as well as offline class for
+                                    various prime subjects such as chemistry, physics, mathematics
+                                    and other; for both school level and career oriented competitive
+                                    level examinations such as JEE, NEET, KEAM etc. The classes
+                                    comes with expert teaching faculties and supplementary mentor
+                                    support.
+                                </p>
+                                <Button
+                                    href="/about"
+                                    isLink={true}
+                                    type="primary"
+                                    className="!w-36 !h-11 mt-3"
+                                >
+                                    Learn More
+                                </Button>
+                            </Slide>
                         </div>
                     </div>
                 </SectionCenter>
@@ -135,23 +159,30 @@ export default function Home() {
                 sectionCenterClassName="pt-14 max-md:pt-16"
             >
                 <div className="" id="course">
-                    <h3 className="font-extrabold text-[2.5rem] max-md:text-[1.75rem]  max-md:text-center">
-                        Innovating education through technology, we empower students to achieve
-                        excellence in academics and competitive exams.
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-20 ">
-                        <VisionCard
-                            title="Our Aim"
-                            description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                technology, providing individualized education and ensuring student with diverse
-                learning styles, thereby making your dreams come true."
-                        />
-                        <VisionCard
-                            title="Our Aim"
-                            description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                technology, providing individualized education and ensuring student with diverse
-                learning styles, thereby making your dreams come true."
-                        />
+                    <Slide duration={1000} direction="down" triggerOnce>
+                        <h3 className="font-extrabold text-[2.5rem] max-md:text-[1.75rem]  max-md:text-center">
+                            Innovating education through technology, we empower students to achieve
+                            excellence in academics and competitive exams.
+                        </h3>
+                    </Slide>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-20">
+                        {/* Map this and add slide left for odd and right for even index */}
+                        <Slide duration={1000} direction="left" triggerOnce>
+                            <VisionCard
+                                title="Our Aim"
+                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
+                            technology, providing individualized education and ensuring student with diverse
+                            learning styles, thereby making your dreams come true."
+                            />
+                        </Slide>
+                        <Slide duration={1000} direction="right" triggerOnce>
+                            <VisionCard
+                                title="Our Aim"
+                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
+                            technology, providing individualized education and ensuring student with diverse
+                            learning styles, thereby making your dreams come true."
+                            />
+                        </Slide>
                     </div>
                 </div>
                 <div className="mt-20">
@@ -162,16 +193,17 @@ export default function Home() {
 
                     <div className="mt-16 relative">
                         <div
-                            className="grid grid-flow-col overflow-auto scrollbar-hide gap-x-5 scroll-smooth "
+                            className="grid grid-flow-col overflow-auto scrollbar-hide gap-x-5 scroll-smooth"
                             ref={courseScrollView}
                         >
                             {courseData.map((item, idx) => (
-                                <CourseCard
-                                    key={idx}
-                                    description={item.description}
-                                    image={item.image}
-                                    title={item.title}
-                                />
+                                <Slide key={idx} duration={1000} direction="right" triggerOnce>
+                                    <CourseCard
+                                        description={item.description}
+                                        image={item.image}
+                                        title={item.title}
+                                    />
+                                </Slide>
                             ))}
                         </div>
                         <span
@@ -192,35 +224,47 @@ export default function Home() {
             {/*  */}
             <section>
                 <SectionCenter className="py-24 max-md:py-10">
-                    <div className="grid grid-cols-2  max-md:grid-cols-1 max-md:gap-y-10">
-                        <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden order-2">
-                            <Image
-                                src={'/img/home/brain.png'}
-                                layout="fill"
-                                objectFit="contain"
-                                alt="About image"
-                                className="!relative  object-center-top md:object-right-top "
-                            />
-                        </div>
+                    <div className="grid grid-cols-2 max-md:grid-cols-1 max-md:gap-y-10">
+                        <Slide duration={1000} direction="left" triggerOnce>
+                            <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden order-2">
+                                <Image
+                                    src={'/img/home/brain.png'}
+                                    layout="fill"
+                                    objectFit="contain"
+                                    alt="About image"
+                                    className="!relative  object-center-top md:object-right-top "
+                                />
+                            </div>
+                        </Slide>
                         <div className="md:order-1">
-                            <h6 className="text-3xl font-italianno ">Schedule a Call with Us</h6>
-                            <h1 className="text-4xl font-semibold">
-                                <span className="text-primary">Connect</span> with our experts to
-                                discuss how we can support your educational goals.
-                            </h1>
-                            {/* <h1 className="text-4xl font-semibold"></h1> */}
-                            <p className=" font-lexend text-[1rem] text-gray-500 font-light leading-8 tracking-tight mt-3">
-                                Choose a convenient time to speak with our team and get personalized
-                                assistance tailored to your needs.
-                            </p>
-                            <Button
-                                href="/about"
-                                isLink={true}
-                                type="primary"
-                                className="!h-11 mt-8 pr-8 pl-8 pt-6 pb-6 w-fit max-md:text-sm"
+                            <Slide
+                                duration={1000}
+                                direction="right"
+                                cascade
+                                damping={0.25}
+                                triggerOnce
                             >
-                                Shedule a Call?
-                            </Button>
+                                <h6 className="text-3xl font-italianno ">
+                                    Schedule a Call with Us
+                                </h6>
+                                <h1 className="text-4xl font-semibold">
+                                    <span className="text-primary">Connect</span> with our experts
+                                    to discuss how we can support your educational goals.
+                                </h1>
+                                {/* <h1 className="text-4xl font-semibold"></h1> */}
+                                <p className=" font-lexend text-[1rem] text-gray-500 font-light leading-8 tracking-tight mt-3">
+                                    Choose a convenient time to speak with our team and get
+                                    personalized assistance tailored to your needs.
+                                </p>
+                                <Button
+                                    href="/about"
+                                    isLink={true}
+                                    type="primary"
+                                    className="!h-11 mt-8 pr-8 pl-8 pt-6 pb-6 w-fit max-md:text-sm"
+                                >
+                                    Shedule a Call?
+                                </Button>
+                            </Slide>
                         </div>
                     </div>
                 </SectionCenter>
@@ -231,13 +275,21 @@ export default function Home() {
                 <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center max-sm:h-[90%]"></div>
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-start flex-col w-[100%]">
-                        <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
-                            Our Services
-                        </div>
-                        <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
-                            We Give You The Best <br />
-                            Facilities to Learning
-                        </div>
+                        <Slide
+                            duration={1000}
+                            direction="right"
+                            cascade
+                            damping={0.025}
+                            triggerOnce
+                        >
+                            <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
+                                Our Services
+                            </div>
+                            <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
+                                We Give You The Best <br />
+                                Facilities to Learning
+                            </div>
+                        </Slide>
                         <div className="flex gap-10 mt-11 w-full justify-start items-start flex-row max-1/2xl:flex-col max-sm:items-center">
                             <div className="flex flex-row gap-10 max-sm:flex-col">
                                 {Array.from({ length: 2 }).map((_, index) => (
@@ -269,40 +321,57 @@ export default function Home() {
                 <SectionCenter className="h-full">
                     <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
                         <div className="flex flex-col items-start justify-start gap-[3.375rem] max-1/2xl:hidden">
-                            <div className="">
-                                <Image
-                                    src="/icons/teams.svg"
-                                    alt="teams"
-                                    layout="fill"
-                                    className="!relative max-h-28"
-                                />
-                            </div>
-                            <div className="w-[320px] font-light leading-[2rem] text-[1.125rem]">
-                                &quot;Meet our dedicated team of expert tutors committed to helping
-                                you excel. With years of experience and a passion for teaching, they
-                                provide personalized guidance to ensure you reach your academic
-                                goals.&quot;
-                            </div>
+                            <Slide
+                                duration={1000}
+                                direction="left"
+                                triggerOnce
+                                cascade
+                                damping={0.025}
+                            >
+                                <div className="">
+                                    <Image
+                                        src="/icons/teams.svg"
+                                        alt="teams"
+                                        layout="fill"
+                                        className="!relative max-h-28"
+                                    />
+                                </div>
+                                <div className="w-[320px] font-light leading-[2rem] text-[1.125rem]">
+                                    &quot;Meet our dedicated team of expert tutors committed to
+                                    helping you excel. With years of experience and a passion for
+                                    teaching, they provide personalized guidance to ensure you reach
+                                    your academic goals.&quot;
+                                </div>
+                            </Slide>
                         </div>
                         <div className="w-full">
-                            <div className="text-[2rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-titleBlack leading-[2.5rem] font-normal">
-                                Our Team
-                            </div>
-                            <div className="text-[2.75rem] max-sm:text-[1.75rem] max-sm:leading-[2.5625rem] font-lexend text-titleBlack leading-[3.4375rem] font-bold">
-                                Meet Our Team..
-                            </div>
+                            <Slide
+                                duration={1000}
+                                direction="right"
+                                triggerOnce
+                                cascade
+                                damping={0.025}
+                            >
+                                <div className="text-[2rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-titleBlack leading-[2.5rem] font-normal">
+                                    Our Team
+                                </div>
+                                <div className="text-[2.75rem] max-sm:text-[1.75rem] max-sm:leading-[2.5625rem] font-lexend text-titleBlack leading-[3.4375rem] font-bold">
+                                    Meet Our Team..
+                                </div>
+                            </Slide>
                             <div className="w-full relative flex flex-col items-center gap-8">
                                 <div
                                     className="flex justify-start gap-[1.125rem] w-full pt-[2.5625rem] max-lg:overflow-auto max-lg:justify-start scroll-smooth scrollbar-hide"
                                     ref={teamScrollView}
                                 >
                                     {Array.from({ length: 3 }).map((_, index) => (
-                                        <TeamCard
-                                            key={index}
-                                            image="/img/team/David.png"
-                                            title="Dr. Emily Carter"
-                                            description="Lorem ipsum dolor"
-                                        />
+                                        <Bounce key={index} cascade damping={2000} triggerOnce>
+                                            <TeamCard
+                                                image="/img/team/David.png"
+                                                title="Dr. Emily Carter"
+                                                description="Lorem ipsum dolor"
+                                            />
+                                        </Bounce>
                                     ))}
                                 </div>
                                 <div className="flex flex-row gap-4 justify-center items-center">
@@ -346,31 +415,41 @@ export default function Home() {
             <section className="w-full py-[6.25rem]">
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
-                        <div className="text-[2rem] font-italianno text-primary leading-10 text-center">
-                            Testimonials
-                        </div>
-                        <div className="text-[1.5rem] sm:text-[2rem] font-bold text-titleBlack leading-10 text-center">
-                            What Our Students Say
-                        </div>
-                        <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem] max-w-[500px]">
-                            Hear from Our Satisfied Clients and Students. Real Stories of Success
-                            and Satisfaction.
-                        </div>
+                        <Slide duration={1000} direction="down" triggerOnce cascade damping={0.025}>
+                            <div className="text-[2rem] font-italianno text-primary leading-10 text-center">
+                                Testimonials
+                            </div>
+                            <div className="text-[1.5rem] sm:text-[2rem] font-bold text-titleBlack leading-10 text-center">
+                                What Our Students Say
+                            </div>
+                            <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem] max-w-[500px]">
+                                Hear from Our Satisfied Clients and Students. Real Stories of
+                                Success and Satisfaction.
+                            </div>
+                        </Slide>
                         <div className="w-full relative">
                             <div
                                 className="flex flex-row max-xl:overflow-auto max-xl:justify-start justify-center gap-6 w-full pt-12 scrollbar-hide scroll-smooth"
                                 ref={testScrollView}
                             >
                                 {Array.from({ length: 3 }).map((_, index) => (
-                                    <TestimonialCard
+                                    <Slide
                                         key={index}
-                                        image="/img/team/David.png"
-                                        location="France"
-                                        name="Sarah M"
-                                        text="Indiginite has been a game-changer for my exam preparation. 
+                                        duration={1000}
+                                        direction="right"
+                                        triggerOnce
+                                        cascade
+                                        damping={0.025}
+                                    >
+                                        <TestimonialCard
+                                            image="/img/team/David.png"
+                                            location="France"
+                                            name="Sarah M"
+                                            text="Indiginite has been a game-changer for my exam preparation. 
                         The resources are top-notch, and the personalized support made all the difference. 
                         I highly recommend their services!"
-                                    />
+                                        />
+                                    </Slide>
                                 ))}
                             </div>
 
