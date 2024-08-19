@@ -14,6 +14,7 @@ const axiosInstance = axios.create({
 type Props = {};
 
 const ContactUsForm = (props: Props) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -27,6 +28,7 @@ const ContactUsForm = (props: Props) => {
     };
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
 
         const isFormValid = Object.entries(formData).every(([key, value]) => value.trim() !== '');
 
@@ -54,7 +56,9 @@ const ContactUsForm = (props: Props) => {
             } else {
                 console.log('Failed to send email.');
             }
+            setIsSubmitting(false);
         } catch (error) {
+            setIsSubmitting(false);
             console.error('An error occurred while sending the email:', error);
         }
     };
@@ -110,9 +114,15 @@ const ContactUsForm = (props: Props) => {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
+                        placeholder="message..."
                     />
                 </div>
-                <Button className="w-fit mt-4" onClick={handleSubmit}>
+                <Button
+                    className="w-fit mt-4"
+                    onClick={handleSubmit}
+                    isLightBg
+                    isSubmitting={isSubmitting}
+                >
                     Submit Now
                 </Button>
             </div>
