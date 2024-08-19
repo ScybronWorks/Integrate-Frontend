@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import ButtonProps from './types';
+import { FormEvent } from 'react';
 
 const Button = ({
     children,
@@ -18,11 +19,10 @@ const Button = ({
             'border border-primary bg-primary text-white hover:border-white hover:bg-transparent hover:text-white',
     };
 
-    const handleOnClick = () => {
-        onClick && onClick();
+    const handleOnClick = (e: FormEvent) => {
+        onClick && onClick(e);
         isLink && href && router.push(href);
     };
-
     return (
         <div
             onClick={handleOnClick}
