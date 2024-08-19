@@ -15,12 +15,6 @@ import Image from 'next/image';
 import { useRef } from 'react';
 import {
     Bounce,
-    Fade,
-    Flip,
-    Hinge,
-    JackInTheBox,
-    Roll,
-    Rotate,
     Slide,
     Zoom,
 } from 'react-awesome-reveal';
@@ -87,7 +81,7 @@ export default function Home() {
                             <Zoom>Unlock Your Potential with Expert Guidance and Resources</Zoom>
                         </div>
                         <div className="pt-5">
-                            <Slide duration={1000} direction="right" triggerOnce>
+                            <Slide duration={1000} direction="up" triggerOnce>
                                 <Button className="text-sm  w-40 h-14">Discover More</Button>
                             </Slide>
                         </div>
