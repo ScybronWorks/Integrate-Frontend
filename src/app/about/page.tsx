@@ -55,9 +55,7 @@ const AboutUs = () => {
                                 <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={12} duration={3} />
                                 </p>
-                                <p className="text-xl items-end justify-end bottom-0 relative">
-                                    +
-                                </p>
+                                <p className="text-xl items-end justify-end bottom-0 relative">+</p>
                             </span>
                             <p className="text-base font-light text-white/80">Courses Available</p>
                         </span>
@@ -67,9 +65,7 @@ const AboutUs = () => {
                                 <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={5000} duration={3} />
                                 </p>
-                                <p className="text-xl items-end justify-end bottom-0 relative">
-                                    +
-                                </p>
+                                <p className="text-xl items-end justify-end bottom-0 relative">+</p>
                             </span>
                             <p className="text-base font-light text-white/80">
                                 Successful Graduates
@@ -81,9 +77,7 @@ const AboutUs = () => {
                                 <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={100} duration={3} />
                                 </p>
-                                <p className="text-xl items-end justify-end bottom-0 relative">
-                                    +
-                                </p>
+                                <p className="text-xl items-end justify-end bottom-0 relative">+</p>
                             </span>
                             <p className="text-base font-light text-white/80">
                                 Qualified Instructors

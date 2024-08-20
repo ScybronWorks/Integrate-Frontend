@@ -54,7 +54,7 @@ const Footer = () => {
                                 src="/img/logo/logo.jpg"
                                 className="h-full w-full object-cover !relative"
                                 alt="logo"
-                                layout="fill"
+                                fill
                             />
                         </div>
                         <div className="max-xl:hidden">

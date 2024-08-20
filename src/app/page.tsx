@@ -100,7 +100,7 @@ export default function Home() {
                                     >
                                         <Image
                                             src="/img/home/about.png"
-                                            layout="fill"
+                                            fill
                                             objectFit="cover"
                                             className="rounded-2xl text-4xl"
                                             alt="About image"
@@ -226,7 +226,7 @@ export default function Home() {
                             <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start ">
                                 <Image
                                     src={'/img/home/brain.png'}
-                                    layout="fill"
+                                    fill
                                     objectFit="contain"
                                     alt="About image"
                                     className="!relative  object-center-top md:object-right-top "
@@ -329,7 +329,7 @@ export default function Home() {
                                     <Image
                                         src="/icons/teams.svg"
                                         alt="teams"
-                                        layout="fill"
+                                        fill
                                         className="!relative max-h-28"
                                     />
                                 </div>

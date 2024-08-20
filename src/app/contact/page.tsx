@@ -10,7 +10,7 @@ const ContactUs = () => {
                 <HeaderTitle title="Contact Us" />
             </Header>
 
-            <ClipEdgeSection className="flex justify-center p-12 w-full mb-0">
+            <ClipEdgeSection className="flex justify-center md:p-12 w-full mb-0">
                 <ContactUsCard />
             </ClipEdgeSection>
 
