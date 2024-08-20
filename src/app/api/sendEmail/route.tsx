@@ -163,14 +163,14 @@ function createEmailTemplate({ email, subject, message, phone, name, course }: E
                     <th>Client's Contact Number</th>
                     <td>${phone}</td>
                   </tr>
-                  ${course &&(
-                    `
+                  ${
+                      course &&
+                      `
                     <tr>
                       <td>Client's Selected Course</td>
                       <td>${course}</td>
                     </tr>
                     `
-                  )
                   }
                   <tr>
                     <th>Client's Subject</th>
