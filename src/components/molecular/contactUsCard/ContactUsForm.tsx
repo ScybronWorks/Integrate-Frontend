@@ -51,12 +51,10 @@ const ContactUsForm = (props: Props) => {
             } else {
                 console.log('Failed to send email.');
             }
-            
         } catch (error) {
-           
             console.error('An error occurred while sending the email:', error);
-        }finally{
-             setIsSubmitting(false);
+        } finally {
+            setIsSubmitting(false);
         }
     };
     return (
