@@ -38,6 +38,8 @@ const config: Config = {
             screens: {
                 xs: '400px',
                 '1/2xl': '1420px',
+                xss: '384px',
+                '3xl': '1722px',
                 ...defaultTheme.screens,
             },
             backgroundPosition: {

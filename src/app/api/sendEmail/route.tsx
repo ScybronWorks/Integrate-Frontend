@@ -22,11 +22,10 @@ export async function POST(req: Request) {
                 pass: process.env.GMAIL_PASS,
             },
         });
-        const template = createEmailTemplate({ email, subject, message, phone, name });
         // Email options
         const mailOptions = {
             from: process.env.GMAIL_USER,
-            to: email, // Recipient's email
+            to: process.env.GMAIL_TO_EMAIL,
             subject: subject,
             html: createEmailTemplate({ email, subject, message, phone, name, course }),
         };
@@ -45,76 +44,159 @@ export async function POST(req: Request) {
 }
 function createEmailTemplate({ email, subject, message, phone, name, course }: EmailData) {
     return `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-              body {
-                  font-family: Arial, sans-serif;
-                  margin: 0;
-                  padding: 0;
-                  background-color: #f4f4f4;
-              }
-              .container {
-                  width: 100%;
-                  max-width: 600px;
-                  margin: 0 auto;
-                  background-color: #ffffff;
-                  padding: 20px;
-                  border-radius: 8px;
-                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-              }
-              .header {
-                  background-color: #4CAF50;
-                  color: #ffffff;
-                  padding: 10px;
-                  text-align: center;
-                  border-radius: 8px 8px 0 0;
-              }
-              .content {
-                  margin: 20px 0;
-              }
-              .footer {
-                  text-align: center;
-                  font-size: 12px;
-                  color: #888888;
-              }
-              .button {
-                  display: inline-block;
-                  padding: 10px 20px;
-                  font-size: 14px;
-                  color: #ffffff;
-                  background-color: #4CAF50;
-                  text-decoration: none;
-                  border-radius: 4px;
-              }
-          </style>
-      </head>
-      <body>
-          <div class="container">
-              <div class="header">
-                  <h1>Enquiry Received</h1>
-              </div>
-              <div class="content">
-                  <p>Hello,</p>
-                  <p>We have received a new enquiry with the following details:</p>
-                  <p><strong>Name:</strong> ${name}</p>
-                  <p><strong>Email:</strong> ${email}</p>
-                  <p><strong>Phone:</strong> ${phone}</p>
-                  <p><strong>Subject:</strong> ${subject}</p>
-                  ${course && <p>{course}</p>}
-                  
-                  <p><strong>Message:</strong></p>
-                  <p>${message}</p>
-                  <p>Thank you for reaching out to us. We will get back to you shortly.</p>
-              </div>
-              <div class="footer">
-                  <p>&copy; 2024 Integrate. All rights reserved.</p>
-              </div>
+     <html lang="en">
+  <head>
+    <!-- HEAD -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enquiry Form</title>
+    <style>
+      body {
+        font-family: Poppins, sans-serif;
+        padding: 20px;
+        background: #f1f1f1;
+      }
+      .container {
+        background-color: #000000;
+        width: 80%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .inner_container {
+        background-color: rgb(215, 215, 215);
+        padding: 50px;
+      }
+
+      header,
+      footer {
+        text-align: center;
+      }
+
+      .email_inner_section {
+        padding: 20px 0 50px 0;
+      }
+
+      hr {
+        height: 5px;
+        background-color: brown;
+        border-color: brown;
+      }
+
+      h1 {
+        color: brown;
+      }
+
+      .enquiry_submission table {
+        text-align: left;
+        margin-top: 50px;
+      }
+
+      .enquiry_submission table tbody tr th {
+        width: 30%;
+        vertical-align: top;
+      }
+
+      .enquiry_submission th,
+      .enquiry_submission td {
+        padding: 10px;
+        margin: 0;
+      }
+
+      .enquiry_submission th {
+        color: brown;
+        font-weight: 900;
+        font-size: 0.8rem;
+      }
+
+      .enquiry_submission td {
+        font-weight: 100;
+      }
+
+      .email_footer {
+        font-size: 10px;
+        color: #ffffff;
+        padding: 20px 0;
+      }
+
+      .email_footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      @media only screen and (max-width: 500px) {
+        .enquiry_submission th,
+        .enquiry_submission td {
+          display: block;
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- BODY -->
+  <body>
+    <div class="container">
+      <div class="inner_container">
+        <header>
+          <img src="https://i.postimg.cc/YLjxddQm/integral-logo-final.jpg" width="100px" />
+          <h1>Enquiry Submission</h1>
+        </header>
+        <hr />
+        <div class="email_content">
+          <div class="email_inner_section">
+            <section>
+              <h3>Hi Admin, you have a new enquiry submission from ${name}.</h3>
+            </section>
+            <section class="enquiry_submission">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Client Name</th>
+                    <td>${name}</td>
+                  </tr>
+                  <tr>
+                    <th>Client's Email Address</th>
+                    <td>${email}</td>
+                  </tr>
+                  <tr>
+                    <th>Client's Contact Number</th>
+                    <td>${phone}</td>
+                  </tr>
+                  <tr>
+                    <td>Client's Selected Course</td>
+                    <td>${course}</td>
+                  </tr>
+                  <tr>
+                    <th>Client's Subject</th>
+                    <td>${subject}</td>
+                  </tr>
+                  <tr>
+                    <th>Client's Message</th>
+                    <td>${message}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
           </div>
-      </body>
-      </html>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer>
+        <section class="email_footer">
+          <img src="https://i.postimg.cc/YLjxddQm/integral-logo-final.jpg" width="100px" />
+
+          <p>Address 1, 123 Road, MY</p>
+          <p>
+            Copyright &copy; ${new Date().getFullYear()} Integrate All Rights
+            Reserved
+          </p>
+        </section>
+      </footer>
+      <!-- footer ends -->
+    </div>
+  </body>
+</html>
+
       `;
 }

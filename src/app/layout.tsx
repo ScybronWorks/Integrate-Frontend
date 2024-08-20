@@ -19,9 +19,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={lexend.className}>
+            <body className={`${lexend.className} overflow-x-hidden`}>
                 <Navbar />
-                <div className="min-h-[100vh]">{children}</div>
+                <div className="min-h-[100vh] overflow-x-hidden">{children}</div>
                 <Footer />
             </body>
         </html>

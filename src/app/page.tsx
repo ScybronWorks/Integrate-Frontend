@@ -217,8 +217,13 @@ export default function Home() {
             <section>
                 <SectionCenter className="py-24 max-md:py-10">
                     <div className="grid grid-cols-2 max-md:grid-cols-1 max-md:gap-y-10">
-                        <Slide duration={1000} direction="left" triggerOnce>
-                            <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start max-md:hidden order-2">
+                        <Slide
+                            duration={1000}
+                            direction="left"
+                            triggerOnce
+                            className="max-md:hidden order-2"
+                        >
+                            <div className="w-full h-full max-h-[22.2rem] max-md:max-h-80 flex justify-start ">
                                 <Image
                                     src={'/img/home/brain.png'}
                                     layout="fill"

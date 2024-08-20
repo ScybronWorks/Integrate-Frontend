@@ -23,7 +23,6 @@ const Navbar = () => {
     useEffect(() => {
         setIsOpen(false);
     }, [pathname]);
-
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
