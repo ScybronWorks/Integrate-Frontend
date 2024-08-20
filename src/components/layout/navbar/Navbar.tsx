@@ -42,7 +42,7 @@ const Navbar = () => {
                             />
                         </div>
 
-                        <div className="hidden gap-12 items-center 1/2xl:flex">
+                        <div className="hidden gap-12 items-center 1/2lx:flex">
                             {links.map(link => (
                                 <div key={link.id}>
                                     <Link
@@ -61,7 +61,7 @@ const Navbar = () => {
                             </Button>
                         </div>
                         <div className="flex items-center">
-                            <button className="1/2xl:hidden" onClick={() => setIsOpen(true)}>
+                            <button className="1/2lx:hidden" onClick={() => setIsOpen(true)}>
                                 <Image
                                     src="/icons/Hamburger.png"
                                     alt="hamburger"
