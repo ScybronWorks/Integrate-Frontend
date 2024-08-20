@@ -35,11 +35,6 @@ const ContactUsForm = (props: Props) => {
         if (!isFormValid) return;
 
         try {
-            // Create an HTTPS agent that does not reject self-signed certificates
-            const agent = new https.Agent({
-                rejectUnauthorized: false, // Disable SSL certificate validation
-            });
-
             const response = await fetch('/api/sendEmail', {
                 method: 'POST',
                 headers: {
@@ -56,10 +51,12 @@ const ContactUsForm = (props: Props) => {
             } else {
                 console.log('Failed to send email.');
             }
-            setIsSubmitting(false);
+            
         } catch (error) {
-            setIsSubmitting(false);
+           
             console.error('An error occurred while sending the email:', error);
+        }finally{
+             setIsSubmitting(false);
         }
     };
     return (
