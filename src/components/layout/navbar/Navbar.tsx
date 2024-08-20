@@ -17,7 +17,7 @@ const Navbar = () => {
     const pathname = usePathname();
     const navRef = useRef(null);
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [isModalOpen, setIsModalOpen] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
 
     useClickAway(navRef, () => setIsOpen(false));
     useEffect(() => {
@@ -72,7 +72,7 @@ const Navbar = () => {
                             {isOpen && (
                                 <div
                                     ref={navRef}
-                                    className="absolute bg-black w-[70%] min-h-screen z-50 top-0 right-0
+                                    className="absolute bg-black w-[70%] min-h-screen h-full z-50 top-0 right-0
                         text-white"
                                 >
                                     <button
@@ -98,6 +98,15 @@ const Navbar = () => {
                                                 {link.label}
                                             </Link>
                                         ))}
+                                        <Button
+                                            onClick={() => {
+                                                setIsOpen(false)
+                                                setIsModalOpen(true)
+                                            }}
+                                            className="my-2"
+                                        >
+                                            Demo
+                                        </Button>
                                     </div>
                                 </div>
                             )}
