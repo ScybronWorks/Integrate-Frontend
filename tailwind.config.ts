@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
     content: [
@@ -14,7 +14,8 @@ const config: Config = {
                 'gradient-conic':
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
                 'gradient-primary-linear': 'linear-gradient(188.71deg, #8F55CE 0%, #402CB1 100%)',
-                'services': 'linear-gradient(273.16deg, rgba(0, 0, 0, 0.49) 1.05%, rgba(0, 0, 0, 0.7) 82.9%), url("/img/home/services.png")'
+                services:
+                    'linear-gradient(273.16deg, rgba(0, 0, 0, 0.49) 1.05%, rgba(0, 0, 0, 0.7) 82.9%), url("/img/home/services.png")',
             },
             colors: {
                 primary: '#4F34B7',
@@ -25,6 +26,7 @@ const config: Config = {
                 subtitleGray: '#868686',
                 teamCardBg: '#DEDAF1',
                 contactInputBg: '#EDEAFF',
+                navActive: '#DEDAF1',
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],
@@ -34,8 +36,11 @@ const config: Config = {
                 'angled-edge': 'polygon(29% 0, 100% 0, 100% 100%, 0 100%, 0 29%)',
             },
             screens: {
-                'xs': '400px',
+                xs: '400px',
                 '1/2xl': '1420px',
+                xss: '384px',
+                '3xl': '1722px',
+                '1/2lx':"1180px",
                 ...defaultTheme.screens,
             },
             backgroundPosition: {
