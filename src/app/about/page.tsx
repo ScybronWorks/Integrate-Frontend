@@ -49,13 +49,13 @@ const AboutUs = () => {
                         </Fade>
                     </div>
 
-                    <div className="flex items-center justify-between w-1/2 pt-6">
+                    <div className="flex items-center justify-between w-full md:w-1/2 pt-6">
                         <span className="flex flex-col space-y-2">
                             <span className="flex items-center space-x-2 relative">
-                                <p className="text-5xl font-semibold">
+                                <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={12} duration={3} />
                                 </p>
-                                <p className="text-4xl items-end justify-end bottom-0 relative">
+                                <p className="text-xl items-end justify-end bottom-0 relative">
                                     +
                                 </p>
                             </span>
@@ -64,10 +64,10 @@ const AboutUs = () => {
 
                         <span className="flex flex-col space-y-2">
                             <span className="flex items-center space-x-2 relative">
-                                <p className="text-5xl font-semibold">
+                                <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={5000} duration={3} />
                                 </p>
-                                <p className="text-4xl items-end justify-end bottom-0 relative">
+                                <p className="text-xl items-end justify-end bottom-0 relative">
                                     +
                                 </p>
                             </span>
@@ -78,10 +78,10 @@ const AboutUs = () => {
 
                         <span className="flex flex-col space-y-2">
                             <span className="flex items-center space-x-2 relative">
-                                <p className="text-5xl font-semibold">
+                                <p className="text-3xl md:text-5xl font-semibold">
                                     <CountUp end={100} duration={3} />
                                 </p>
-                                <p className="text-4xl items-end justify-end bottom-0 relative">
+                                <p className="text-xl items-end justify-end bottom-0 relative">
                                     +
                                 </p>
                             </span>
@@ -133,7 +133,7 @@ const AboutUs = () => {
 
             <div
                 className="grid grid-cols-1 gap-6 absolute md:- max-w-5xl mx-auto w-full left-1/2 -translate-x-1/2
-                md:grid-cols-2 px-4 md:px-0 bottom-[5rem] md:bottom-[10rem]"
+                md:grid-cols-2 px-4 md:px-0 bottom-[3rem] md:bottom-[10rem]"
             >
                 <Slide direction="up" duration={1000} triggerOnce>
                     <Image
