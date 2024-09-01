@@ -33,19 +33,31 @@ const AboutUs = () => {
                             <h6 className="text-2xl">
                                 The firm aims to provide quality education for students who are
                                 thriving to achieve their maximum for different subjects in high
-                                school, higher secondary and for competitive examinations.
+                                school, higher secondary, and for competitive examinations.
                             </h6>
-                            <p className="text-base leading-8 text-white/80">
-                                We are dedicated in providing online as well as offline class for
-                                various prime subjects such as chemistry, physics, mathematics and
-                                other; for both school level and career oriented competitive level
-                                examinations such as JEE, NEET, KEAM etc. The classes comes with
-                                expert teaching faculties and supplementary mentor support. We
-                                provide proper model examinations of each subject with weekly
-                                analysis for each student and initiate correction procedures. Our
-                                courses at each level of studies are oriented to facilitate easy and
-                                comfortable study patterns for students, feeling stress free.
-                            </p>
+                            <ul className="text-base leading-8 text-white/80 list-disc list-inside mt-4">
+                                <li>
+                                    We are dedicated to providing online as well as offline classes
+                                    for prime subjects such as chemistry, physics, mathematics, and
+                                    others.
+                                </li>
+                                <li>
+                                    Our courses cater to both school-level and career-oriented
+                                    competitive exams such as JEE, NEET, KEAM, etc.
+                                </li>
+                                <li>
+                                    Classes are led by expert teaching faculties with supplementary
+                                    mentor support.
+                                </li>
+                                <li>
+                                    We offer proper model examinations for each subject with weekly
+                                    analysis for each student and initiate correction procedures.
+                                </li>
+                                <li>
+                                    Our courses are designed to facilitate easy and comfortable
+                                    study patterns, helping students feel stress-free.
+                                </li>
+                            </ul>
                         </Fade>
                     </div>
 
@@ -109,17 +121,71 @@ const AboutUs = () => {
                             </h1>
                         </Slide>
 
-                        <div className="flex items-center gap-8 py-16 flex-col md:flex-row">
-                            <VisionCard
-                                title="Our Aim"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                technology, providing individualized education and ensuring student with diverse
-                learning styles, thereby making your dreams come true."
-                            />
-                            <VisionCard
-                                title="Our Vision"
-                                description="Our vision is to culture globally resourceful citizens by nurturing them with quality education and innovative learning style and powering their success."
-                            />
+                        <div
+                            className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20 mb-10
+                            grid-rows-1
+                            "
+                        >
+                            {/* Map this and add slide left for odd and right for even index */}
+                            <Slide duration={1000} direction="left" triggerOnce>
+                                <VisionCard
+                                    title="Vision"
+                                    description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Vision Aims included"
+                                    description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Highlights"
+                                    description={
+                                        <ul className="list-disc list-inside">
+                                            <li>
+                                                The evaluation of portions covered each day based on
+                                                daily exams.
+                                            </li>
+                                            <li>
+                                                Comprehensive tracking system to ensure studies.
+                                                (Student Monitoring System)
+                                            </li>
+                                            <li>
+                                                A high quality of education provided by a team of
+                                                experienced faculty.
+                                            </li>
+                                            <li>Personalised monitoring.</li>
+                                        </ul>
+                                    }
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Why integrate?"
+                                    description={
+                                        <ul className="list-disc list-inside">
+                                            <li>
+                                                A tailored monitoring system designed for
+                                                individuals requiring personalised attention.
+                                            </li>
+                                            <li>
+                                                A complete course material that offers a wide range
+                                                of information based on the curriculum.
+                                            </li>
+                                            <li>
+                                                Additional doubt-clearing sessions conducted based
+                                                on identified needs.
+                                            </li>
+                                            <li>
+                                                Guaranteed revision modules prior to examinations.
+                                            </li>
+                                            <li>Consistent communication with parents.</li>
+                                        </ul>
+                                    }
+                                />
+                            </Slide>
                         </div>
                     </div>
                 </div>
