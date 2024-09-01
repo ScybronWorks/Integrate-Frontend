@@ -31,5 +31,4 @@ export const courseData = [
         originalPrice: '3999',
         discountPrice: '2999',
     },
-
 ];

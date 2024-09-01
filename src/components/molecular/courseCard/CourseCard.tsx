@@ -9,7 +9,13 @@ type Props = {
     discountedPrice?: string;
 };
 
-const CourseCard = ({ description, image, title,discountedPrice='2999',originalPrice='3999' }: Props) => {
+const CourseCard = ({
+    description,
+    image,
+    title,
+    discountedPrice = '2999',
+    originalPrice = '3999',
+}: Props) => {
     return (
         <div className="grid grid-rows-12 h-[34rem] w-80  rounded-lg bg-cardBrown hover:bg-gradient-primary-linear">
             <div className="row-span-6 relative">

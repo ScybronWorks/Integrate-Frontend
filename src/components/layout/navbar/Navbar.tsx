@@ -100,8 +100,8 @@ const Navbar = () => {
                                         ))}
                                         <Button
                                             onClick={() => {
-                                                setIsOpen(false)
-                                                setIsModalOpen(true)
+                                                setIsOpen(false);
+                                                setIsModalOpen(true);
                                             }}
                                             className="my-2"
                                         >

@@ -92,7 +92,7 @@ const Footer = () => {
                                     <strong>Contact Number</strong>:
                                 </span>
                                 <span className="pl-4">8129177072 </span>
-                                <span className="pl-4">9061707144  </span>
+                                <span className="pl-4">9061707144 </span>
                                 <span>
                                     <strong>For admissions</strong>:
                                 </span>
