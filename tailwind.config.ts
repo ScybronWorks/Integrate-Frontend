@@ -27,6 +27,7 @@ const config: Config = {
                 teamCardBg: '#DEDAF1',
                 contactInputBg: '#EDEAFF',
                 navActive: '#DEDAF1',
+                priceCross: '#FF5151',
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],
@@ -40,7 +41,7 @@ const config: Config = {
                 '1/2xl': '1420px',
                 xss: '384px',
                 '3xl': '1722px',
-                '1/2lx':"1180px",
+                '1/2lx': '1180px',
                 ...defaultTheme.screens,
             },
             backgroundPosition: {

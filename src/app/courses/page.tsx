@@ -18,16 +18,14 @@ const Courses = () => {
                 <div className="pt-24 grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-16 justify-center items-center">
                     <Zoom cascade damping={0.2} triggerOnce>
                         {courseData.map((item, idx) => (
-                            <div
-                                key={idx}
-                                className="flex justify-center hover:scale-105 transition-transform"
-                            >
                                 <CourseCard
+                                key={idx}
                                     description={item.description}
                                     image={item.image}
                                     title={item.title}
+                                    discountedPrice={item.discountPrice}
+                                    originalPrice={item.originalPrice}
                                 />
-                            </div>
                         ))}
                     </Zoom>
                 </div>

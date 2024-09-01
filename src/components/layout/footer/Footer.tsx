@@ -87,12 +87,25 @@ const Footer = () => {
                     >
                         <div className="flex gap-2">
                             <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
-                            <span>0123456789 | 0123456789</span>
+                            <div className="flex flex-col gap-1">
+                                <span>
+                                    <strong>Contact Number</strong>:
+                                </span>
+                                <span className="pl-4">8129177072 </span>
+                                <span className="pl-4">9061707144  </span>
+                                <span>
+                                    <strong>For admissions</strong>:
+                                </span>
+                                <span className="pl-4">8129927078 (CBSE)</span>
+                                <span className="pl-4">7592849406 (State)</span>
+                            </div>
                         </div>
+
                         <div className="flex gap-2 max-w-[24.5rem] ">
                             <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
                             <span>
-                                4904 Robson Street, Vancouver, British Columbia - V6B 3K9, Canada
+                                Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33,
+                                Santhi Nagar residence, Muppathadam (P.O) Aluva,
                             </span>
                         </div>
                         <div className="flex gap-2">

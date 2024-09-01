@@ -157,22 +157,67 @@ export default function Home() {
                             excellence in academics and competitive exams.
                         </h3>
                     </Slide>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-20">
+                    <div
+                        className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
+                        grid-rows-1
+                    "
+                    >
                         {/* Map this and add slide left for odd and right for even index */}
                         <Slide duration={1000} direction="left" triggerOnce>
                             <VisionCard
-                                title="Our Aim"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                            technology, providing individualized education and ensuring student with diverse
-                            learning styles, thereby making your dreams come true."
+                                title="Vision"
+                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
                             />
                         </Slide>
                         <Slide duration={1000} direction="right" triggerOnce>
                             <VisionCard
-                                title="Our Aim"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                            technology, providing individualized education and ensuring student with diverse
-                            learning styles, thereby making your dreams come true."
+                                title="Vision Aims included"
+                                description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                            />
+                        </Slide>
+                        <Slide duration={1000} direction="right" triggerOnce>
+                            <VisionCard
+                                title="Highlights"
+                                description={
+                                    <ul className="list-disc list-inside">
+                                        <li>
+                                            The evaluation of portions covered each day based on
+                                            daily exams.
+                                        </li>
+                                        <li>
+                                            Comprehensive tracking system to ensure studies.
+                                            (Student Monitoring System)
+                                        </li>
+                                        <li>
+                                            A high quality of education provided by a team of
+                                            experienced faculty.
+                                        </li>
+                                        <li>Personalised monitoring.</li>
+                                    </ul>
+                                }
+                            />
+                        </Slide>
+                        <Slide duration={1000} direction="right" triggerOnce>
+                            <VisionCard
+                                title="Why integrate?"
+                                description={
+                                    <ul className="list-disc list-inside">
+                                        <li>
+                                            A tailored monitoring system designed for individuals
+                                            requiring personalised attention.
+                                        </li>
+                                        <li>
+                                            A complete course material that offers a wide range of
+                                            information based on the curriculum.
+                                        </li>
+                                        <li>
+                                            Additional doubt-clearing sessions conducted based on
+                                            identified needs.
+                                        </li>
+                                        <li>Guaranteed revision modules prior to examinations.</li>
+                                        <li>Consistent communication with parents.</li>
+                                    </ul>
+                                }
                             />
                         </Slide>
                     </div>
@@ -194,6 +239,8 @@ export default function Home() {
                                         description={item.description}
                                         image={item.image}
                                         title={item.title}
+                                        discountedPrice={item.discountPrice}
+                                        originalPrice={item.originalPrice}
                                     />
                                 </Slide>
                             ))}
