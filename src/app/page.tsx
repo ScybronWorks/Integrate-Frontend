@@ -80,7 +80,7 @@ export default function Home() {
                         </div>
                         <div className="pt-5">
                             <Slide duration={1000} direction="up" triggerOnce>
-                                <Button className="text-sm  w-40 h-14">Discover More</Button>
+                                <Button className="text-lg  w-40 h-14">Discover More</Button>
                             </Slide>
                         </div>
                     </div>
