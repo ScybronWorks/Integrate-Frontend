@@ -83,7 +83,7 @@ const Gallery = () => {
                 </div>
                 <div
                     className="grid justify-center grid-cols-[repeat(auto-fill,minmax(384px,1fr))]
-                            max-xss:grid-cols-1 gap-0
+                            max-xss:grid-cols-1 gap-0 
                 "
                 >
                     {/* <Zoom cascade damping={0.25} triggerOnce> */}

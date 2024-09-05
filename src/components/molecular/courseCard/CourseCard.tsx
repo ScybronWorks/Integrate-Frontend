@@ -13,24 +13,30 @@ const CourseCard = ({
     description,
     image,
     title,
-    discountedPrice = '2999',
-    originalPrice = '3999',
+    discountedPrice = '2,999',
+    originalPrice = '3,999',
 }: Props) => {
     return (
-        <div className="grid grid-rows-12 h-[34rem] w-80  rounded-lg bg-cardBrown hover:bg-gradient-primary-linear">
-            <div className="row-span-6 relative">
+        <div
+            className="grid grid-rows-12 h-[38rem] w-96 max-xss:w-full  rounded-lg bg-cardBrown hover:bg-primary p-4 
+        "
+        >
+            <div className="row-span-6 relative min-h-[20rem] max-xss:h-full">
                 <Image src={image} className="object-cover" fill alt="courseImage" />
             </div>
-            <div className="row-span-9 flex flex-col justify-center items-center gap-3 p-8 py-16 text-center text-white">
-                <div className="w-40">
-                    <h3 className="text-2xl">{title}</h3>
+            <div className="row-span-9 flex flex-col   gap-3  pt-12  text-white max-xss:w-full">
+                <div className="">
+                    <h3 className="text-2xl font-bold">{title}</h3>
                 </div>
-                <p className="text-sm font-light">{description}</p>
-                <div className="mt-4 ">
-                    <p className="text-xm font-light line-through text-priceCross">
+                <p className="text-sm font-extralight h-[8rem]">{description}</p>
+                <div className="flex gap-2 items-end">
+                    <p className="text-xl font-semibold ">
+                        Rs:
+                        <span className="text-3xl font-semibold "> ${discountedPrice}</span>
+                    </p>
+                    <p className="text-xl  line-through text-gray-500 font-semibold">
                         ${originalPrice}
                     </p>
-                    <p className="text-xl font-semibold ">${discountedPrice}</p>
                 </div>
             </div>
         </div>
