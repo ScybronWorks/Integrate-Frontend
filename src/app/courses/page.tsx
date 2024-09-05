@@ -12,13 +12,16 @@ const Courses = () => {
     return (
         <>
             <Header type="md">
-                <HeaderTitle title="Our Courses" titleStyles="max-sm:text-[2.3rem]" />
+                <HeaderTitle
+                    title="Our Courses"
+                    titleStyles="max-sm:text-[2.3rem] max-xss:text-[1.8rem] "
+                />
             </Header>
 
             <SectionCenter className="mb-16">
                 <div
                     className="pt-24 grid grid-cols-[repeat(auto-fill,minmax(400px,1fr))] gap-y-16 justify-center items-center
-                max-xss:grid-cols-1
+                max-xss:grid-cols-1 text-
                 "
                 >
                     <Zoom className="flex justify-center" cascade damping={0.2} triggerOnce>
