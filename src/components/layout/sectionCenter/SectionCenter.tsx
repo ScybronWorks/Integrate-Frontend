@@ -8,7 +8,7 @@ const SectionCenter: React.FC<{ children: ReactNode; className?: string }> = ({
             className={`
         max-w-[75rem] 
         mx-auto
-        max-1/2xl:p-2
+        max-1/2xl:px-2
         ${className}`}
         >
             {children}

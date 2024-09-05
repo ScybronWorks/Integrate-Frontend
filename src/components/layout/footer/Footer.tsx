@@ -2,11 +2,14 @@
 import Button from '@/components/atomic/button/Button';
 
 import {
-    faFacebook,
     faInstagram,
-    faLinkedinIn,
+    faFacebook,
+    faLinkedin,
     faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+    faTwitter,
+    faXTwitter,
+} from '@fortawesome/free-brands-svg-icons'; // Replace faTwitter for "X" icon
+
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -22,10 +25,12 @@ const navLinks = [
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
-    { icon: faFacebook, href: '#' },
     { icon: faInstagram, href: '#' },
+    { icon: faFacebook, href: '#' },
+    { icon: faLinkedin, href: '#' },
     { icon: faYoutube, href: '#' },
-    { icon: faLinkedinIn, href: '#' },
+    { icon: faXTwitter, href: '#' },
+    { icon: faTwitter, href: '#' },
 ];
 
 const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {
@@ -46,13 +51,13 @@ const Footer = () => {
     return (
         <>
             <DemoModal isOpen={isModalOpen} handleClose={toggleModal} />
-            <footer className=" bg-titleBlack w-full min-h-[33rem]">
-                <SectionCenter className="py-20">
-                    <div className="flex  items-center justify-between max-xl:flex-col max-xl:gap-12 max-xl:items-start">
+            <footer className=" bg-secondary w-full min-h-[33rem] ">
+                <SectionCenter className="py-20 max-xl:pl-6">
+                    <div className="flex  items-center justify-between max-xl:flex-col max-xl:gap-12 max-xl:items-start ">
                         <div className=" max-w-[22.8rem] h-32  w-full">
                             <Image
-                                src="/img/logo/logo.jpg"
-                                className="h-full w-full object-cover !relative"
+                                src="/img/logo/logo.png"
+                                className="h-full w-full object-contain !relative"
                                 alt="logo"
                                 fill
                             />
