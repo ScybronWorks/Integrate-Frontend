@@ -27,7 +27,7 @@ const config: Config = {
                 teamCardBg: '#DEDAF1',
                 contactInputBg: '#EDEAFF',
                 navActive: '#DEDAF1',
-                priceCross: '#FF5151',
+                
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],
