@@ -7,6 +7,7 @@ type Props = {
     description: string;
     originalPrice?: string;
     discountedPrice?: string;
+    isScrolling?: boolean;
 };
 
 const CourseCard = ({
@@ -15,11 +16,12 @@ const CourseCard = ({
     title,
     discountedPrice = '2,999',
     originalPrice = '3,999',
+    isScrolling = false,
 }: Props) => {
     return (
         <div
-            className="grid grid-rows-12 h-[38rem] w-96 max-xss:w-full  rounded-lg bg-cardBrown hover:bg-primary p-4 
-        "
+            className={`grid grid-rows-12 h-[38rem] w-96   rounded-lg bg-cardBrown hover:bg-primary p-4
+                ${isScrolling ? 'max-[350px]:w-[320px]' : ' max-[350px]:w-full'} max-xss:p-2`}
         >
             <div className="row-span-6 relative min-h-[20rem] max-xss:h-full">
                 <Image src={image} className="object-cover" fill alt="courseImage" />
@@ -32,10 +34,10 @@ const CourseCard = ({
                 <div className="flex gap-2 items-end">
                     <p className="text-xl font-semibold ">
                         Rs:
-                        <span className="text-3xl font-semibold "> ${discountedPrice}</span>
+                        <span className="text-3xl font-semibold "> ₹{discountedPrice}</span>
                     </p>
                     <p className="text-xl  line-through text-gray-500 font-semibold">
-                        ${originalPrice}
+                        ₹{originalPrice}
                     </p>
                 </div>
             </div>
