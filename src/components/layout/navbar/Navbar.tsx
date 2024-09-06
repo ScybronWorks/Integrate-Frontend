@@ -30,7 +30,6 @@ const Navbar = () => {
     return (
         <>
             <DemoModal handleClose={() => toggleModal()} isOpen={isModalOpen} />
-
             <nav className="bg-transparent text-white absolute top-0 left-0 right-0 z-50">
                 <SectionCenter className="navbar relative ">
                     <div className="flex  justify-between items-center pt-10">

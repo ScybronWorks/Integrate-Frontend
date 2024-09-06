@@ -4,6 +4,7 @@ import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/header/Header';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+import CallScheduleModal from '@/components/molecular/callScheduleModal/CallScheduleModel';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
 import TeamCard from '@/components/molecular/teamCard/TeamCard';
@@ -12,7 +13,7 @@ import VisionCard from '@/components/molecular/visionCard/VisionCard';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Bounce, Slide, Zoom } from 'react-awesome-reveal';
 
 const NewsletterInput = () => {
@@ -34,7 +35,7 @@ export default function Home() {
     const courseScrollView = useRef<HTMLDivElement | null>(null);
     const testScrollView = useRef<HTMLDivElement | null>(null);
     const teamScrollView = useRef<HTMLDivElement | null>(null);
-
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     function onTeamScrollClick(type: 'right' | 'left') {
         if (!teamScrollView) return;
 
@@ -44,7 +45,6 @@ export default function Home() {
             teamScrollView.current.scrollLeft += 266;
         }
     }
-
     function onTestScrollClick(type: 'right' | 'left') {
         if (!testScrollView) return;
 
@@ -59,14 +59,17 @@ export default function Home() {
         if (!courseScrollView) return;
 
         if (type == 'left' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft -= 335;
+            courseScrollView.current.scrollLeft -= 400;
         } else if (type == 'right' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft += 335;
+            courseScrollView.current.scrollLeft += 400;
         }
     }
-
+ const toggleModal = () => {
+     setIsModalOpen(!isModalOpen);
+ };
     return (
         <main className="">
+            <CallScheduleModal handleClose={() => toggleModal()} isOpen={isModalOpen} />
             <Header backgroundImageType="home" type="lg" ClassName="text-white">
                 <SectionCenter className="h-full">
                     <div className="flex items-start justify-center h-full flex-col">
@@ -88,14 +91,23 @@ export default function Home() {
             </Header>
 
             <section className="w-full pt-24 pb-16">
-                <SectionCenter>
+                <SectionCenter className="max-1/2lx:px-5 max-xss:px-2">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1">
-                        <Slide duration={1000} direction="left" triggerOnce>
+                        <Slide
+                            duration={1000}
+                            direction="left"
+                            triggerOnce
+                            className="max-lg:order-1"
+                        >
                             <div className="h-full px-10 max-md:px-0 max-lg:order-1">
-                                <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
+                                <div
+                                    className="relative w-full h-[22rem] bg-titleBlack rounded-2xl
+                                max-xss:h-[17rem]
+                                "
+                                >
                                     <div
-                                        className=" absolute  h-[26rem] top-9 left-9 right-9 max-md:right-6
-                                max-md:bottom-6 max-md:left-6 
+                                        className=" absolute  h-[24rem] top-9 left-9 right-9 max-md:right-6
+                                max-md:bottom-6 max-md:left-6 max-xss:h-[19rem]
                                 "
                                     >
                                         <Image
@@ -117,11 +129,22 @@ export default function Home() {
                                 cascade
                                 damping={0.025}
                             >
-                                <h6 className="text-3xl font-italianno text-primary">About us</h6>
-                                <h1 className="text-4xl font-semibold">Empowering Minds</h1>
-                                <h1 className="text-4xl font-semibold">Shoping Futrues</h1>
+                                <h6 className="text-3xl font-italianno text-secondary">About us</h6>
+                                <h1
+                                    className="text-4xl font-semibold text-primary *:
+                                max-sm:text-3xl 
+                                "
+                                >
+                                    Empowering Minds <br />
+                                    Shaping Futrues
+                                </h1>
+
                                 {/* <h1 className="text-4xl font-semibold"></h1> */}
-                                <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
+                                <p
+                                    className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3
+                                max-sm:text-[0.9rem] max-sm:leading-7
+                                "
+                                >
                                     The firm aims to provide quality education for students who are
                                     thriving to achieve their maximum for different subjects in high
                                     school, higher secondary and for competitive examinations. We
@@ -135,7 +158,7 @@ export default function Home() {
                                 <Button
                                     href="/about"
                                     isLink={true}
-                                    type="primary"
+                                    type="secondary"
                                     className="!w-36 !h-11 mt-3"
                                 >
                                     Learn More
@@ -146,120 +169,99 @@ export default function Home() {
                 </SectionCenter>
             </section>
 
-            <ClipEdgeSection
-                className="text-white mb-0"
-                sectionCenterClassName="pt-14 max-md:pt-16"
-            >
-                <div className="" id="course">
-                    <Slide duration={1000} direction="down" triggerOnce>
-                        <h3 className="font-extrabold text-[2.5rem] max-md:text-[1.75rem]  max-md:text-center">
-                            Innovating education through technology, we empower students to achieve
-                            excellence in academics and competitive exams.
-                        </h3>
-                    </Slide>
-                    <div
-                        className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
-                        grid-rows-1
-                    "
-                    >
-                        {/* Map this and add slide left for odd and right for even index */}
-                        <Slide duration={1000} direction="left" triggerOnce>
-                            <VisionCard
-                                title="Vision"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
-                            />
-                        </Slide>
-                        <Slide duration={1000} direction="right" triggerOnce>
-                            <VisionCard
-                                title="Vision Aims included"
-                                description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
-                            />
-                        </Slide>
-                        <Slide duration={1000} direction="right" triggerOnce>
-                            <VisionCard
-                                title="Highlights"
-                                description={
-                                    <ul className="list-disc list-inside">
-                                        <li>
-                                            The evaluation of portions covered each day based on
-                                            daily exams.
-                                        </li>
-                                        <li>
-                                            Comprehensive tracking system to ensure studies.
-                                            (Student Monitoring System)
-                                        </li>
-                                        <li>
-                                            A high quality of education provided by a team of
-                                            experienced faculty.
-                                        </li>
-                                        <li>Personalised monitoring.</li>
-                                    </ul>
-                                }
-                            />
-                        </Slide>
-                        <Slide duration={1000} direction="right" triggerOnce>
-                            <VisionCard
-                                title="Why integrate?"
-                                description={
-                                    <ul className="list-disc list-inside">
-                                        <li>
-                                            A tailored monitoring system designed for individuals
-                                            requiring personalised attention.
-                                        </li>
-                                        <li>
-                                            A complete course material that offers a wide range of
-                                            information based on the curriculum.
-                                        </li>
-                                        <li>
-                                            Additional doubt-clearing sessions conducted based on
-                                            identified needs.
-                                        </li>
-                                        <li>Guaranteed revision modules prior to examinations.</li>
-                                        <li>Consistent communication with parents.</li>
-                                    </ul>
-                                }
-                            />
-                        </Slide>
+            <section className="bg-secondary max-1/2xl:mt-24 pb-20 ">
+                <SectionCenter className="text-white mb-0 pt-14 max-md:pt-10 !max-xss:px-0 relative">
+                    <div className=" max-2xl:hidden absolute top-10 -right-80 w-[19.8rem] h-[34rem]">
+                        <Image
+                            src="/img/home/childOpacity.png"
+                            fill
+                            objectFit="cover"
+                            className="rounded-2xl text-4xl"
+                            alt="About image"
+                        />
                     </div>
-                </div>
-                <div className="mt-20">
-                    <h6 className="text-3xl font-italianno text-center">Our Courses</h6>
-                    <h3 className="font-extrabold text-[2.5rem] max-w-[43rem] text-center mx-auto">
-                        Master YOur Exams: Expert Courses for Every Stage
-                    </h3>
-
-                    <div className="mt-16 relative">
+                    <div className="relative" id="course">
+                        <Slide duration={1000} direction="down" triggerOnce>
+                            <h3 className="font-extrabold text-primary text-[2.5rem] max-md:text-[1.75rem]  max-md:text-start max-sm:text-[1.5rem]">
+                                Innovating education through technology, we empower students to
+                                achieve excellence in academics and competitive exams.
+                            </h3>
+                        </Slide>
                         <div
-                            className="grid grid-flow-col overflow-auto scrollbar-hide gap-x-5 scroll-smooth"
-                            ref={courseScrollView}
+                            className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
+                        grid-rows-1 max-sm:mt-14 
+                        "
                         >
-                            {courseData.map((item, idx) => (
-                                <Slide key={idx} duration={1000} direction="right" triggerOnce>
-                                    <CourseCard
-                                        description={item.description}
-                                        image={item.image}
-                                        title={item.title}
-                                        discountedPrice={item.discountPrice}
-                                        originalPrice={item.originalPrice}
-                                    />
-                                </Slide>
-                            ))}
+                            {/* Map this and add slide left for odd and right for even index */}
+                            <Slide duration={1000} direction="left" triggerOnce>
+                                <VisionCard
+                                    title="Vision"
+                                    description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Aims included"
+                                    description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                                />
+                            </Slide>
                         </div>
-                        <span
-                            className="absolute -left-8 top-[50%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
-                            onClick={() => onCourseScrollClick('left')}
-                        >
-                            <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
-                        </span>
-                        <span
-                            className="absolute -right-8 top-[50%] w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
-                            onClick={() => onCourseScrollClick('right')}
-                        >
-                            <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
-                        </span>
                     </div>
-                </div>
-            </ClipEdgeSection>
+                </SectionCenter>
+            </section>
+
+            <section className="max-1/2xl:mt-24 pb-20 ">
+                <SectionCenter className="text-black mb-0 max-md:pt-10 max-xss:px-0 relative">
+                    <div className="mt-20">
+                        <h6 className="text-3xl font-italianno text-center text-secondary">
+                            Our Courses
+                        </h6>
+                        <h3 className="font-extrabold text-[2.5rem] max-w-[43rem] text-center mx-auto max-sm:text-[2rem] max-xss:text-[1.5rem]">
+                            Master Your Exams: Expert Courses for Every Stage
+                        </h3>
+
+                        <div className="mt-16 relative">
+                            <div
+                                className="grid grid-flow-col overflow-scroll scrollbar-hide gap-x-5 scroll-smooth
+                                max-xss:flex  snap-mandatory  snap-x
+                                "
+                                ref={courseScrollView}
+                            >
+                                {courseData.map((item, idx) => (
+                                    <Slide
+                                        className="snap-center"
+                                        key={idx}
+                                        duration={1000}
+                                        direction="right"
+                                        triggerOnce
+                                    >
+                                        <CourseCard
+                                            description={item.description}
+                                            image={item.image}
+                                            title={item.title}
+                                            discountedPrice={item.discountPrice}
+                                            originalPrice={item.originalPrice}
+                                            isScrolling={true}
+                                        />
+                                    </Slide>
+                                ))}
+                            </div>
+                            <span
+                                className="absolute -left-8 top-[30%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-primary cursor-pointer max-1/2lx:left-0 "
+                                onClick={() => onCourseScrollClick('left')}
+                            >
+                                <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
+                            </span>
+                            <span
+                                className="absolute -right-8 top-[30%] w-8 h-8 rounded-full text-black bg-primary cursor-pointer flex justify-center items-center max-1/2lx:right-0  "
+                                onClick={() => onCourseScrollClick('right')}
+                            >
+                                <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
+                            </span>
+                        </div>
+                    </div>
+                </SectionCenter>
+            </section>
             {/*  */}
             <section>
                 <SectionCenter className="py-24 max-md:py-10">
@@ -291,7 +293,7 @@ export default function Home() {
                                 <h6 className="text-3xl font-italianno ">
                                     Schedule a Call with Us
                                 </h6>
-                                <h1 className="text-4xl font-semibold">
+                                <h1 className="text-4xl font-semibold max-xss:text-[1.7rem]">
                                     <span className="text-primary">Connect</span> with our experts
                                     to discuss how we can support your educational goals.
                                 </h1>
@@ -301,12 +303,12 @@ export default function Home() {
                                     personalized assistance tailored to your needs.
                                 </p>
                                 <Button
-                                    href="/about"
-                                    isLink={true}
-                                    type="primary"
+                                    isLink={false}
+                                    type="secondary"
                                     className="!h-11 mt-8 pr-8 pl-8 pt-6 pb-6 w-fit max-md:text-sm"
+                                    onClick={() => toggleModal()}
                                 >
-                                    Shedule a Call?
+                                    Schedule a Call?
                                 </Button>
                             </Slide>
                         </div>

@@ -2,7 +2,7 @@ import { FormEvent } from 'react';
 
 type ButtonProps = {
     children: string;
-    type?: 'outline' | 'primary';
+    type?: 'outline' | 'primary' |'secondary';
     isLink?: boolean;
     href?: string;
     className?: string;
