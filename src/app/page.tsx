@@ -64,9 +64,9 @@ export default function Home() {
             courseScrollView.current.scrollLeft += 400;
         }
     }
- const toggleModal = () => {
-     setIsModalOpen(!isModalOpen);
- };
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
     return (
         <main className="">
             <CallScheduleModal handleClose={() => toggleModal()} isOpen={isModalOpen} />

@@ -1,127 +1,168 @@
-<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
+        <!-- HEAD -->
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>New Call Scheduled</title>
-        <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-            rel="stylesheet"
-        />
+        <title>Enquiry Form</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-            }
-            .email-container {
-                max-width: 600px;
-                margin: 0 auto;
-                background-color: #ffffff;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            .email-header,
-            .email-footer {
-                background-color: #003366;
-                color: #ffffff;
-                text-align: center;
+                font-family: Poppins, sans-serif;
                 padding: 20px;
+                background: #f1f1f1;
             }
-            .email-header img,
-            .email-footer img {
-                max-width: 150px;
-                height: auto;
-            }
-            .email-body {
+            .container {
                 background-color: #f6b662;
-                padding: 30px;
+                width: 80%;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .inner_container {
+                background-color: #372a25;
+                padding: 50px;
+                color: #ffffff;
+            }
+
+            header,
+            footer {
                 text-align: center;
             }
-            .email-body h1 {
-                color: #003366;
-                font-size: 24px;
-                margin-bottom: 10px;
+
+            .email_inner_section {
+                padding: 20px 0 50px 0;
             }
-            .email-body p {
-                color: #333333;
-                font-size: 16px;
-                margin: 20px 0;
+
+            hr {
+                height: 5px;
+                background-color: #f6b662;
+                border-color: #f6b662;
             }
-            .email-body .user-details {
-                background-color: #f4f4f4;
-                padding: 20px;
-                border-radius: 10px;
-                margin-bottom: 20px;
+
+            h1 {
+                color: #f6b662;
             }
-            .email-body .user-details h2 {
-                color: #003366;
-                font-size: 18px;
-                margin-bottom: 15px;
+
+            .enquiry_submission table {
+                text-align: left;
+                margin-top: 50px;
             }
-            .email-body .user-details p {
-                font-size: 15px;
-                color: #555555;
+
+            .enquiry_submission table tbody tr th {
+                width: 30%;
+                vertical-align: top;
             }
-            .email-footer p {
+
+            .enquiry_submission th,
+            .enquiry_submission td {
+                padding: 10px;
+                margin: 0;
+            }
+
+            .enquiry_submission th {
+                color: #f6b662;
+                font-weight: 900;
+                font-size: 0.8rem;
+                min-width: 200px;
+            }
+
+            .enquiry_submission td {
+                font-weight: 100;
                 color: #ffffff;
-                font-size: 14px;
             }
-            .email-body i {
-                color: #28a745;
-                font-size: 60px;
-                margin: 20px 0;
+
+            .email_footer {
+                font-size: 10px;
+                color: black;
+                padding: 20px 0;
             }
-            .schedule-button {
-                padding: 1rem 2rem;
-                display: flex;
-                align-items: center;
+
+            .email_footer a {
+                color: #ffffff;
                 text-decoration: none;
-                background: #372a25;
-                width: 110px;
-                height: 20px;
-                color: white;
-                gap: 1rem;
-                border-radius: 20px;
+            }
+            .address {
+                width: 50%;
                 margin: 0 auto;
+            }
+
+            @media only screen and (max-width: 500px) {
+                .enquiry_submission th,
+                .enquiry_submission td {
+                    display: block;
+                    width: 100% !important;
+                }
             }
         </style>
     </head>
+
+    <!-- BODY -->
     <body>
-        <div class="email-container">
-            <!-- Header with Logo -->
-            <div class="email-header">
-                <img src="https://iili.io/dvM8eIV.png" alt="Company Logo" />
-            </div>
-
-            <!-- Body Content -->
-            <div class="email-body">
-                <h1>New Call Scheduled</h1>
-                <p>
-                    You have a new call scheduled from your portfolio website. Here are the details:
-                </p>
-
-                <!-- User Details Section -->
-                <div class="user-details">
-                    <h2>Contact Details</h2>
-                    <p><strong>Name:</strong> {{name}}</p>
-                    <p><strong>Phone:</strong> {{number}}</p>
-                    <p><strong>Preferred Time:</strong> {{time}}</p>
+        <div class="container">
+            <div class="inner_container">
+                <header>
+                    <img src="https://iili.io/dvM8eIV.png" width="150px" />
+                    <h1>Enquiry Submission</h1>
+                </header>
+                <hr />
+                <div class="email_content">
+                    <div class="email_inner_section">
+                        <section>
+                            <h3>Hi Admin, you have a new enquiry submission from ${name}.</h3>
+                        </section>
+                        <section class="enquiry_submission">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <td>${name}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Client's Email Address</th>
+                                        <td>${email}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Client's Contact Number</th>
+                                        <td>${phone}</td>
+                                    </tr>
+                                    ${ course && `
+                                    <tr>
+                                        <th>Client's Selected Course</th>
+                                        <td>${course}</td>
+                                    </tr>
+                                    ` }
+                                    <tr>
+                                        <th>Client's Subject</th>
+                                        <td>${subject}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Client's Message</th>
+                                        <td>${message}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
                 </div>
-                <!-- Decorative Icon -->
-                <a href="tel:9895689287" class="schedule-button">
-                    <i class="fas fa-phone-alt" style="font-size: 1.5rem; color: white"></i>
-                    Call now
-                </a>
             </div>
+            <!-- Footer -->
+            <footer>
+                <section class="email_footer">
+                    <img
+                        src="https://iili.io/dvM8eIV.png"
+                        width="150px"
+                        style="margin-bottom: 30px"
+                    />
 
-            <!-- Footer with Logo -->
-            <div class="email-footer">
-                <img src="https://iili.io/dvM8eIV.png" alt="Company Logo" />
-                <p>&copy; {{year}} Integrate. All rights reserved.</p>
-            </div>
+                    <p class="address">
+                        Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33, Santhi
+                        Nagar residence, Muppathadam (P.O) Aluva,
+                    </p>
+                    <p>
+                        Copyright &copy; ${new Date().getFullYear()} Integrate All Rights Reserved
+                    </p>
+                </section>
+            </footer>
+            <!-- footer ends -->
         </div>
     </body>
 </html>
