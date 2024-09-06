@@ -164,7 +164,5 @@ function createEmailTemplate({ phone, name, course, preferredTime }: EmailData) 
         </div>
     </body>
 </html>
-
-
-      `;
+`;
 }
