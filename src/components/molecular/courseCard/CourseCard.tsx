@@ -32,10 +32,10 @@ const CourseCard = ({
                 <div className="flex gap-2 items-end">
                     <p className="text-xl font-semibold ">
                         Rs:
-                        <span className="text-3xl font-semibold "> ${discountedPrice}</span>
+                        <span className="text-3xl font-semibold "> ₹{discountedPrice}</span>
                     </p>
                     <p className="text-xl  line-through text-gray-500 font-semibold">
-                        ${originalPrice}
+                        ₹{originalPrice}
                     </p>
                 </div>
             </div>
