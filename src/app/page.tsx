@@ -4,6 +4,7 @@ import { serviceData } from '@/@db/service';
 import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/header/Header';
+import Loading from '@/components/layout/loading/Loading';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
 import CallScheduleModal from '@/components/molecular/callScheduleModal/CallScheduleModel';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
@@ -14,7 +15,7 @@ import VisionCard from '@/components/molecular/visionCard/VisionCard';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Bounce, Slide, Zoom } from 'react-awesome-reveal';
 
 const NewsletterInput = () => {
