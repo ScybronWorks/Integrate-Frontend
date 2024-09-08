@@ -1,5 +1,6 @@
 'use client';
 import { courseData } from '@/@db/course';
+import { serviceData } from '@/@db/service';
 import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/header/Header';
@@ -113,8 +114,7 @@ export default function Home() {
                                         <Image
                                             src="/img/home/about.png"
                                             fill
-                                            objectFit="cover"
-                                            className="rounded-2xl text-4xl"
+                                            className="rounded-2xl text-4xl object-cover"
                                             alt="About image"
                                         />
                                     </div>
@@ -175,8 +175,7 @@ export default function Home() {
                         <Image
                             src="/img/home/childOpacity.png"
                             fill
-                            objectFit="cover"
-                            className="rounded-2xl text-4xl"
+                            className="rounded-2xl text-4xl object-cover"
                             alt="About image"
                         />
                     </div>
@@ -276,9 +275,8 @@ export default function Home() {
                                 <Image
                                     src={'/img/home/brain.png'}
                                     fill
-                                    objectFit="contain"
                                     alt="About image"
-                                    className="!relative  object-center-top md:object-right-top "
+                                    className="!relative  object-center-top object-contain md:object-right-top "
                                 />
                             </div>
                         </Slide>
@@ -338,22 +336,12 @@ export default function Home() {
                         </Slide>
                         <div className="flex gap-10 mt-11 w-full justify-start items-start flex-row max-1/2xl:flex-col max-sm:items-center">
                             <div className="flex flex-row gap-10 max-sm:flex-col">
-                                {Array.from({ length: 2 }).map((_, index) => (
+                                {serviceData.map((item, idx) => (
                                     <ServiceCard
-                                        title="Tutoring"
-                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
-                                        image="/img/tutoring.png"
-                                        key="1"
-                                    />
-                                ))}
-                            </div>
-                            <div className="flex flex-row gap-10 max-sm:flex-col">
-                                {Array.from({ length: 2 }).map((_, index) => (
-                                    <ServiceCard
-                                        title="Tutoring"
-                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
-                                        image="/img/tutoring.png"
-                                        key="1"
+                                        title={item.title}
+                                        description={item.description}
+                                        image={item.image}
+                                        key={idx}
                                     />
                                 ))}
                             </div>
@@ -361,9 +349,8 @@ export default function Home() {
                     </div>
                 </SectionCenter>
             </section>
-
             {/* Our Team Section */}
-            <section className="w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
+            <section className="hidden w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
                 <SectionCenter className="h-full">
                     <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
                         <div className="flex flex-col items-start justify-start gap-[3.375rem] max-1/2xl:hidden">
@@ -442,18 +429,40 @@ export default function Home() {
             </section>
 
             {/* Newsletter Section */}
-            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-gradient-primary-linear">
-                <SectionCenter className="h-full">
-                    <div className="flex justify-center items-start flex-col w-[100%]">
-                        <div className="text-[3.5rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-white leading-[4.25rem] font-normal">
-                            Subscribe to Our Newsletter...
+            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-primary relative">
+                <div
+                    className="absolute max-md:bottom-16 max-md:-right-16 max-md:w-[550px] mad-md:h-[170px] w-[800px] h-[219px] -right-16 bottom-20  max-md:hidden
+                "
+                >
+                    <Image
+                        src={'/img/logo/logo.png'}
+                        alt="logo"
+                        fill
+                        className="!relative opacity-[15%]  -rotate-[25deg]"
+                    />
+                </div>
+                <SectionCenter className="h-full ">
+                    <div className="flex gap-16">
+                        <div className="relative max-md:hidden">
+                            <Image
+                                alt="integrate boy logo"
+                                src={'/img/home/boy.png'}
+                                width={342}
+                                height={417}
+                            />
                         </div>
-                        <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light max-w-[41rem] mt-[1.4375rem] max-sm:mt-[0.6875rem] max-sm:text-[0.8125rem]">
-                            Subscribe to our Gmail notifications for timely updates and important
-                            announcements. Never miss out on valuable information and new resources!
+                        <div className="flex justify-center items-start flex-col w-[100%] z-50">
+                            <div className="text-[3.5rem] max-sm:text-[2.5rem] max-sm:leading-none font-italianno text-white leading-[4.25rem] font-normal z-20 max-[350px]:text-[2.25rem]">
+                                Subscribe to Our Newsletter...
+                            </div>
+                            <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light max-w-[41rem] mt-[1.4375rem] max-sm:mt-[0.6875rem] max-sm:text-[0.8125rem] z-20">
+                                Subscribe to our Gmail notifications for timely updates and
+                                important announcements. Never miss out on valuable information and
+                                new resources!
+                            </div>
+                            {/* Newsletter Input Component */}
+                            <NewsletterInput />
                         </div>
-                        {/* Newsletter Input Component */}
-                        <NewsletterInput />
                     </div>
                 </SectionCenter>
             </section>
@@ -463,13 +472,13 @@ export default function Home() {
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
                         <Slide duration={1000} direction="down" triggerOnce cascade damping={0.025}>
-                            <div className="text-[2rem] font-italianno text-primary leading-10 text-center">
+                            <div className="text-[2rem] font-italianno text-black leading-10 text-center">
                                 Testimonials
                             </div>
                             <div className="text-[1.5rem] sm:text-[2rem] font-bold text-titleBlack leading-10 text-center">
                                 What Our Students Say
                             </div>
-                            <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem] max-w-[500px]">
+                            <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-primary text-center mt-[1rem] max-w-[500px]">
                                 Hear from Our Satisfied Clients and Students. Real Stories of
                                 Success and Satisfaction.
                             </div>

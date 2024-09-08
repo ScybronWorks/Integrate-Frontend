@@ -7,7 +7,7 @@ type Props = {
     className?: string;
 };
 
-const VisionCard = ({ title, description, type = 'primary',className }: Props) => {
+const VisionCard = ({ title, description, type = 'primary', className }: Props) => {
     return (
         <div
             className={`w-full h-full p-8 flex-col rounded-tr-lg rounded-br-[3rem] ${className}  ${type === 'primary' ? 'bg-white text-black' : 'bg-secondary text-white'}`}
