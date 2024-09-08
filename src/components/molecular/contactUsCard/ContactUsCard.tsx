@@ -3,30 +3,14 @@ import React from 'react';
 import ContactData from './ContactData';
 import ContactUsForm from './ContactUsForm';
 import { Fade } from 'react-awesome-reveal';
+import { contactDetails } from '@/@db/contact';
 
 type Props = {};
 
 const ContactUsCard = ({}: Props) => {
-    const contactDetails = [
-        {
-            title: 'Address',
-            description: `Integrate Edutech Pvt. Ltd. House no 370,Manedath house, Near Mannam Post office Mannam P.O, N. Paravoor, Ernakulam Kerala – 683520`,
-            image: '/icons/address.svg',
-        },
-        {
-            title: 'Email',
-            description: `edutechintegrate@gmail.com`,
-            image: '/icons/email.svg',
-        },
-        {
-            title: 'Phone',
-            description: `+91 9061707144, +91 8129927073`,
-            image: '/icons/phone.svg',
-        },
-    ];
     return (
         <>
-            <div className="w-full h-[34rem] bg-gradient-primary-linear hidden md:flex flex-col p-8 rounded-br-[3rem] rounded-tr-lg text-white mb-44 mt-20">
+            <div className="w-full h-[34rem] bg-secondary hidden md:flex flex-col p-8 rounded-br-[3rem] rounded-tr-lg text-white mb-44 mt-20">
                 <Fade triggerOnce>
                     <div className="w-fit flex flex-col gap-2 py-2">
                         <h2 className="text-6xl font-semibold">Let{`'`}s connect now</h2>
@@ -57,7 +41,7 @@ const ContactUsCard = ({}: Props) => {
 
             {/* mdall Screen */}
             <div className="flex flex-col gap-10">
-                <div className="w-full h-fit bg-gradient-primary-linear flex md:hidden flex-col p-8 rounded-br-[3rem] rounded-tr-lg text-white mt-20">
+                <div className="w-full h-fit flex md:hidden flex-col p-8 rounded-br-[3rem] rounded-tr-lg bg-secondary mt-20 text-white">
                     <Fade triggerOnce>
                         <div className="w-fit flex flex-col gap-2 py-2">
                             <h2 className="text-6xl font-semibold">Let{`'`}s connect now</h2>
