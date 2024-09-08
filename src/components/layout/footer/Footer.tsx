@@ -115,7 +115,7 @@ const Footer = () => {
                         </div>
                         <div className="flex gap-2">
                             <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
-                            <span>admin@testtest@gmail.com</span>
+                            <span>edutechintegrate@gmail.com</span>
                         </div>
                     </div>
                 </SectionCenter>
