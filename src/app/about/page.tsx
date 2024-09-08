@@ -35,26 +35,26 @@ const AboutUs = () => {
                             </h1>
                         </Slide>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 py-16 ">
-                            <div className="grid-cols-2 h-full">
-                                <Slide direction="left" duration={1000} triggerOnce>
-                                    <VisionCard
-                                        title="Our Aim"
-                                        type="secondary"
-                                        className='pb-16'
-                                        description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
-                                    />
-                                </Slide>
-                            </div>
-                            <div className='h-full'>
-                                <Slide direction="right" duration={1000} triggerOnce>
-                                    <VisionCard
-                                        title="Our Vision"
-                                        type="secondary"
-                                        description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
-                                    />
-                                </Slide>
-                            </div>
+                        <div
+                            className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
+                                grid-rows-1 max-sm:mt-14 
+                        "
+                        >
+                            {/* Map this and add slide left for odd and right for even index */}
+                            <Slide duration={1000} direction="left" triggerOnce>
+                                <VisionCard
+                                    title="Vision"
+                                    type="secondary"
+                                    description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Aims included"
+                                    type="secondary"
+                                    description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                                />
+                            </Slide>
                         </div>
                     </div>
 
@@ -189,9 +189,9 @@ const AboutUs = () => {
                         </Fade>
                     </div>
 
-                    <div className="flex items-center justify-between w-full md:w-1/2 pt-6">
-                        <span className="flex flex-col space-y-3">
-                            <span className="flex items-center space-x-2 relative">
+                    <div className="flex items-center justify-between w-full md:w-1/2 pt-6 gap-2">
+                        <span className="flex flex-col space-y-3 max-md:items-center text-center">
+                            <span className="flex items-center space-x-0 relative">
                                 <p className="text-3xl md:text-5xl font-semibold text-primary">
                                     <CountUp end={12} duration={3} />
                                 </p>
@@ -199,11 +199,11 @@ const AboutUs = () => {
                                     +
                                 </p>
                             </span>
-                            <p className="text-base font-bold">Courses Available</p>
+                            <p className="text-base font-bold max-sm:text-xs">Courses Available</p>
                         </span>
 
-                        <span className="flex flex-col space-y-3">
-                            <span className="flex items-center space-x-2 relative">
+                        <span className="flex flex-col space-y-3 max-md:items-center text-center">
+                            <span className="flex items-center space-x-0 relative ">
                                 <p className="text-3xl md:text-5xl font-semibold text-primary">
                                     <CountUp end={5000} duration={3} />
                                 </p>
@@ -211,11 +211,13 @@ const AboutUs = () => {
                                     +
                                 </p>
                             </span>
-                            <p className="text-base font-bold">Successful Students</p>
+                            <p className="text-base font-bold max-sm:text-xs">
+                                Successful Students
+                            </p>
                         </span>
 
-                        <span className="flex flex-col space-y-3">
-                            <span className="flex items-center space-x-2 relative">
+                        <span className="flex flex-col space-y-3 max-md:items-center text-center">
+                            <span className="flex items-center space-x-0 relative">
                                 <p className="text-3xl md:text-5xl font-semibold text-primary">
                                     <CountUp end={30} duration={3} />
                                 </p>
@@ -223,19 +225,25 @@ const AboutUs = () => {
                                     +
                                 </p>
                             </span>
-                            <p className="text-base font-bold">Qualified Instructors</p>
+                            <p className="text-base font-bold max-sm:text-xs">
+                                Qualified Instructors
+                            </p>
                         </span>
                     </div>
 
                     <div className="py-10">
                         <Slide direction="up" duration={1000} triggerOnce>
-                            <Image
-                                src="/img/about/AboutImage.png"
-                                alt="about-image"
-                                width={1400}
-                                height={800}
-                                className="w-full h-full object-cover clip-path-image"
-                            />
+                            <div
+                                className=" h-auto relative aspect-[5/2] max-md:aspect-[3/2]
+                            "
+                            >
+                                <Image
+                                    src="/img/about/AboutImage.png"
+                                    alt="about-image"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </Slide>
                     </div>
                 </div>

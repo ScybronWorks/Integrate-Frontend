@@ -94,7 +94,7 @@ const Gallery = () => {
                                 src={item.src}
                                 isImage={item.isImage}
                                 text={item.title}
-                                thumbnail={item.thumnail}
+                                thumbnail={item.thumbnail}
                             />
                         </div>
                     ))}
