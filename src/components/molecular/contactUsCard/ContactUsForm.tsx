@@ -115,7 +115,7 @@ const ContactUsForm = (props: Props) => {
                 <Button
                     className="w-fit mt-4"
                     onClick={handleSubmit}
-                    type='secondary'
+                    type="secondary"
                     isSubmitting={isSubmitting}
                 >
                     Submit Now

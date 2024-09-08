@@ -32,11 +32,11 @@ const Navbar = () => {
             <DemoModal handleClose={() => toggleModal()} isOpen={isModalOpen} />
             <nav className="bg-transparent text-white absolute top-0 left-0 right-0 z-50">
                 <SectionCenter className="navbar relative ">
-                    <div className="flex  justify-between items-center pt-10">
-                        <div className="w-[11.65rem] md:w-[19.3rem] h-[4rem] md:h-[4.75rem]">
+                    <div className="flex  justify-between items-center pt-10 px-3">
+                        <div className="w-[13rem] h-[3.3rem]    ">
                             <img
                                 className="w-full h-full object-cover object-center"
-                                src="https://img.freepik.com/free-photo/cement-texture_1194-5331.jpg"
+                                src="/img/logo/logo.png"
                                 alt="Logo"
                             />
                         </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                 Demo
                             </Button>
                         </div>
-                        <div className="flex items-center">
+                        <div className=" items-center hidden max-1/2lx:flex transition-all">
                             <button className="1/2lx:hidden" onClick={() => setIsOpen(true)}>
                                 <Image
                                     src="/icons/Hamburger.png"
@@ -88,9 +88,10 @@ const Navbar = () => {
                                             <Link
                                                 key={link.id}
                                                 className={twMerge(
-                                                    location.pathname === link.href && 'bg-primary',
-                                                    `w-full px-6 py-5 uppercase text-sm hover:bg-primary
-                                        transition-colors duration-300 ease-linear`
+                                                    location.pathname === link.href &&
+                                                        'bg-secondary',
+                                                    `w-full px-6 py-5 uppercase text-sm hover:bg-secondary
+                                                    transition-colors duration-300 ease-linear`
                                                 )}
                                                 href={link.href}
                                             >
@@ -103,6 +104,7 @@ const Navbar = () => {
                                                 setIsModalOpen(true);
                                             }}
                                             className="my-2"
+                                            type="primary"
                                         >
                                             Demo
                                         </Button>
