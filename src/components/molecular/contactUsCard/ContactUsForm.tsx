@@ -58,10 +58,10 @@ const ContactUsForm = (props: Props) => {
         }
     };
     return (
-        <div className="w-full h-fit p-8 py-12 flex flex-col gap-4 bg-white text-black rounded-tr-lg rounded-br-[3rem]">
+        <div className="w-full h-fit p-8 py-12 flex flex-col gap-4 bg-white text-secondary rounded-tr-lg rounded-br-[3rem]">
             <Fade triggerOnce>
                 <div className="flex flex-col gap-2">
-                    <h2 className="text-primary text-3xl font-bold">Enquiry Form</h2>
+                    <h2 className=" text-3xl font-bold text-secondary">Enquiry Form</h2>
                     <p className="font-italianno text-lg">
                         Submit Your Inquiry: We{`'`}ll Get Back to You with the Information You
                         Need.
@@ -115,7 +115,7 @@ const ContactUsForm = (props: Props) => {
                 <Button
                     className="w-fit mt-4"
                     onClick={handleSubmit}
-                    isLightBg
+                    type='secondary'
                     isSubmitting={isSubmitting}
                 >
                     Submit Now
