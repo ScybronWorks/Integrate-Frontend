@@ -18,8 +18,8 @@ const config: Config = {
                     'linear-gradient(273.16deg, rgba(0, 0, 0, 0.49) 1.05%, rgba(0, 0, 0, 0.7) 82.9%), url("/img/home/services.png")',
             },
             colors: {
-                primary: '#4F34B7',
-                secondary: '#CDC7ED',
+                primary: '#F6B662',
+                secondary: '#372A25',
                 titleBlack: '#1E1E1E',
                 textMuted: '#817E7B',
                 cardBrown: '#393023',
@@ -27,6 +27,7 @@ const config: Config = {
                 teamCardBg: '#DEDAF1',
                 contactInputBg: '#EDEAFF',
                 navActive: '#DEDAF1',
+                
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],
@@ -40,8 +41,9 @@ const config: Config = {
                 '1/2xl': '1420px',
                 xss: '384px',
                 '3xl': '1722px',
-                '1/2lx':"1180px",
+                '1/2lx': '1180px',
                 ...defaultTheme.screens,
+                small:'350px'
             },
             backgroundPosition: {
                 'top-left-1rem': '60% 50%',

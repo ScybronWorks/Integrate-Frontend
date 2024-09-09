@@ -1,9 +1,13 @@
 'use client';
 import { courseData } from '@/@db/course';
+import { serviceData } from '@/@db/service';
+import Arrow from '@/components/atomic/arrow/Arrow';
 import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/header/Header';
+import Loading from '@/components/layout/loading/Loading';
 import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+import CallScheduleModal from '@/components/molecular/callScheduleModal/CallScheduleModel';
 import CourseCard from '@/components/molecular/courseCard/CourseCard';
 import ServiceCard from '@/components/molecular/serviceCard/ServiceCard';
 import TeamCard from '@/components/molecular/teamCard/TeamCard';
@@ -12,7 +16,7 @@ import VisionCard from '@/components/molecular/visionCard/VisionCard';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Bounce, Slide, Zoom } from 'react-awesome-reveal';
 
 const NewsletterInput = () => {
@@ -34,7 +38,8 @@ export default function Home() {
     const courseScrollView = useRef<HTMLDivElement | null>(null);
     const testScrollView = useRef<HTMLDivElement | null>(null);
     const teamScrollView = useRef<HTMLDivElement | null>(null);
-
+    const serviceScrollView = useRef<HTMLDivElement | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     function onTeamScrollClick(type: 'right' | 'left') {
         if (!teamScrollView) return;
 
@@ -44,7 +49,6 @@ export default function Home() {
             teamScrollView.current.scrollLeft += 266;
         }
     }
-
     function onTestScrollClick(type: 'right' | 'left') {
         if (!testScrollView) return;
 
@@ -59,14 +63,27 @@ export default function Home() {
         if (!courseScrollView) return;
 
         if (type == 'left' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft -= 335;
+            courseScrollView.current.scrollLeft -= 400;
         } else if (type == 'right' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft += 335;
+            courseScrollView.current.scrollLeft += 400;
+        }
+    }
+    function onServiceScrollClick(type: 'right' | 'left') {
+        if (!serviceScrollView) return;
+
+        if (type == 'left' && serviceScrollView.current) {
+            serviceScrollView.current.scrollLeft -= 256;
+        } else if (type == 'right' && serviceScrollView.current) {
+            serviceScrollView.current.scrollLeft += 256;
         }
     }
 
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
     return (
         <main className="">
+            <CallScheduleModal handleClose={() => toggleModal()} isOpen={isModalOpen} />
             <Header backgroundImageType="home" type="lg" ClassName="text-white">
                 <SectionCenter className="h-full">
                     <div className="flex items-start justify-center h-full flex-col">
@@ -80,7 +97,7 @@ export default function Home() {
                         </div>
                         <div className="pt-5">
                             <Slide duration={1000} direction="up" triggerOnce>
-                                <Button className="text-sm  w-40 h-14">Discover More</Button>
+                                <Button className="text-lg  w-40 h-14">Discover More</Button>
                             </Slide>
                         </div>
                     </div>
@@ -88,28 +105,36 @@ export default function Home() {
             </Header>
 
             <section className="w-full pt-24 pb-16">
-                <SectionCenter>
+                <SectionCenter className="max-1/2lx:px-5 max-xss:px-2">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1">
-                        <Slide duration={1000} direction="left" triggerOnce>
+                        <Slide
+                            duration={1000}
+                            direction="left"
+                            triggerOnce
+                            className="max-lg:order-1"
+                        >
                             <div className="h-full px-10 max-md:px-0 max-lg:order-1">
-                                <div className="relative w-full h-96 bg-titleBlack rounded-2xl">
+                                <div
+                                    className="relative w-full h-[22rem] bg-titleBlack rounded-2xl
+                                max-xss:h-[17rem]
+                                "
+                                >
                                     <div
-                                        className=" absolute  h-[26rem] top-9 left-9 right-9 max-md:right-6
-                                max-md:bottom-6 max-md:left-6 
+                                        className=" absolute  h-[24rem] top-9 left-9 right-9 max-md:right-6
+                                max-md:bottom-6 max-md:left-6 max-xss:h-[19rem]
                                 "
                                     >
                                         <Image
                                             src="/img/home/about.png"
                                             fill
-                                            objectFit="cover"
-                                            className="rounded-2xl text-4xl"
+                                            className="rounded-2xl text-4xl object-cover"
                                             alt="About image"
                                         />
                                     </div>
                                 </div>
                             </div>
                         </Slide>
-                        <div className="">
+                        <div className="max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
                                 direction="right"
@@ -117,25 +142,34 @@ export default function Home() {
                                 cascade
                                 damping={0.025}
                             >
-                                <h6 className="text-3xl font-italianno text-primary">About us</h6>
-                                <h1 className="text-4xl font-semibold">Empowering Minds</h1>
-                                <h1 className="text-4xl font-semibold">Shoping Futrues</h1>
+                                <h6 className="text-3xl font-italianno text-secondary">About us</h6>
+                                <h1
+                                    className="text-4xl font-semibold text-primary *:
+                                max-sm:text-3xl 
+                                "
+                                >
+                                    Empowering Minds <br />
+                                </h1>
+
                                 {/* <h1 className="text-4xl font-semibold"></h1> */}
-                                <p className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3">
+                                <p
+                                    className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3
+                                max-sm:text-[0.9rem] max-sm:leading-7
+                                "
+                                >
                                     The firm aims to provide quality education for students who are
-                                    thriving to achieve their maximum for different subjects in high
-                                    school, higher secondary and for competitive examinations. We
-                                    are dedicated in providing online as well as offline class for
-                                    various prime subjects such as chemistry, physics, mathematics
-                                    and other; for both school level and career oriented competitive
-                                    level examinations such as JEE, NEET, KEAM etc. The classes
-                                    comes with expert teaching faculties and supplementary mentor
-                                    support.
+                                    striving to achieve their maximum potential in different
+                                    subjects in high school and higher secondary. We are dedicated
+                                    to providing online as well as offline classes for various prime
+                                    subjects such as chemistry, physics, mathematics, and more,
+                                    helping students build a strong foundation. The classes come
+                                    with expert teaching faculties and supplementary mentor support,
+                                    ensuring personalized attention for every student.
                                 </p>
                                 <Button
                                     href="/about"
                                     isLink={true}
-                                    type="primary"
+                                    type="secondary"
                                     className="!w-36 !h-11 mt-3"
                                 >
                                     Learn More
@@ -146,73 +180,98 @@ export default function Home() {
                 </SectionCenter>
             </section>
 
-            <ClipEdgeSection
-                className="text-white mb-0"
-                sectionCenterClassName="pt-14 max-md:pt-16"
-            >
-                <div className="" id="course">
-                    <Slide duration={1000} direction="down" triggerOnce>
-                        <h3 className="font-extrabold text-[2.5rem] max-md:text-[1.75rem]  max-md:text-center">
-                            Innovating education through technology, we empower students to achieve
-                            excellence in academics and competitive exams.
-                        </h3>
-                    </Slide>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 mt-20">
-                        {/* Map this and add slide left for odd and right for even index */}
-                        <Slide duration={1000} direction="left" triggerOnce>
-                            <VisionCard
-                                title="Our Aim"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                            technology, providing individualized education and ensuring student with diverse
-                            learning styles, thereby making your dreams come true."
-                            />
-                        </Slide>
-                        <Slide duration={1000} direction="right" triggerOnce>
-                            <VisionCard
-                                title="Our Aim"
-                                description="The prime objective of Integrate is to improve the learning outcomes with enhanced
-                            technology, providing individualized education and ensuring student with diverse
-                            learning styles, thereby making your dreams come true."
-                            />
-                        </Slide>
+            <section className="bg-secondary max-1/2xl:mt-24 pb-20 ">
+                <SectionCenter className="text-white mb-0 pt-14 max-md:pt-10 !max-xss:px-0 relative">
+                    <div className=" max-2xl:hidden absolute top-10 -right-80 w-[19.8rem] h-[34rem]">
+                        <Image
+                            src="/img/home/childOpacity.png"
+                            fill
+                            className="rounded-2xl text-4xl object-cover"
+                            alt="About image"
+                        />
                     </div>
-                </div>
-                <div className="mt-20">
-                    <h6 className="text-3xl font-italianno text-center">Our Courses</h6>
-                    <h3 className="font-extrabold text-[2.5rem] max-w-[43rem] text-center mx-auto">
-                        Master YOur Exams: Expert Courses for Every Stage
-                    </h3>
-
-                    <div className="mt-16 relative">
+                    <div className="relative" id="course">
+                        <Slide duration={1000} direction="down" triggerOnce>
+                            <h3 className="font-extrabold text-primary text-[2.5rem] max-md:text-[1.75rem]  max-md:text-start max-sm:text-[1.5rem]">
+                                Innovating education through technology, we empower students to
+                                achieve excellence in academics and competitive exams.
+                            </h3>
+                        </Slide>
                         <div
-                            className="grid grid-flow-col overflow-auto scrollbar-hide gap-x-5 scroll-smooth"
-                            ref={courseScrollView}
+                            className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
+                                grid-rows-1 max-sm:mt-14 
+                        "
                         >
-                            {courseData.map((item, idx) => (
-                                <Slide key={idx} duration={1000} direction="right" triggerOnce>
-                                    <CourseCard
-                                        description={item.description}
-                                        image={item.image}
-                                        title={item.title}
-                                    />
-                                </Slide>
-                            ))}
+                            {/* Map this and add slide left for odd and right for even index */}
+                            <Slide duration={1000} direction="left" triggerOnce>
+                                <VisionCard
+                                    title="Vision"
+                                    description="The organization is committed to empowering every student striving to reach their full potential in high school and higher secondary education by leveraging modern technologies and innovations, thereby anticipating the transformative possibilities within the educational system through the integration of technology."
+                                />
+                            </Slide>
+                            <Slide duration={1000} direction="right" triggerOnce>
+                                <VisionCard
+                                    title="Aims included"
+                                    description="The firm aims to provide quality education for students who are striving to achieve their maximum in different subjects in high school and higher secondary. We are committed to providing online as well as offline classes for a variety of essential subjects like chemistry, physics, mathematics, and more, focusing entirely on helping students excel in their academic journey and succeed in their school-level education."
+                                />
+                            </Slide>
                         </div>
-                        <span
-                            className="absolute -left-8 top-[50%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
-                            onClick={() => onCourseScrollClick('left')}
-                        >
-                            <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
-                        </span>
-                        <span
-                            className="absolute -right-8 top-[50%] w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
-                            onClick={() => onCourseScrollClick('right')}
-                        >
-                            <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
-                        </span>
                     </div>
-                </div>
-            </ClipEdgeSection>
+                </SectionCenter>
+            </section>
+
+            <section className="max-1/2xl:mt-24 pb-20 ">
+                <SectionCenter className="text-black mb-0 max-md:pt-10 max-xss:px-0 relative">
+                    <div className="mt-20">
+                        <h6 className="text-3xl font-italianno text-center text-secondary">
+                            Our Courses
+                        </h6>
+                        <h3 className="font-extrabold text-[2.5rem] max-w-[43rem] text-center mx-auto max-sm:text-[2rem] max-xss:text-[1.5rem]">
+                            Master Your Exams: Expert Courses for Every Stage
+                        </h3>
+
+                        <div className="mt-16 relative">
+                            <div
+                                className="grid grid-flow-col overflow-scroll scrollbar-hide gap-x-5 scroll-smooth
+                                max-xss:flex  snap-mandatory  snap-x
+                                "
+                                ref={courseScrollView}
+                            >
+                                {courseData.map((item, idx) => (
+                                    <Slide
+                                        className="snap-center"
+                                        key={idx}
+                                        duration={1000}
+                                        direction="right"
+                                        triggerOnce
+                                    >
+                                        <CourseCard
+                                            description={item.description}
+                                            image={item.image}
+                                            title={item.title}
+                                            discountedPrice={item.discountPrice}
+                                            originalPrice={item.originalPrice}
+                                            isScrolling={true}
+                                        />
+                                    </Slide>
+                                ))}
+                            </div>
+                            <span
+                                className="absolute -left-8 top-[30%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-primary cursor-pointer max-1/2lx:left-0 "
+                                onClick={() => onCourseScrollClick('left')}
+                            >
+                                <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
+                            </span>
+                            <span
+                                className="absolute -right-8 top-[30%] w-8 h-8 rounded-full text-black bg-primary cursor-pointer flex justify-center items-center max-1/2lx:right-0  "
+                                onClick={() => onCourseScrollClick('right')}
+                            >
+                                <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
+                            </span>
+                        </div>
+                    </div>
+                </SectionCenter>
+            </section>
             {/*  */}
             <section>
                 <SectionCenter className="py-24 max-md:py-10">
@@ -227,13 +286,12 @@ export default function Home() {
                                 <Image
                                     src={'/img/home/brain.png'}
                                     fill
-                                    objectFit="contain"
                                     alt="About image"
-                                    className="!relative  object-center-top md:object-right-top "
+                                    className="!relative  object-center-top object-contain md:object-right-top "
                                 />
                             </div>
                         </Slide>
-                        <div className="md:order-1">
+                        <div className="md:order-1 max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
                                 direction="right"
@@ -244,7 +302,7 @@ export default function Home() {
                                 <h6 className="text-3xl font-italianno ">
                                     Schedule a Call with Us
                                 </h6>
-                                <h1 className="text-4xl font-semibold">
+                                <h1 className="text-4xl font-semibold max-xss:text-[1.7rem]">
                                     <span className="text-primary">Connect</span> with our experts
                                     to discuss how we can support your educational goals.
                                 </h1>
@@ -254,12 +312,12 @@ export default function Home() {
                                     personalized assistance tailored to your needs.
                                 </p>
                                 <Button
-                                    href="/about"
-                                    isLink={true}
-                                    type="primary"
+                                    isLink={false}
+                                    type="secondary"
                                     className="!h-11 mt-8 pr-8 pl-8 pt-6 pb-6 w-fit max-md:text-sm"
+                                    onClick={() => toggleModal()}
                                 >
-                                    Shedule a Call?
+                                    Schedule a Call?
                                 </Button>
                             </Slide>
                         </div>
@@ -271,7 +329,7 @@ export default function Home() {
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-white relative z-0">
                 <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center max-sm:h-[90%]"></div>
                 <SectionCenter className="h-full">
-                    <div className="flex justify-center items-start flex-col w-[100%]">
+                    <div className="">
                         <Slide
                             duration={1000}
                             direction="right"
@@ -279,32 +337,39 @@ export default function Home() {
                             damping={0.025}
                             triggerOnce
                         >
-                            <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
-                                Our Services
-                            </div>
-                            <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
-                                We Give You The Best <br />
-                                Facilities to Learning
+                            <div className="flex flex-row justify-between">
+                                <div className="text-center w-full">
+                                    <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
+                                        Our Services
+                                    </div>
+                                    <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
+                                        We Give You The Best <br />
+                                        Facilities to Learning
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 mr-16 max-sm:hidden ">
+                                    <Arrow
+                                        onClick={() => onServiceScrollClick('left')}
+                                        type="left"
+                                    />
+                                    <Arrow
+                                        onClick={() => onServiceScrollClick('right')}
+                                        type="right"
+                                    />
+                                </div>
                             </div>
                         </Slide>
                         <div className="flex gap-10 mt-11 w-full justify-start items-start flex-row max-1/2xl:flex-col max-sm:items-center">
-                            <div className="flex flex-row gap-10 max-sm:flex-col">
-                                {Array.from({ length: 2 }).map((_, index) => (
+                            <div
+                                className="flex flex-row gap-10 max-sm:flex-col  overflow-auto max-w-[1150px] snap-mandatory scroll-smooth snap-x scrollbar-hide"
+                                ref={serviceScrollView}
+                            >
+                                {serviceData.map((item, idx) => (
                                     <ServiceCard
-                                        title="Tutoring"
-                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
-                                        image="/img/tutoring.png"
-                                        key="1"
-                                    />
-                                ))}
-                            </div>
-                            <div className="flex flex-row gap-10 max-sm:flex-col">
-                                {Array.from({ length: 2 }).map((_, index) => (
-                                    <ServiceCard
-                                        title="Tutoring"
-                                        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magni at sed eius."
-                                        image="/img/tutoring.png"
-                                        key="1"
+                                        title={item.title}
+                                        description={item.description}
+                                        image={item.image}
+                                        key={idx}
                                     />
                                 ))}
                             </div>
@@ -312,9 +377,8 @@ export default function Home() {
                     </div>
                 </SectionCenter>
             </section>
-
             {/* Our Team Section */}
-            <section className="w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
+            <section className="hidden w-full pt-[0.25rem] pb-[6.25rem] bg-white relative z-0">
                 <SectionCenter className="h-full">
                     <div className="flex flex-row justify-start items-start w-[100%] gap-[3.5rem]">
                         <div className="flex flex-col items-start justify-start gap-[3.375rem] max-1/2xl:hidden">
@@ -393,18 +457,40 @@ export default function Home() {
             </section>
 
             {/* Newsletter Section */}
-            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-gradient-primary-linear">
-                <SectionCenter className="h-full">
-                    <div className="flex justify-center items-start flex-col w-[100%]">
-                        <div className="text-[3.5rem] max-sm:text-[1.75rem] max-sm:leading-none font-italianno text-white leading-[4.25rem] font-normal">
-                            Subscribe to Our Newsletter...
+            <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-primary relative">
+                <div
+                    className="absolute max-md:bottom-16 max-md:-right-16 max-md:w-[550px] mad-md:h-[170px] w-[800px] h-[219px] -right-16 bottom-20  max-md:hidden
+                "
+                >
+                    <Image
+                        src={'/img/logo/logo.png'}
+                        alt="logo"
+                        fill
+                        className="!relative opacity-[15%]  -rotate-[25deg]"
+                    />
+                </div>
+                <SectionCenter className="h-full ">
+                    <div className="flex gap-16 max-sm:px-10 max-small:px-8">
+                        <div className="relative max-md:hidden">
+                            <Image
+                                alt="integrate boy logo"
+                                src={'/img/home/boy.png'}
+                                width={342}
+                                height={417}
+                            />
                         </div>
-                        <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light max-w-[41rem] mt-[1.4375rem] max-sm:mt-[0.6875rem] max-sm:text-[0.8125rem]">
-                            Subscribe to our Gmail notifications for timely updates and important
-                            announcements. Never miss out on valuable information and new resources!
+                        <div className="flex justify-center items-start flex-col w-[100%] z-50">
+                            <div className="text-[3.5rem] max-sm:text-[2.5rem] max-sm:leading-none font-italianno text-white leading-[4.25rem] font-normal z-20 max-[350px]:text-[2.25rem]">
+                                Subscribe to Our Newsletter...
+                            </div>
+                            <div className="text-[1rem] font-lexend text-white leading-[1.625rem] font-light max-w-[41rem] mt-[1.4375rem] max-sm:mt-[0.6875rem] max-sm:text-[0.8125rem] z-20">
+                                Subscribe to our Gmail notifications for timely updates and
+                                important announcements. Never miss out on valuable information and
+                                new resources!
+                            </div>
+                            {/* Newsletter Input Component */}
+                            <NewsletterInput />
                         </div>
-                        {/* Newsletter Input Component */}
-                        <NewsletterInput />
                     </div>
                 </SectionCenter>
             </section>
@@ -414,13 +500,13 @@ export default function Home() {
                 <SectionCenter className="h-full">
                     <div className="flex justify-center items-center flex-col w-[100%]">
                         <Slide duration={1000} direction="down" triggerOnce cascade damping={0.025}>
-                            <div className="text-[2rem] font-italianno text-primary leading-10 text-center">
+                            <div className="text-[2rem] font-italianno text-black leading-10 text-center">
                                 Testimonials
                             </div>
                             <div className="text-[1.5rem] sm:text-[2rem] font-bold text-titleBlack leading-10 text-center">
                                 What Our Students Say
                             </div>
-                            <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-subtitleGray text-center mt-[1rem] max-w-[500px]">
+                            <div className="text-[0.8rem] sm:text-[1rem] font-light leading-6 text-primary text-center mt-[1rem] max-w-[500px]">
                                 Hear from Our Satisfied Clients and Students. Real Stories of
                                 Success and Satisfaction.
                             </div>
@@ -438,8 +524,8 @@ export default function Home() {
                                             location="France"
                                             name="Sarah M"
                                             text="Indiginite has been a game-changer for my exam preparation. 
-                        The resources are top-notch, and the personalized support made all the difference. 
-                        I highly recommend their services!"
+                                                    The resources are top-notch, and the personalized support made all the difference. 
+                                                I highly recommend their services!"
                                         />
                                     ))}
                                 </Zoom>
