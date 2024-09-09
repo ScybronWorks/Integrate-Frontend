@@ -45,14 +45,14 @@ const AboutUs = () => {
                                 <VisionCard
                                     title="Vision"
                                     type="secondary"
-                                    description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
+                                    description="The organization is committed to empowering every student striving to reach their full potential in high school and higher secondary education by leveraging modern technologies and innovations, thereby anticipating the transformative possibilities within the educational system through the integration of technology."
                                 />
                             </Slide>
                             <Slide duration={1000} direction="right" triggerOnce>
                                 <VisionCard
                                     title="Aims included"
                                     type="secondary"
-                                    description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                                    description="The firm aims to provide quality education for students who are striving to achieve their maximum in different subjects in high school and higher secondary. We are committed to providing online as well as offline classes for a variety of essential subjects like chemistry, physics, mathematics, and more, focusing entirely on helping students excel in their academic journey and succeed in their school-level education."
                                 />
                             </Slide>
                         </div>
@@ -176,15 +176,16 @@ const AboutUs = () => {
                                 school, higher secondary and for competitive examinations.
                             </h6>
                             <p className="text-sm md:text-base leading-6 md:leading-8 ">
-                                We are dedicated in providing online as well as offline class for
-                                various prime subjects such as chemistry, physics, mathematics and
-                                other; for both school level and career oriented competitive level
-                                examinations such as JEE, NEET, KEAM etc. The classes comes with
-                                expert teaching faculties and supplementary mentor support. We
-                                provide proper model examinations of each subject with weekly
-                                analysis for each student and initiate correction procedures. Our
-                                courses at each level of studies are oriented to facilitate easy and
-                                comfortable study patterns for students, feeling stress free.
+                                We are dedicated to providing both online and offline classes for
+                                various prime subjects such as chemistry, physics, mathematics, and
+                                more. The classes come with expert teaching faculties and
+                                supplementary mentor support, guiding students through all academic
+                                challenges. We provide proper model examinations for each subject,
+                                offering weekly analysis for each student to track their progress
+                                and initiate personalized correction procedures. Our courses,
+                                designed at every level of study, are oriented to facilitate easy
+                                and comfortable study patterns for students, helping them feel
+                                stress-free and confident.
                             </p>
                         </Fade>
                     </div>
