@@ -3,10 +3,17 @@
 import React, { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 import loadingAnimation from './loading.json';
+import { preloadImages } from '@/utils/preloadImage';
 const Loading = ({ children }: { children: React.ReactNode }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const imageUrls = [
+            '/img/logo/logo.png',
+            '/img/header/headerBackgroundHome.png',
+            '/img/header/headerBackgroundOther.png',
+        ];
+        preloadImages(imageUrls);
         // Simulate loading complete after mount
         const timer = setTimeout(() => {
             setLoading(false);
@@ -14,7 +21,6 @@ const Loading = ({ children }: { children: React.ReactNode }) => {
 
         return () => clearTimeout(timer); // Cleanup timer on unmount
     }, []);
-
     return (
         <>
             {loading ? (

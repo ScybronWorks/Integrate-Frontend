@@ -63,9 +63,9 @@ export default function Home() {
         if (!courseScrollView) return;
 
         if (type == 'left' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft -= 400;
+            courseScrollView.current.scrollLeft -= 200;
         } else if (type == 'right' && courseScrollView.current) {
-            courseScrollView.current.scrollLeft += 400;
+            courseScrollView.current.scrollLeft += 200;
         }
     }
     function onServiceScrollClick(type: 'right' | 'left') {
@@ -106,7 +106,7 @@ export default function Home() {
 
             <section className="w-full pt-24 pb-16">
                 <SectionCenter className="max-1/2lx:px-5 max-xss:px-2">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-24 lg:gap-x-1 lg:mb-16">
                         <Slide
                             duration={1000}
                             direction="left"
@@ -145,7 +145,7 @@ export default function Home() {
                                 <h6 className="text-3xl font-italianno text-secondary">About us</h6>
                                 <h1
                                     className="text-4xl font-semibold text-primary *:
-                                max-sm:text-3xl 
+                                max-sm:text-2xl  
                                 "
                                 >
                                     Empowering Minds <br />
@@ -153,7 +153,7 @@ export default function Home() {
 
                                 {/* <h1 className="text-4xl font-semibold"></h1> */}
                                 <p
-                                    className=" font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3
+                                    className=" max-sm:hidden font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3
                                 max-sm:text-[0.9rem] max-sm:leading-7
                                 "
                                 >
@@ -165,6 +165,17 @@ export default function Home() {
                                     helping students build a strong foundation. The classes come
                                     with expert teaching faculties and supplementary mentor support,
                                     ensuring personalized attention for every student.
+                                </p>
+                                <p
+                                    className=" sm:hidden font-lexend text-[1rem] font-light leading-8 tracking-tight mt-3
+                                max-sm:text-[0.9rem] max-sm:leading-7
+                                "
+                                >
+                                    We offer quality education for high school and higher secondary
+                                    students. Our online and offline classes cover key subjects like
+                                    chemistry, physics, and mathematics. With expert teachers and
+                                    personalized mentor support, we help students build a strong
+                                    foundation and reach their full potential.
                                 </p>
                                 <Button
                                     href="/about"
@@ -221,7 +232,7 @@ export default function Home() {
             </section>
 
             <section className="max-1/2xl:mt-24 pb-20 ">
-                <SectionCenter className="text-black mb-0 max-md:pt-10 max-xss:px-0 relative">
+                <SectionCenter className="text-black mb-0 max-md:pt-10  relative">
                     <div className="mt-20">
                         <h6 className="text-3xl font-italianno text-center text-secondary">
                             Our Courses
@@ -459,14 +470,14 @@ export default function Home() {
             {/* Newsletter Section */}
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-primary relative">
                 <div
-                    className="absolute max-md:bottom-16 max-md:-right-16 max-md:w-[550px] mad-md:h-[170px] w-[800px] h-[219px] -right-16 bottom-20  max-md:hidden
+                    className="absolute max-md:bottom-16 max-md:-right-16 max-md:w-[550px] mad-md:h-[170px] w-[600px] h-[135px] -right-16 bottom-20  max-md:hidden
                 "
                 >
                     <Image
                         src={'/img/logo/logo.png'}
                         alt="logo"
                         fill
-                        className="!relative opacity-[15%]  -rotate-[25deg]"
+                        className="!relative opacity-[20%]  -rotate-[25deg]"
                     />
                 </div>
                 <SectionCenter className="h-full ">

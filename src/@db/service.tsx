@@ -7,7 +7,8 @@ export const serviceData = [
     {
         image: '/img/home/service6.png',
         title: 'Parent Updates',
-        description: 'Regular updates and communication to keep parents informed about their child’s progress.',
+        description:
+            'Regular updates and communication to keep parents informed about their child’s progress.',
     },
     {
         image: '/img/home/service1.png',
