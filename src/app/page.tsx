@@ -1,6 +1,7 @@
 'use client';
 import { courseData } from '@/@db/course';
 import { serviceData } from '@/@db/service';
+import Arrow from '@/components/atomic/arrow/Arrow';
 import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
 import Header from '@/components/layout/header/Header';
@@ -37,6 +38,7 @@ export default function Home() {
     const courseScrollView = useRef<HTMLDivElement | null>(null);
     const testScrollView = useRef<HTMLDivElement | null>(null);
     const teamScrollView = useRef<HTMLDivElement | null>(null);
+    const serviceScrollView = useRef<HTMLDivElement | null>(null);
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     function onTeamScrollClick(type: 'right' | 'left') {
         if (!teamScrollView) return;
@@ -66,6 +68,16 @@ export default function Home() {
             courseScrollView.current.scrollLeft += 400;
         }
     }
+    function onServiceScrollClick(type: 'right' | 'left') {
+        if (!serviceScrollView) return;
+
+        if (type == 'left' && serviceScrollView.current) {
+            serviceScrollView.current.scrollLeft -= 256;
+        } else if (type == 'right' && serviceScrollView.current) {
+            serviceScrollView.current.scrollLeft += 256;
+        }
+    }
+
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
@@ -122,7 +134,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </Slide>
-                        <div className="">
+                        <div className="max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
                                 direction="right"
@@ -137,7 +149,6 @@ export default function Home() {
                                 "
                                 >
                                     Empowering Minds <br />
-                                    Shaping Futrues
                                 </h1>
 
                                 {/* <h1 className="text-4xl font-semibold"></h1> */}
@@ -147,14 +158,13 @@ export default function Home() {
                                 "
                                 >
                                     The firm aims to provide quality education for students who are
-                                    thriving to achieve their maximum for different subjects in high
-                                    school, higher secondary and for competitive examinations. We
-                                    are dedicated in providing online as well as offline class for
-                                    various prime subjects such as chemistry, physics, mathematics
-                                    and other; for both school level and career oriented competitive
-                                    level examinations such as JEE, NEET, KEAM etc. The classes
-                                    comes with expert teaching faculties and supplementary mentor
-                                    support.
+                                    striving to achieve their maximum potential in different
+                                    subjects in high school and higher secondary. We are dedicated
+                                    to providing online as well as offline classes for various prime
+                                    subjects such as chemistry, physics, mathematics, and more,
+                                    helping students build a strong foundation. The classes come
+                                    with expert teaching faculties and supplementary mentor support,
+                                    ensuring personalized attention for every student.
                                 </p>
                                 <Button
                                     href="/about"
@@ -196,13 +206,13 @@ export default function Home() {
                             <Slide duration={1000} direction="left" triggerOnce>
                                 <VisionCard
                                     title="Vision"
-                                    description="The prime objective of Integrate is to improve the learning outcomes with enhanced technology, providing individualised education and ensuring students with diverse learning styles, thereby making your dreams come true."
+                                    description="The organization is committed to empowering every student striving to reach their full potential in high school and higher secondary education by leveraging modern technologies and innovations, thereby anticipating the transformative possibilities within the educational system through the integration of technology."
                                 />
                             </Slide>
                             <Slide duration={1000} direction="right" triggerOnce>
                                 <VisionCard
                                     title="Aims included"
-                                    description="The firm aims to provide quality education for students who are thriving to achieve their maximum for different subjects in high school, higher secondary, and for competitive examinations. We are dedicated to providing online as well as offline classes for various prime subjects such as chemistry, physics, mathematics, etc."
+                                    description="The firm aims to provide quality education for students who are striving to achieve their maximum in different subjects in high school and higher secondary. We are committed to providing online as well as offline classes for a variety of essential subjects like chemistry, physics, mathematics, and more, focusing entirely on helping students excel in their academic journey and succeed in their school-level education."
                                 />
                             </Slide>
                         </div>
@@ -281,7 +291,7 @@ export default function Home() {
                                 />
                             </div>
                         </Slide>
-                        <div className="md:order-1">
+                        <div className="md:order-1 max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
                                 direction="right"
@@ -319,7 +329,7 @@ export default function Home() {
             <section className="w-full pt-[5.625rem] pb-[6.25rem] bg-white relative z-0">
                 <div className="w-full h-[75%] absolute top-0 -z-10 bg-services bg-cover bg-no-repeat bg-center max-sm:h-[90%]"></div>
                 <SectionCenter className="h-full">
-                    <div className="flex justify-center items-start flex-col w-[100%]">
+                    <div className="">
                         <Slide
                             duration={1000}
                             direction="right"
@@ -327,16 +337,33 @@ export default function Home() {
                             damping={0.025}
                             triggerOnce
                         >
-                            <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
-                                Our Services
-                            </div>
-                            <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
-                                We Give You The Best <br />
-                                Facilities to Learning
+                            <div className="flex flex-row justify-between">
+                                <div className="text-center w-full">
+                                    <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
+                                        Our Services
+                                    </div>
+                                    <div className="text-[2.4375rem] max-sm:text-[1.75rem] max-xs:text-[1.2rem] max-xs:leading-[1.5] font-lexend text-white leading-[3rem] font-bold mt-[1px] max-sm:w-full max-sm:text-center">
+                                        We Give You The Best <br />
+                                        Facilities to Learning
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 mr-16 max-sm:hidden ">
+                                    <Arrow
+                                        onClick={() => onServiceScrollClick('left')}
+                                        type="left"
+                                    />
+                                    <Arrow
+                                        onClick={() => onServiceScrollClick('right')}
+                                        type="right"
+                                    />
+                                </div>
                             </div>
                         </Slide>
                         <div className="flex gap-10 mt-11 w-full justify-start items-start flex-row max-1/2xl:flex-col max-sm:items-center">
-                            <div className="flex flex-row gap-10 max-sm:flex-col">
+                            <div
+                                className="flex flex-row gap-10 max-sm:flex-col  overflow-auto max-w-[1150px] snap-mandatory scroll-smooth snap-x scrollbar-hide"
+                                ref={serviceScrollView}
+                            >
                                 {serviceData.map((item, idx) => (
                                     <ServiceCard
                                         title={item.title}
@@ -443,7 +470,7 @@ export default function Home() {
                     />
                 </div>
                 <SectionCenter className="h-full ">
-                    <div className="flex gap-16">
+                    <div className="flex gap-16 max-sm:px-10 max-small:px-8">
                         <div className="relative max-md:hidden">
                             <Image
                                 alt="integrate boy logo"
@@ -497,8 +524,8 @@ export default function Home() {
                                             location="France"
                                             name="Sarah M"
                                             text="Indiginite has been a game-changer for my exam preparation. 
-                        The resources are top-notch, and the personalized support made all the difference. 
-                        I highly recommend their services!"
+                                                    The resources are top-notch, and the personalized support made all the difference. 
+                                                I highly recommend their services!"
                                         />
                                     ))}
                                 </Zoom>

@@ -1,5 +1,15 @@
 export const serviceData = [
     {
+        image: '/img/home/service5.png',
+        title: 'Doubt Clearing',
+        description: 'One-on-one sessions to clarify any questions and doubts you may have.',
+    },
+    {
+        image: '/img/home/service6.png',
+        title: 'Parent Updates',
+        description: 'Regular updates and communication to keep parents informed about their child’s progress.',
+    },
+    {
         image: '/img/home/service1.png',
         title: 'Tutoring',
         description: 'Personalized lessons to help you achieve success.',

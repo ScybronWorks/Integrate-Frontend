@@ -43,6 +43,7 @@ const config: Config = {
                 '3xl': '1722px',
                 '1/2lx': '1180px',
                 ...defaultTheme.screens,
+                small:'350px'
             },
             backgroundPosition: {
                 'top-left-1rem': '60% 50%',
