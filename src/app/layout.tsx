@@ -3,6 +3,8 @@ import { Lexend } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/layout/footer/Footer';
 import Navbar from '@/components/layout/navbar/Navbar';
+import { useEffect, useState } from 'react';
+import Loading from '@/components/layout/loading/Loading';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -20,9 +22,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${lexend.className} overflow-x-hidden`}>
-                <Navbar />
-                <div className="min-h-[100vh] overflow-x-hidden">{children}</div>
-                <Footer />
+                <Loading>
+                    <Navbar />
+                    <div className="min-h-[100vh] overflow-x-hidden">{children}</div>
+                    <Footer />
+                </Loading>
             </body>
         </html>
     );

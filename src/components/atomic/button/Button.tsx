@@ -19,6 +19,7 @@ const Button = ({
     const buttonStyle = {
         outline: 'border border-white text-white hover:border-primary hover:bg-primary',
         primary: `border border-primary bg-primary text-white ${isLightBg ? 'hover:text-gray-500 hover:border-grey-500' : 'hover:border-white hover:text-white'}  hover:bg-transparent`,
+        secondary: `border border-primary bg-secondary text-white ${isLightBg ? 'hover:text-gray-500 hover:border-grey-500' : 'hover:border-black hover:text-black'}  hover:bg-transparent`,
     };
 
     const handleOnClick = (e: FormEvent) => {

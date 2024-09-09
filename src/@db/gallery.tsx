@@ -22,13 +22,19 @@ export const galleryData = [
     {
         title: 'Interactive Classroom Sessions',
         src: '/video/gallery/video1.mp4',
-        thumnail: '/img/gallery/thumbnail/thumbnail1.png',
+        thumbnail: '/img/gallery/thumbnail/thumbnail1.png',
         isImage: false,
     },
     {
         title: 'Interactive Classroom Sessions',
         src: '/video/gallery/video2.mp4',
-        thumnail: '/img/gallery/thumbnail/thumbnail2.png',
+        thumbnail: '/img/gallery/thumbnail/thumbnail2.png',
+        isImage: false,
+    },
+    {
+        title: 'Interactive Classroom Sessions',
+        src: '/video/gallery/video3.mp4',
+        thumbnail: '/img/gallery/thumbnail/thumbnail2.png',
         isImage: false,
     },
 ];

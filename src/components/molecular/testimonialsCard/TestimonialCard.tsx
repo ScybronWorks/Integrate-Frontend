@@ -23,7 +23,7 @@ const TestimonialCard = ({ image, location, name, text }: Props) => {
                     </div>
                 </div>
                 <div className="rounded-full relative h-16 w-16 right-2 bottom-7 max-xs:hidden">
-                    <Image src="/icons/quoteIcon.svg" width={56} height={56} alt="quote" />
+                    <Image src="/img/home/testimonial.png" width={56} height={56} alt="quote" />
                 </div>
             </div>
         </div>

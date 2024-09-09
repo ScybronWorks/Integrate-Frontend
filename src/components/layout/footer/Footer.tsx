@@ -2,11 +2,14 @@
 import Button from '@/components/atomic/button/Button';
 
 import {
-    faFacebook,
     faInstagram,
-    faLinkedinIn,
+    faFacebook,
+    faLinkedin,
     faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+    faTwitter,
+    faXTwitter,
+} from '@fortawesome/free-brands-svg-icons'; // Replace faTwitter for "X" icon
+
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -22,10 +25,12 @@ const navLinks = [
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
-    { icon: faFacebook, href: '#' },
     { icon: faInstagram, href: '#' },
+    { icon: faFacebook, href: '#' },
+    { icon: faLinkedin, href: '#' },
     { icon: faYoutube, href: '#' },
-    { icon: faLinkedinIn, href: '#' },
+    { icon: faXTwitter, href: '#' },
+    { icon: faTwitter, href: '#' },
 ];
 
 const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {
@@ -46,13 +51,13 @@ const Footer = () => {
     return (
         <>
             <DemoModal isOpen={isModalOpen} handleClose={toggleModal} />
-            <footer className=" bg-titleBlack w-full min-h-[33rem]">
-                <SectionCenter className="py-20">
-                    <div className="flex  items-center justify-between max-xl:flex-col max-xl:gap-12 max-xl:items-start">
+            <footer className=" bg-secondary w-full min-h-[33rem] ">
+                <SectionCenter className="py-20 max-xl:pl-6">
+                    <div className="flex  items-center justify-between max-xl:flex-col max-xl:gap-12 max-xl:items-start ">
                         <div className=" max-w-[22.8rem] h-32  w-full">
                             <Image
-                                src="/img/logo/logo.jpg"
-                                className="h-full w-full object-cover !relative"
+                                src="/img/logo/logo.png"
+                                className="h-full w-full object-contain !relative"
                                 alt="logo"
                                 fill
                             />
@@ -87,17 +92,30 @@ const Footer = () => {
                     >
                         <div className="flex gap-2">
                             <FontAwesomeIcon icon={faPhone} className="w-5 h-5" />
-                            <span>0123456789 | 0123456789</span>
+                            <div className="flex flex-col gap-1">
+                                <span>
+                                    <strong>Contact Number</strong>:
+                                </span>
+                                <span className="pl-4">8129177072 </span>
+                                <span className="pl-4">9061707144 </span>
+                                <span>
+                                    <strong>For admissions</strong>:
+                                </span>
+                                <span className="pl-4">8129927078 (CBSE)</span>
+                                <span className="pl-4">7592849406 (State)</span>
+                            </div>
                         </div>
+
                         <div className="flex gap-2 max-w-[24.5rem] ">
                             <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
                             <span>
-                                4904 Robson Street, Vancouver, British Columbia - V6B 3K9, Canada
+                                Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33,
+                                Santhi Nagar residence, Muppathadam (P.O) Aluva,
                             </span>
                         </div>
                         <div className="flex gap-2">
                             <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5" />
-                            <span>admin@testtest@gmail.com</span>
+                            <span>edutechintegrate@gmail.com</span>
                         </div>
                     </div>
                 </SectionCenter>
