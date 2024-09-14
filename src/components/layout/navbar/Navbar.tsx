@@ -140,12 +140,12 @@ const links = [
         href: '/courses',
         isButton: false,
     },
-    {
-        id: 4,
-        label: 'Gallery',
-        href: '/gallery',
-        isButton: false,
-    },
+    // {
+    //     id: 4,
+    //     label: 'Gallery',
+    //     href: '/gallery',
+    //     isButton: false,
+    // },
     {
         id: 5,
         label: 'Contact',

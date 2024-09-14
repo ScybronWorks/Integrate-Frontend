@@ -21,15 +21,18 @@ const navLinks = [
     { title: 'HOME', href: '/' },
     { title: 'ABOUT US', href: '/about' },
     { title: 'COURSES', href: '/courses' },
-    { title: 'NEWS', href: '/' },
+    // { title: 'NEWS', href: '/' },
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
     { icon: faInstagram, href: '#' },
-    { icon: faFacebook, href: '#' },
-    { icon: faLinkedin, href: '#' },
+    { icon: faFacebook, href: 'https://www.facebook.com/integral.edu' },
+    {
+        icon: faLinkedin,
+        href: 'https://www.linkedin.com/in/integrate-edu-156330325/',
+    },
     { icon: faYoutube, href: '#' },
-    { icon: faXTwitter, href: '#' },
+    { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
     { icon: faTwitter, href: '#' },
 ];
 
