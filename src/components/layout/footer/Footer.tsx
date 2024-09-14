@@ -33,7 +33,7 @@ const socialMediaLinks = [
     },
     { icon: faYoutube, href: '#' },
     { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
-    { icon: faTwitter, href: '#' },
+   
 ];
 
 const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {
