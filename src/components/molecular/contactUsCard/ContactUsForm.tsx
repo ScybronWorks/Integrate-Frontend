@@ -11,6 +11,7 @@ const axiosInstance = axios.create({
         rejectUnauthorized: false, // Disable SSL certificate verification
     }),
 });
+
 type Props = {};
 
 const ContactUsForm = (props: Props) => {
@@ -22,32 +23,48 @@ const ContactUsForm = (props: Props) => {
         subject: '',
         message: '',
     });
+    const [error, setError] = useState<string>('');
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
+    const validateForm = () => {
+        let firstError = '';
+
+        // Check each field for validity and set the first error
+        if (!formData.name.trim()) {
+            firstError = 'Name is required.';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+            firstError = 'Invalid email address.';
+        } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+            firstError = 'Phone number must be exactly 10 digits.';
+        } else if (!formData.subject.trim()) {
+            firstError = 'Subject is required.';
+        } else if (!formData.message.trim()) {
+            firstError = 'Message is required.';
+        }
+
+        setError(firstError);
+        return !firstError; // Return false if there's an error
+    };
+
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        const isFormValid = Object.entries(formData).every(([key, value]) => value.trim() !== '');
-
-        if (!isFormValid) return;
+        if (!validateForm()) {
+            setIsSubmitting(false);
+            return;
+        }
 
         try {
-            const response = await fetch('/api/sendEmail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            const response = await axiosInstance.post('/api/sendEmail', formData);
 
-            const data = await response.json();
-
-            if (data.success) {
+            if (response.data.success) {
                 console.log('Email sent successfully!');
                 setFormData({ email: '', message: '', name: '', phone: '', subject: '' });
+                setError('');
             } else {
                 console.log('Failed to send email.');
             }
@@ -57,11 +74,12 @@ const ContactUsForm = (props: Props) => {
             setIsSubmitting(false);
         }
     };
+
     return (
         <div className="w-full h-fit p-8 py-12 flex flex-col gap-4 bg-white text-secondary rounded-tr-lg rounded-br-[3rem]">
             <Fade triggerOnce>
                 <div className="flex flex-col gap-2">
-                    <h2 className=" text-3xl font-bold text-secondary">Enquiry Form</h2>
+                    <h2 className="text-3xl font-bold text-secondary">Enquiry Form</h2>
                     <p className="font-italianno text-lg">
                         Submit Your Inquiry: We{`'`}ll Get Back to You with the Information You
                         Need.
@@ -70,6 +88,8 @@ const ContactUsForm = (props: Props) => {
             </Fade>
             <div className="flex flex-col">
                 <div className="grid grid-cols-2 gap-4">
+                    {error && <div className="col-span-2 mb-4 text-red-500">{error}</div>}
+
                     <input
                         type="text"
                         className="bg-contactInputBg h-12 focus-visible:border-primary px-4 text-sm font-light"
@@ -89,7 +109,6 @@ const ContactUsForm = (props: Props) => {
                     <input
                         type="number"
                         className="bg-contactInputBg h-12 focus-visible:border-primary px-4 text-sm font-light"
-                        style={{}}
                         placeholder="Phone"
                         name="phone"
                         value={formData.phone}
@@ -109,7 +128,7 @@ const ContactUsForm = (props: Props) => {
                         name="message"
                         value={formData.message}
                         onChange={handleInputChange}
-                        placeholder="message..."
+                        placeholder="Message..."
                     />
                 </div>
                 <Button

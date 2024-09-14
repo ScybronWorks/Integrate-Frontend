@@ -10,12 +10,12 @@ type Props = {
 
 const TestimonialCard = ({ image, location, name, text }: Props) => {
     return (
-        <div className="w-[100%] xl:w-[28rem] min-w-[22.5rem] p-8 flex flex-col _testimonials-card-shadow justify-between items-start rounded-lg gap-12">
+        <div className="w-[100%] xl:w-[28rem] h-full min-w-[22.5rem] p-8 flex flex-col _testimonials-card-shadow justify-between items-start rounded-lg gap-12 snap-start">
             <p className="text-[1rem] font-light text-titleBlack leading-6">{text}</p>
             <div className="flex justify-between w-full">
                 <div className="flex items-center gap-3">
                     <div className="rounded-full relative h-16 w-16 flex">
-                        <Image src={image} alt="profile" fill />
+                        <Image src={image} alt="profile" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col">
                         <p className="text-base font-bold">{name}</p>

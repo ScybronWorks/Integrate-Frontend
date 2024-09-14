@@ -22,6 +22,7 @@ export async function POST(req: Request) {
                 pass: process.env.GMAIL_PASS,
             },
         });
+        console.log(process.env.GMAIL_USER, process.env.GMAIL_PASS);
         // Email options
         const mailOptions = {
             from: process.env.GMAIL_USER,
@@ -43,141 +44,138 @@ export async function POST(req: Request) {
     }
 }
 function createEmailTemplate({ email, subject, message, phone, name, course }: EmailData) {
-    return `
-   <html lang="en">
+    return `<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enquiry Submission</title>
     <style>
         body {
-            font-family: Poppins, sans-serif;
+            font-family: Arial, sans-serif;
             padding: 20px;
-            background: #f1f1f1;
+            background-color: #f1f1f1;
+            margin: 0;
         }
         .container {
             background-color: #f6b662;
-            width: 80%;
+            width: 100%;
             max-width: 600px;
             margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .inner_container {
+        .inner-container {
             background-color: #372a25;
-            padding: 50px;
+            padding: 40px;
             color: #ffffff;
         }
-        header, footer {
+        header {
             text-align: center;
         }
-        .email_inner_section {
-            padding: 20px 0 50px 0;
+        .email-footer {
+            background-color: #003366;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
         }
         hr {
-            height: 5px;
+            border: 0;
+            height: 4px;
             background-color: #f6b662;
-            border: none;
+            margin: 20px 0;
         }
         h1 {
             color: #f6b662;
+            font-size: 24px;
         }
-        .enquiry_submission table {
-            text-align: left;
-            margin-top: 50px;
+        .enquiry-submission {
+            margin-top: 30px;
+        }
+        .enquiry-submission table {
             width: 100%;
             border-collapse: collapse;
         }
-        .enquiry_submission th, .enquiry_submission td {
+        .enquiry-submission th, .enquiry-submission td {
             padding: 10px;
-            color: #ffffff;
+            text-align: left;
         }
-        .enquiry_submission th {
+        .enquiry-submission th {
             color: #f6b662;
             font-weight: bold;
         }
-        .email_footer {
-            font-size: 10px;
-            color: black;
+        .email-footer {
+            font-size: 12px;
+            color: #000000;
             padding: 20px 0;
         }
-        .email_footer a {
-            color: #ffffff;
-            text-decoration: none;
+        .email-footer p{
+        color: white;
         }
         .address {
-            width: 50%;
             margin: 0 auto;
+            width: 80%;
         }
-        @media only screen and (max-width: 500px) {
-            .enquiry_submission th, .enquiry_submission td {
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+            .enquiry-submission th, .enquiry-submission td {
                 display: block;
-                width: 100% !important;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="inner_container">
+        <div class="inner-container">
             <header>
-                <img src="https://iili.io/dvM8eIV.png" width="150px" alt="Logo" />
                 <h1>Enquiry Submission</h1>
             </header>
             <hr />
-            <div class="email_content">
-                <div class="email_inner_section">
-                    <section>
-                        <h3>Hi Admin, you have a new enquiry submission from ${name}.</h3>
-                    </section>
-                    <section class="enquiry_submission">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Client Name</th>
-                                    <td>${name}</td>
-                                </tr>
-                                <tr>
-                                    <th>Client's Email Address</th>
-                                    <td>${email}</td>
-                                </tr>
-                                <tr>
-                                    <th>Client's Contact Number</th>
-                                    <td>${phone}</td>
-                                </tr>
-                                ${
-                                    course
-                                        ? `
-                                <tr>
-                                    <th>Client's Selected Course</th>
-                                    <td>${course}</td>
-                                </tr>`
-                                        : ''
-                                }
-                                <tr>
-                                    <th>Client's Subject</th>
-                                    <td>${subject}</td>
-                                </tr>
-                                <tr>
-                                    <th>Client's Message</th>
-                                    <td>${message}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
+            <section>
+                <p>Hi Admin, you have a new enquiry submission from ${name}.</p>
+                <div class="enquiry-submission">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Client Name:</th>
+                                <td>${name}</td>
+                            </tr> 
+                            <tr>
+                                <th>Client's Email Address:</th>
+                                <td>${email}</td>
+                            </tr>
+                            <tr>
+                                <th>Client's Contact Number:</th>
+                                <td>${phone}</td>
+                            </tr>
+                            ${
+                                course
+                                    ? `
+                            <tr>
+                                <th>Client's Selected Course:</th>
+                                <td>${course}</td>
+                            </tr>`
+                                    : ''
+                            }
+                            <tr>
+                                <th>Client's Subject:</th>
+                                <td>${subject}</td>
+                            </tr>
+                            <tr>
+                                <th>Client's Message:</th>
+                                <td>${message}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-        </div>
-        <footer>
-            <section class="email_footer">
-                <img src="https://iili.io/dvM8eIV.png" width="150px" alt="Logo" style="margin-bottom: 30px" />
-                <p class="address">
-                    Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33, Santhi Nagar residence, Muppathadam (P.O) Aluva
-                </p>
-                <p>
-                    Copyright &copy; ${new Date().getFullYear()} Integrate All Rights Reserved
-                </p>
-                <p>If you no longer wish to receive these emails, you can <a href="unsubscribe-link">unsubscribe here</a>.</p>
             </section>
-        </footer>
+        </div>
+       <div class="email-footer">
+            <p>&copy; ${new Date().getFullYear()} Integrate. All rights reserved.</p>
+        </div>
     </div>
 </body>
 </html>

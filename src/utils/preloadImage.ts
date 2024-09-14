@@ -1,4 +1,4 @@
-export const preloadImages = (imageUrls:string[]) => {
+export const preloadImages = (imageUrls: string[]) => {
     return new Promise((resolve, reject) => {
         let loadedImages = 0;
         const totalImages = imageUrls.length;
