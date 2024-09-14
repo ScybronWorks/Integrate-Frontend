@@ -21,6 +21,31 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <head>
+                <meta property="og:title" content="Integrate Edutech" />
+                <meta
+                    property="og:description"
+                    content="Integrate Edutech empowers students by providing quality education through online and offline classes. We specialize in subjects like chemistry, physics, and mathematics, with expert faculty and personalized mentor support to help students achieve their academic potential."
+                />
+                <meta property="og:image" content="https://integrateedu.co.in/img/logo/logo.png" />
+                <meta property="og:url" content="https://integrateedu.co.in/" />
+                <meta property="og:type" content="website" />
+
+                <meta name="title" content="Integrate Edutech" />
+                <meta
+                    name="description"
+                    content="Integrate Edutech offers quality education for high school and higher secondary students. Our online and offline classes cover key subjects like chemistry, physics, and mathematics, with expert teaching and personalized mentor support."
+                />
+                <meta
+                    name="keywords"
+                    content="Integrate Edutech, quality education, online classes, offline classes, high school education, higher secondary education, chemistry, physics, mathematics, expert teaching, mentor support, academic excellence"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta name="language" content="English" />
+                <link href="/img/logo/logo.ico" rel="icon" />
+                <link href="/img/logo/logo.ico" rel="apple-touch-icon" />
+            </head>
             <body className={`${lexend.className} overflow-x-hidden`}>
                 <Loading>
                     <Navbar />
