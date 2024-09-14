@@ -27,12 +27,13 @@ const Button = ({
         isLink && href && router.push(href);
     };
     return (
-        <div
+        <button
             onClick={handleOnClick}
             className={`${buttonStyle[type]} transition-colors duration-700 font-bold py-2 px-4 rounded-md text-center h-[100%]  w-[100%] cursor-pointer flex justify-center items-center ${className}`}
+            
         >
             {isSubmitting ? <Loader isLoading /> : children}
-        </div>
+        </button>
     );
 };
 

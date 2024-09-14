@@ -17,15 +17,52 @@ const CallScheduleModal = ({ isOpen, handleClose }: Props) => {
         course: '',
         preferredTime: '',
     });
+    const [errors, setErrors] = useState<string>('');
+
+    const validateForm = () => {
+        let isValid = true;
+        let firstError = '';
+
+        // Reset errors
+        firstError = '';
+
+        // Name validation
+        if (!formData.name.trim()) {
+            firstError = 'Name is required.';
+            isValid = false;
+        }
+
+        // Phone number validation
+        const phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(formData.phone.trim())) {
+            if (!firstError) firstError = 'Phone number must be exactly 10 digits.';
+            isValid = false;
+        }
+
+        // Course validation
+        if (!formData.course.trim()) {
+            if (!firstError) firstError = 'Course selection is required.';
+            isValid = false;
+        }
+
+        // Preferred Time validation
+        if (!formData.preferredTime.trim()) {
+            if (!firstError) firstError = 'Preferred time is required.';
+            isValid = false;
+        }
+
+        setErrors(firstError);
+        return isValid;
+    };
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async () => {
+        if (!validateForm()) return;
+
         setIsSubmitting(true);
-        const isFormValid = Object.entries(formData).every(([key, value]) => value.trim() !== '');
-        if (!isFormValid) return;
         try {
             const response = await fetch('/api/scheduleCall', {
                 method: 'POST',
@@ -44,6 +81,7 @@ const CallScheduleModal = ({ isOpen, handleClose }: Props) => {
                     course: '',
                     preferredTime: '',
                 });
+                setErrors('');
             } else {
                 console.log('Failed to submit form.');
             }
@@ -73,11 +111,14 @@ const CallScheduleModal = ({ isOpen, handleClose }: Props) => {
                                 Schedule a Call
                             </h2>
 
+                            {errors && <div className="col-span-2 mb-4 text-red-500">{errors}</div>}
+
                             <input
                                 type="text"
                                 className="bg-contactInputBg h-12 focus-visible:border-primary px-4 text-sm font-light"
                                 placeholder="Name"
                                 name="name"
+                                value={formData.name}
                                 onChange={handleInputChange}
                             />
 
@@ -86,14 +127,15 @@ const CallScheduleModal = ({ isOpen, handleClose }: Props) => {
                                 className="bg-contactInputBg h-12 focus-visible:border-primary px-4 text-sm font-light"
                                 placeholder="Phone"
                                 name="phone"
+                                value={formData.phone}
                                 onChange={handleInputChange}
                             />
 
                             <select
                                 className="w-full col-span-2 px-2 bg-contactInputBg h-12 focus-visible:border-primary font-light"
                                 name="course"
+                                value={formData.course}
                                 onChange={handleInputChange}
-                                required
                             >
                                 <option value="">Select course</option>
                                 {courseData.map((data, i) => (
@@ -106,8 +148,9 @@ const CallScheduleModal = ({ isOpen, handleClose }: Props) => {
                             <input
                                 type="text"
                                 className="bg-contactInputBg h-12 focus-visible:border-primary px-4 text-sm font-light"
-                                placeholder="Preferred Time "
+                                placeholder="Preferred Time"
                                 name="preferredTime"
+                                value={formData.preferredTime}
                                 onChange={handleInputChange}
                             />
                         </div>
