@@ -11,7 +11,7 @@ export const contactDetails = [
     },
     {
         title: 'Phone',
-        description: `+91 9061707144, +91 8129927073`,
+        description: `+91 9061707144, +91 8129177072`,
         image: '/icons/phone.svg',
     },
 ];

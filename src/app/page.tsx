@@ -1,6 +1,7 @@
 'use client';
 import { courseData } from '@/@db/course';
 import { serviceData } from '@/@db/service';
+import { testimonialsData } from '@/@db/testimonials';
 import Arrow from '@/components/atomic/arrow/Arrow';
 import Button from '@/components/atomic/button/Button';
 import ClipEdgeSection from '@/components/layout/clipEdgeSection/ClipEdgeSection';
@@ -125,7 +126,7 @@ export default function Home() {
                                 "
                                     >
                                         <Image
-                                            src="/img/home/about.png"
+                                            src="/img/home/about.jpg"
                                             fill
                                             className="rounded-2xl text-4xl object-cover"
                                             alt="About image"
@@ -217,7 +218,7 @@ export default function Home() {
                             <Slide duration={1000} direction="left" triggerOnce>
                                 <VisionCard
                                     title="Vision"
-                                    description="The organization is committed to empowering every student striving to reach their full potential in high school and higher secondary education by leveraging modern technologies and innovations, thereby anticipating the transformative possibilities within the educational system through the integration of technology."
+                                    description="The organization is committed to empowering every student striving to reach their full potential in high school and higher secondary education by leveraging modern technologies and innovations, thereby anticipating the transformative possibilities within the educational system through the integration of technology."
                                 />
                             </Slide>
                             <Slide duration={1000} direction="right" triggerOnce>
@@ -349,7 +350,7 @@ export default function Home() {
                             triggerOnce
                         >
                             <div className="flex flex-row justify-between">
-                                <div className="text-center w-full">
+                                <div className="text-left w-full">
                                     <div className="text-[2rem] max-sm:text-[1.75rem] font-italianno text-white leading-[2.5rem] font-normal max-sm:w-full max-sm:text-center">
                                         Our Services
                                     </div>
@@ -508,7 +509,7 @@ export default function Home() {
 
             {/* Testimonials Section */}
             <section className="w-full py-[6.25rem]">
-                <SectionCenter className="h-full">
+                <SectionCenter className="h-full !sm:px-2 !px-0">
                     <div className="flex justify-center items-center flex-col w-[100%]">
                         <Slide duration={1000} direction="down" triggerOnce cascade damping={0.025}>
                             <div className="text-[2rem] font-italianno text-black leading-10 text-center">
@@ -524,32 +525,30 @@ export default function Home() {
                         </Slide>
                         <div className="w-full relative">
                             <div
-                                className="flex flex-row max-xl:overflow-auto max-xl:justify-start justify-center gap-6 w-full pt-12 scrollbar-hide scroll-smooth"
+                                className="flex max-xl:overflow-auto max-xl:justify-start justify-center gap-6 w-full pt-12 scrollbar-hide overflow-x-auto md:pl-[72rem] scroll-smooth snap-x scrollbar-hide"
                                 ref={testScrollView}
                             >
-                                <Zoom duration={1000} triggerOnce cascade>
-                                    {Array.from({ length: 3 }).map((_, index) => (
+                                <Zoom duration={0} triggerOnce cascade>
+                                    {testimonialsData?.map((testimonial, index) => (
                                         <TestimonialCard
-                                            key={index}
-                                            image="/img/team/David.png"
-                                            location="France"
-                                            name="Sarah M"
-                                            text="Indiginite has been a game-changer for my exam preparation. 
-                                                    The resources are top-notch, and the personalized support made all the difference. 
-                                                I highly recommend their services!"
+                                            key={testimonial?.id}
+                                            image={testimonial?.image}
+                                            location={testimonial?.role}
+                                            name={testimonial?.name}
+                                            text={testimonial?.text}
                                         />
                                     ))}
                                 </Zoom>
                             </div>
 
                             <span
-                                className="absolute -left-8 top-[50%] xl:hidden w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
+                                className="absolute -left-8 top-[50%] w-8 h-8 flex justify-center items-center  rounded-full text-black bg-white cursor-pointer max-md:left-0 "
                                 onClick={() => onTestScrollClick('left')}
                             >
                                 <FontAwesomeIcon icon={faAngleLeft} className="w-4 h-4" />
                             </span>
                             <span
-                                className="absolute -right-8 top-[50%] xl:hidden w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
+                                className="absolute -right-8 top-[50%] w-8 h-8 rounded-full text-black bg-white cursor-pointer flex justify-center items-center max-md:right-0  "
                                 onClick={() => onTestScrollClick('right')}
                             >
                                 <FontAwesomeIcon icon={faAngleRight} className="w-4 h-4" />
