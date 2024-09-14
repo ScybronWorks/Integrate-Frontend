@@ -43,8 +43,8 @@ export default function RootLayout({
                 <meta name="robots" content="index, follow" />
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="language" content="English" />
-                <link href="/img/logo/logo.ico" rel="icon" />
-                <link href="/img/logo/logo.ico" rel="apple-touch-icon" />
+                <link href="https://integrateedu.co.in/img/logo/logo.ico" rel="icon" />
+                <link href="https://integrateedu.co.in/img/logo/logo.ico" rel="apple-touch-icon" />
             </head>
             <body className={`${lexend.className} overflow-x-hidden`}>
                 <Loading>
