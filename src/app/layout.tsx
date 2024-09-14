@@ -27,7 +27,7 @@ export default function RootLayout({
                     property="og:description"
                     content="Integrate Edutech empowers students by providing quality education through online and offline classes. We specialize in subjects like chemistry, physics, and mathematics, with expert faculty and personalized mentor support to help students achieve their academic potential."
                 />
-                <meta property="og:image" content="https://integrateedu.co.in/img/logo/logo.png" />
+                <meta property="og:image" content="https://integrateedu.co.in/img/home/boy.png" />
                 <meta property="og:url" content="https://integrateedu.co.in/" />
                 <meta property="og:type" content="website" />
 
