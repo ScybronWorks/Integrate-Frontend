@@ -25,15 +25,20 @@ const navLinks = [
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
-    { icon: faInstagram, href: '#' },
-    { icon: faFacebook, href: 'https://www.facebook.com/integral.edu' },
+    {
+        icon: faInstagram,
+        href: 'https://www.instagram.com/integrate_edutech?igsh=cHR6eGJ2MHB4bDRk',
+    },
+    {
+        icon: faFacebook,
+        href: 'https://www.facebook.com/profile.php?id=61564446839366&mibextid=ZbWKwL',
+    },
     {
         icon: faLinkedin,
         href: 'https://www.linkedin.com/in/integrate-edu-156330325/',
     },
-    { icon: faYoutube, href: '#' },
+    { icon: faYoutube, href: 'https://youtube.com/@integrateedu' },
     { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
-    { icon: faTwitter, href: '#' },
 ];
 
 const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {

@@ -309,7 +309,7 @@ export default function Home() {
                         <div className="md:order-1 max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
-                                direction="right"
+                                direction="left"
                                 cascade
                                 damping={0.25}
                                 triggerOnce
