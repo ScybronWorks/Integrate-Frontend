@@ -112,8 +112,8 @@ const Footer = () => {
                         <div className="flex gap-2 max-w-[24.5rem] ">
                             <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
                             <span>
-                                Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33,
-                                Santhi Nagar residence, Muppathadam (P.O) Aluva,
+                                Integrate Edutech House no: 370 Mannam P O, N.Paravoor Ernakulam,
+                                Kerala
                             </span>
                         </div>
                         <div className="flex gap-2">

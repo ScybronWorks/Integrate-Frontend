@@ -1,5 +1,3 @@
-
-
 export const testimonialsData = [
     {
         id: 1,
