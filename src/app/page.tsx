@@ -17,6 +17,7 @@ import VisionCard from '@/components/molecular/visionCard/VisionCard';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Bounce, Slide, Zoom } from 'react-awesome-reveal';
 
@@ -89,7 +90,7 @@ export default function Home() {
                 <SectionCenter className="h-full">
                     <div className="flex items-start justify-center h-full flex-col">
                         <div
-                            className="text-6xl  font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
+                            className="text-6xl font-semibold leading-[5.4rem] max-w-[279rem] max-xl:text-4xl
                             max-lg:text-2xl"
                         >
                             <Zoom duration={2000} triggerOnce>
@@ -98,7 +99,9 @@ export default function Home() {
                         </div>
                         <div className="pt-5">
                             <Slide duration={1000} direction="up" triggerOnce>
-                                <Button className="text-lg  w-40 h-14">Discover More</Button>
+                                <Link href="/courses">
+                                    <Button className="text-lg w-40 h-14">Discover More</Button>
+                                </Link>
                             </Slide>
                         </div>
                     </div>
@@ -146,7 +149,7 @@ export default function Home() {
                                 <h6 className="text-3xl font-italianno text-secondary">About us</h6>
                                 <h1
                                     className="text-4xl font-semibold text-primary *:
-                                max-sm:text-2xl  
+                                max-sm:text-2xl
                                 "
                                 >
                                     Empowering Minds <br />
@@ -211,7 +214,7 @@ export default function Home() {
                         </Slide>
                         <div
                             className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
-                                grid-rows-1 max-sm:mt-14 
+                                grid-rows-1 max-sm:mt-14
                         "
                         >
                             {/* Map this and add slide left for odd and right for even index */}
@@ -306,7 +309,7 @@ export default function Home() {
                         <div className="md:order-1 max-sm:px-10 max-small:px-8">
                             <Slide
                                 duration={1000}
-                                direction="right"
+                                direction="left"
                                 cascade
                                 damping={0.25}
                                 triggerOnce

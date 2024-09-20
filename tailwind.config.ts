@@ -25,9 +25,9 @@ const config: Config = {
                 cardBrown: '#393023',
                 subtitleGray: '#868686',
                 teamCardBg: '#DEDAF1',
-                contactInputBg: '#EDEAFF',
-                navActive: '#DEDAF1',
-                
+                contactInputBg: 'rgb(255 243 228)',
+                navActive: 'rgb(255 243 228)',
+
             },
             fontFamily: {
                 lexend: ['Lexend', 'sans-serif'],

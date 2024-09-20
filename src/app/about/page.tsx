@@ -37,7 +37,7 @@ const AboutUs = () => {
 
                         <div
                             className="grid grid-cols-1 md:grid-cols-2  gap-x-12 gap-y-12 mt-20
-                                grid-rows-1 max-sm:mt-14 
+                                grid-rows-1 max-sm:mt-14
                         "
                         >
                             {/* Map this and add slide left for odd and right for even index */}
