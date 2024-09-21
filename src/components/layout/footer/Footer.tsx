@@ -25,13 +25,13 @@ const navLinks = [
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
-    { icon: faInstagram, href: '#' },
+    { icon: faInstagram, href: 'https://www.instagram.com/integrate_edutech?igsh=cHR6eGJ2MHB4bDRk' },
     { icon: faFacebook, href: 'https://www.facebook.com/integral.edu' },
     {
         icon: faLinkedin,
         href: 'https://www.linkedin.com/in/integrate-edu-156330325/',
     },
-    { icon: faYoutube, href: '#' },
+    { icon: faYoutube, href: 'https://youtube.com/@integrateedu?si=oCOoEFHgdYjrxw8P' },
     { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
    
 ];
@@ -112,8 +112,10 @@ const Footer = () => {
                         <div className="flex gap-2 max-w-[24.5rem] ">
                             <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
                             <span>
-                                Integrate Edutech Pvt. Ltd. Third Second Floor, House number 33,
-                                Santhi Nagar residence, Muppathadam (P.O) Aluva,
+                                Integrate Edutech 
+                                House no: 370
+                                Mannam P O, N.Paravoor
+                                Ernakulam, Kerala
                             </span>
                         </div>
                         <div className="flex gap-2">
