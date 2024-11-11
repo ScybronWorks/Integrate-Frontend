@@ -129,6 +129,10 @@ const Footer = () => {
                     <div className="text-center">
                         © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
                     </div>
+                    <br/>
+                    <div className="text-center">
+                        Powered by Scybron Digital Solutions
+                    </div>
                     <div className=" pt-5 flex justify-center items-center gap-6 ">
                         {socialMediaLinks.map((item, idx) => (
                             <SocialMediaIcon key={idx} icon={item.icon} href={item.href} />
