@@ -1,7 +1,7 @@
 export const contactDetails = [
     {
         title: 'Address',
-        description: `Integrate Edutech Pvt. Ltd. House no 370,Manedath house, Near Mannam Post office Mannam P.O, N. Paravoor, Ernakulam Kerala – 683520`,
+        description: `Integrate Edutech House no: 370 Mannam P O, N.Paravoor Ernakulam, Kerala`,
         image: '/icons/address.svg',
     },
     {

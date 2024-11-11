@@ -1,22 +1,22 @@
 'use client';
-import Button from '@/components/atomic/button/Button';
 
 import {
-    faInstagram,
     faFacebook,
+    faInstagram,
     faLinkedin,
-    faYoutube,
-    faTwitter,
     faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'; // Replace faTwitter for "X" icon
-
+    faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
-import Image from 'next/image';
+
+import Button from '@/components/atomic/button/Button';
 import DemoModal from '@/components/molecular/demoModal/DemoModal';
+import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+
 const navLinks = [
     { title: 'HOME', href: '/' },
     { title: 'ABOUT US', href: '/about' },
@@ -33,7 +33,6 @@ const socialMediaLinks = [
     },
     { icon: faYoutube, href: 'https://youtube.com/@integrateedu?si=oCOoEFHgdYjrxw8P' },
     { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
-   
 ];
 
 const SocialMediaIcon: React.FC<{ icon: any; href: string }> = ({ icon, href }) => {
@@ -116,6 +115,9 @@ const Footer = () => {
                                 House no: 370
                                 Mannam P O, N.Paravoor
                                 Ernakulam, Kerala
+
+                                Integrate Edutech House no: 370 Mannam P O, N.Paravoor
+                                Ernakulam, Kerala
                             </span>
                         </div>
                         <div className="flex gap-2">
