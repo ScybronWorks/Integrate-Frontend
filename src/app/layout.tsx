@@ -21,13 +21,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <head>
                 <meta property="og:title" content="Integrate Edutech" />
                 <meta
                     property="og:description"
                     content="Integrate Edutech empowers students by providing quality education through online and offline classes. We specialize in subjects like chemistry, physics, and mathematics, with expert faculty and personalized mentor support to help students achieve their academic potential."
                 />
-                <meta property="og:image" content="https://integrateedu.co.in/img/logo/logo.png" />
                 <meta property="og:url" content="https://integrateedu.co.in/" />
                 <meta property="og:type" content="website" />
 
@@ -43,8 +41,6 @@ export default function RootLayout({
                 <meta name="robots" content="index, follow" />
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <meta name="language" content="English" />
-                <link href="/img/logo/logo.ico" rel="icon" />
-                <link href="/img/logo/logo.ico" rel="apple-touch-icon" />
             </head>
             <body className={`${lexend.className} overflow-x-hidden`}>
                 <Loading>

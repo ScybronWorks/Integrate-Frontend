@@ -1,22 +1,22 @@
 'use client';
-import Button from '@/components/atomic/button/Button';
 
 import {
-    faInstagram,
     faFacebook,
+    faInstagram,
     faLinkedin,
-    faYoutube,
-    faTwitter,
     faXTwitter,
-} from '@fortawesome/free-brands-svg-icons'; // Replace faTwitter for "X" icon
-
+    faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
-import Image from 'next/image';
+
+import Button from '@/components/atomic/button/Button';
 import DemoModal from '@/components/molecular/demoModal/DemoModal';
+import SectionCenter from '@/components/layout/sectionCenter/SectionCenter';
+
 const navLinks = [
     { title: 'HOME', href: '/' },
     { title: 'ABOUT US', href: '/about' },
@@ -25,19 +25,13 @@ const navLinks = [
     { title: 'CONTACT US', href: '/contact' },
 ];
 const socialMediaLinks = [
-    {
-        icon: faInstagram,
-        href: 'https://www.instagram.com/integrate_edutech?igsh=cHR6eGJ2MHB4bDRk',
-    },
-    {
-        icon: faFacebook,
-        href: 'https://www.facebook.com/profile.php?id=61564446839366&mibextid=ZbWKwL',
-    },
+    { icon: faInstagram, href: 'https://www.instagram.com/integrate_edutech?igsh=cHR6eGJ2MHB4bDRk' },
+    { icon: faFacebook, href: 'https://www.facebook.com/integral.edu' },
     {
         icon: faLinkedin,
         href: 'https://www.linkedin.com/in/integrate-edu-156330325/',
     },
-    { icon: faYoutube, href: 'https://youtube.com/@integrateedu' },
+    { icon: faYoutube, href: 'https://youtube.com/@integrateedu?si=oCOoEFHgdYjrxw8P' },
     { icon: faXTwitter, href: 'https://x.com/Integrateedu' },
 ];
 
@@ -117,8 +111,13 @@ const Footer = () => {
                         <div className="flex gap-2 max-w-[24.5rem] ">
                             <FontAwesomeIcon icon={faLocationDot} className="w-5 h-5" />
                             <span>
-                                Integrate Edutech House no: 370 Mannam P O, N.Paravoor Ernakulam,
-                                Kerala
+                                Integrate Edutech 
+                                House no: 370
+                                Mannam P O, N.Paravoor
+                                Ernakulam, Kerala
+
+                                Integrate Edutech House no: 370 Mannam P O, N.Paravoor
+                                Ernakulam, Kerala
                             </span>
                         </div>
                         <div className="flex gap-2">
@@ -131,6 +130,10 @@ const Footer = () => {
                 <SectionCenter className="py-10 border-t text-white text-sm border-gray-700">
                     <div className="text-center">
                         © Integrate Edutech Pvt. Ltd. All Rights Reserved 2024
+                    </div>
+                    <br/>
+                    <div className="text-center">
+                        Powered by Scybron Digital Solutions
                     </div>
                     <div className=" pt-5 flex justify-center items-center gap-6 ">
                         {socialMediaLinks.map((item, idx) => (
